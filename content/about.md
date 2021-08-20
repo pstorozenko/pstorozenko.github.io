@@ -4,9 +4,10 @@ katex: true
 ---
 
 Hi, my name is Piotr Pasza Storożenko located in Warsaw, Poland.
-I'm a physicist, data scientist by heart with love for programming.
+I'm a data scientist, physicist, by heart with love for programming.
 Wannabe applied mathematician.
-Huge julia enthusiast.
+A huge julia enthusiast, but I code mostly in python and R.
+Some small chunks of code and simulations in C++17 and newer are also fine ^^.
 On this blog I share things I find interesting.
 
 * GitHub: [pstorozenko](https://github.com/pstorozenko/)
@@ -21,7 +22,7 @@ Experience:
 
 Education:
 
-* 2018 - 2020 Master in Data Science, MiNI, Warsaw University of Technology, thesis title _Competition for attention in online social networks_ under [dr. inż. Grzegorz Siudem](http://if.pw.edu.pl/~siudem/) from WUT as well as [dr José Javier Ramasco](https://ifisc.uib-csic.es/~jramasco/) and [dr Sandro Meloni](https://ifisc.uib-csic.es/users/sandro/) from IFISC, summa cum laude
+* 2018 - 2020 Master in Data Science, MiNI, Warsaw University of Technology, thesis title _Competition for attention in online social networks_ under [dr inż. Grzegorz Siudem](http://if.pw.edu.pl/~siudem/) from WUT as well as [dr José Javier Ramasco](https://ifisc.uib-csic.es/~jramasco/) and [dr Sandro Meloni](https://ifisc.uib-csic.es/users/sandro/) from IFISC, summa cum laude
   * Winter 2019 Erasmus exchange, Faculty of Engineering Science, KU Leuven
-* 2014 - 2018 Bachelor of Eng in Applied Physics, Faculty of Physics, Warsaw University of Technology, thesis title _Synthesis and cristalization of glass and nanomaterials LiFe0.85V0.1PO4_ under [dr. inż. Tomasz Pietrzak](http://www.if.pw.edu.pl/~topie/), summa cum laude
+* 2014 - 2018 Bachelor of Eng in Applied Physics, Faculty of Physics, Warsaw University of Technology, thesis title _Synthesis and cristalization of glass and nanomaterials LiFe0.85V0.1PO4_ under [dr inż. Tomasz Pietrzak](http://www.if.pw.edu.pl/~topie/), summa cum laude
   * April 2018 6th place at [International Physicists' Tournament 2018](https://2018.iptnet.info/) as part of Polish team
