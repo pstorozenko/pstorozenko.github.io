@@ -9,6 +9,9 @@ Wannabe applied mathematician.
 Huge julia enthusiast.
 On this blog I share things I find interesting.
 
+* GitHub: [pstorozenko](https://github.com/pstorozenko/)
+* LinkedIn [Piotr Storożenko](https://www.linkedin.com/in/piotr-storo%C5%BCenko-438087128/)
+
 Experience:
 
 * 2021 - now  ML Engineer@[Appsilon](https://appsilon.com/)
