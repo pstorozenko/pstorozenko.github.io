@@ -6,3 +6,14 @@
 <!-- To automatically render math in text elements, include the auto-render extension: -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
