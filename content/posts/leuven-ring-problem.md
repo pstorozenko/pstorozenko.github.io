@@ -1,6 +1,6 @@
 ---
 title: "The Leuven Ring Problem ◯‍"
-date: 2021-09-06T07:33:51+02:00
+date: 2021-09-06T01:33:51
 katex: true
 tags: ["easy", "math", "circles", "erasmus"]
 ---
