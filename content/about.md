@@ -16,19 +16,22 @@ On this blog I share things I find interesting.
 Experience:
 
 * 2021 - now  ML Engineer@[Appsilon](https://appsilon.com/)
-  * Research in 3D rigging modeling using unusual GANs while working with leading world experts in that field.
+  * Research in 3D rigging modeling using unusual GANs while working with the leading world experts in that field.
   * Research in artistic sketch to photorealistic 3D model area. Working with SoTA GANs models.
 * 2020 - 2021 Data Scientist@[ING Bank Śląski](https://www.ing.pl/)
-  * Data science consulting for various internal teams. Both problem understanding as well as delivering quick PoCs.
-  * Creating Polish language NLP model for sentence multi-label classification, corporate clients department. Mixing various technics of transformers with classic ML.
-  * Internal AI Academy - explaining basics of data processing and ML in python for over 100 people in a few 8-week courses.
-  * Working on the whole company standards for ML.
+  * Part of ING Poland Center of Expertise - Artificial Intelligence. Data Science consulting for various internal teams. Both problem understanding as well as delivering quick PoCs.
+  * Creating Polish language NLP model for sentence multi-label classification, corporate clients department. Mixing various techniques of transformers with classic ML.
+  * Creating and teaching at internal _AI Academy_ - explaining basics of data processing and ML in python for over 100 people in a few 8-week courses.
+  * Working on the whole company standards for machine learning.
 * Summer 2019 Research internship [SURF@IFISC](https://ifisc.uib-csic.es/), UIB, Palma de Mallorca
   * Agent based model of Twitter hashtags dynamics in numpy, cython and eventually C++17.
   * Analyzing 273 GB of tweets in python and R.
   * Internship expanded into Master thesis later on.
 * Summer 2017 Internship in Advanced NLP Group@[Samsung R&D](https://samsungrd.pl/)
   * Working on the next word prediction engine for Samsung smartphone's keyboard, mostly C++.
+* 2016 - 2020 Science Teacher@[Inceptio](https://inceptio.org.pl/)
+  * Around ~10 6-weeks courses for high-school students on C++, java, python.
+  * Caretaker and teacher at [WUT Summer Camps 2017-2020](https://www.oboznaukowy.edu.pl/). Courses on Data Science, Physics, Math, Programming and more for high school students.
 
 Education:
 
