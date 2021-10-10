@@ -1,15 +1,17 @@
 ---
 title: "How to Sum Like a Boss (Almost) Σ"
-date: 2021-10-09T17:42:59+02:00
+date: 2021-10-16T08:42:59+02:00
 katex: true
-tags: ["julia", "performance", "summing"]
+tags: ["performance", "summing", "julia"]
 ---
 
-In a recent post I presented how memory layout may influence a matrix summing speed.
+In a recent post, I presented how memory layout may influence a matrix summing speed.
 It's interesting to see that there are plenty of pitfalls we might fall into when writing sum function and memory layout is not the only one.
-Please [read the previous post on summing]({{< ref "/posts/speed-of-traversing-matrix" >}} "Post on summing by rows vs cols first") if you haven't already first.
+Please first [read the previous post on summing]({{< ref "/posts/speed-of-traversing-matrix" >}} "Post on summing by rows vs cols first") if you haven't already.
 
-Without thinking _why_ let's take a look at those two functions:
+Without thinking _why_, let's take a look at those two functions:
+
+<!--more-->
 
 ```julia
 function sum1(A)
@@ -47,8 +49,8 @@ function sum2(A)
 end
 ```
 
-They are very similar to the _efficient_ function from the previous post but now we're not summing into a single variable.
-Instead we **first calculate sum for each row/column** and then sum the intermediate row/column result.
+They are very similar to the _efficient_ function from the previous post, but now we're not summing into a single variable.
+Instead, we **first calculate a sum for each row/column** and then sum the intermediate row/column result.
 As we will soon see, adding this additional vector _may change something_.
 
 ## Benchmarking different summing approaches
@@ -75,14 +77,14 @@ Findings:
 ### Finding #1
 
 So this is one of these problems where at first results are strange, but a moment later they're obvious.
-The key factor is a low-level parallelisation that processor is able to perform when calculating sums for rows.
+The key factor is a low-level parallelization that the processor is able to perform when calculating sums for rows.
 
-First, observe that in general, summing operation is not parallelizable operation.
+First, observe that in general, the summing operation is not parallelizable.
 If you want to calculate sum of array $[1, 2, 3, 4]$ by visiting each element in turn, you have to calculate $0 + 1$, $1 + 2$, then $3 + 3$ and finally $6 + 4$.
 You could at one time calculate $1 + 2$ and $3 + 4$, and then do $3 + 7$ but it would require _jumping_ over the array.
 
-Not let's remind that julia has F-style memory layout with matrix being stored as a sequence of columns.
-This means (as discussed in a previous post) that to iterate along the memory, we have to iterate with outer loop over columns and inner over rows.
+Not let's remind that julia has F-style memory layout with a matrix being stored as a sequence of columns.
+This means (as discussed in a previous post) that to iterate along the memory, we have to iterate with the outer loop over columns and the inner over rows.
 
 Imagine that you have to sum elements of the following matrix $A$:
 
@@ -120,7 +122,7 @@ This implementation takes advantage of low-level optimizations.
 
 ## How should I write my code based on these experiments
 
-In this post we discovered another thing to keep in mind when writing a high-performance code.
+In this post, we discovered another thing to keep in mind when writing high-performance code. 
 First, try to use built-in methods when possible.
-Second, try to design function in a way that there is no way for throttling on access to a single variable.
-Thinking in this way also allows to perform some higher-level optimization when necessary.
+Second, try to design the function in a way that there is no way for throttling on access to a single variable.
+Thinking in this way also allows performing some higher-level optimization when necessary.
