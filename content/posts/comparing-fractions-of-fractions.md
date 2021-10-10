@@ -2,7 +2,7 @@
 title: "Comparing fractions of fractions on COVID case 😷"
 date: 2021-08-26T21:38:08+02:00
 katex: true
-tags: ["easy" ,"math", "probability"]
+tags: ["math", "probability"]
 ---
 
 I had a little argue recently with one anti-vaxxer and I thought it will make an interesting blog content.

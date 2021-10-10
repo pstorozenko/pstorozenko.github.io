@@ -2,7 +2,7 @@
 title: "Pizza Twice as Big 🍕"
 date: 2021-09-04T11:01:14+02:00
 katex: true
-tags: ["easy", "math", "circles", "pizza", "julia"]
+tags: ["math", "circles", "pizza", "julia"]
 # draft: true
 ---
 

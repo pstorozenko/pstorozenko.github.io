@@ -1,8 +1,8 @@
 ---
-title: "The Leuven Ring Problem ◯‍"
+title: "The Leuven Ring Problem ○"
 date: 2021-09-06T01:33:51
 katex: true
-tags: ["easy", "math", "circles", "erasmus"]
+tags: ["math", "circles", "erasmus"]
 ---
 
 During my studies, I spent one semester at [KU Leuven](https://www.kuleuven.be/english/).

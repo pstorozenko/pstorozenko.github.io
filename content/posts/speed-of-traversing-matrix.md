@@ -2,7 +2,7 @@
 title: "Speed of Traversing Matrix → vs ↓"
 date: 2021-10-01T22:24:55+02:00
 katex: true
-tags: ["computer_science", "julia", "numerical_methods", "sums"]
+tags: ["programming", "julia", "performance", "sums"]
 ---
 
 Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
