@@ -1,7 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 theme = "hello-friend"
-googleAnalitics = "G-PR8Z9SJC7F"
+googleAnalytics = "G-PR8Z9SJC7F"
 paginate = 5
 
 [params]
