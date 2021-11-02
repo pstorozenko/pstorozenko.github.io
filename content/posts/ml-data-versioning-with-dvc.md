@@ -1,7 +1,7 @@
 ---
 title: "ML Data Versioning With DVC: How to manage machine learning data 🗃"
 date: 2021-10-13T07:23:26+02:00
-tags: ["machine-learning", "dvc"]
+tags: ["machine-learning", "dvc", "appsilon"]
 ---
 
 Recently I wrote [a post about DVC at my company's, Appsilon blog](https://appsilon.com/ml-data-versioning-with-dvc/).
