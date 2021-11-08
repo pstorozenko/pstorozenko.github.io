@@ -126,3 +126,5 @@ In this post, we discovered another thing to keep in mind when writing high-perf
 First, try to use built-in methods when possible.
 Second, try to design the function in a way that there is no way for throttling on access to a single variable.
 Thinking in this way also allows performing some higher-level optimization when necessary.
+
+[As always, code available on GitHub.](https://github.com/pstorozenko/pstorozenko.github.io/tree/main/code/how-to-sum-like-a-boss)

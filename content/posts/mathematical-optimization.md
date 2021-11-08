@@ -83,7 +83,7 @@ Problem written like this is much easier to solve by hand, and we eliminated one
 Let's try to phrase above problems using `julia`.
 We will be using `JuMP` package as it has a convenient interface.
 The code is so self-explaining that I leave it as is.
-At GitHub you will find a jupyter notebook with this code.
+At GitHub you will find [a jupyter notebook with this code](https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/mathematical-optimization/main.ipynb).
 
 This is the first simple quadratic problem:
 

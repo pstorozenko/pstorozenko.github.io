@@ -72,4 +72,4 @@ Expect the post on packing circles in ⬤ (recreating the first image) soon!
 
 If you liked it, please share my blog with friends that might be interested in such posts :)
 
-Code used to generate all images is available [here](https://github.com/pstorozenko/pstorozenko.github.io/tree/main/code/pizza-twice-as-big).
+Code used to generate all images is available [at GitHub](https://github.com/pstorozenko/pstorozenko.github.io/tree/main/code/pizza-twice-as-big).

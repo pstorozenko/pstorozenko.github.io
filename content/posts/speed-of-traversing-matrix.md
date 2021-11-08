@@ -118,7 +118,7 @@ Now let's explore how times are changing with matrix $A$ size ranging from 512x5
 
 ![Summing over rows vs columns benchmark](/posts/speed-of-traversing-matrix/benchmark.png)
 
-Notebook with benchmarks [is available here](https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/speed-of-traversing-matrix/summing.ipynb).
+Notebook with benchmarks [is available at GitHub](https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/speed-of-traversing-matrix/summing.ipynb).
 
 ## The summing mysteries
 
