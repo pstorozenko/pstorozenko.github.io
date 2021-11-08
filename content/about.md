@@ -11,7 +11,7 @@ Some small chunks of code and simulations in C++17 and newer are also fine ^^.
 On this blog I share things I find interesting.
 
 * GitHub: [pstorozenko](https://github.com/pstorozenko/)
-* LinkedIn [Piotr Storożenko](https://www.linkedin.com/in/piotr-storo%C5%BCenko-438087128/)
+* LinkedIn [Piotr Storożenko](https://www.linkedin.com/in/piotr-pasza-storo%C5%BCenko/)
 
 Experience:
 
@@ -20,7 +20,7 @@ Experience:
   * Research in artistic sketch to photorealistic 3D model area. Working with SoTA GANs models.
 * 2020 - 2021 Data Scientist@[ING Bank Śląski](https://www.ing.pl/)
   * Part of ING Poland Center of Expertise - Artificial Intelligence. Data Science consulting for various internal teams. Both problem understanding as well as delivering quick PoCs.
-  * Creating Polish language NLP model for sentence multi-label classification, corporate clients department. Mixing various techniques of transformers with classic ML.
+  * Creating Polish language NLP model for sentence multi-label classification, Corporate Clients Department. Mixing various techniques of transformers with classic ML.
   * Creating and teaching at internal _AI Academy_ - explaining basics of data processing and ML in python for over 100 people in a few 8-week courses.
   * Working on the whole company standards for machine learning.
 * Summer 2019 Research internship [SURF@IFISC](https://ifisc.uib-csic.es/), UIB, Palma de Mallorca
