@@ -109,8 +109,10 @@ We can introduce two types of constrains:</p>
 </ol>
 <p>For example:</p>
 <p>$$
-\min_x x^2 + 5 \newline
-\text{s.t.} \, 4 \le x \le 10
+\begin{aligned}
+\min\quad & x^2 + 5 \newline
+\text{Subject to} \quad & 4 \le x \le 10 \newline
+\end{aligned}
 $$</p>
 <p>and here solution is $x_{min} = 4$ and objective function is $4^2 + 5 = 21$.
 Note that the interval is closed.
@@ -118,9 +120,11 @@ It is super rare for optimization problems to have open boundaries.
 Try to think what it would mean.</p>
 <p>Let&rsquo;s consider:</p>
 <p>$$
-\max_{x, y} 4y \newline
-\text{s.t.} \, x \le 3 \newline
-\quad x = 2y + 2
+\begin{aligned}
+\max\quad & 4y \newline
+\text{Subject to} \quad & x \le 3 \newline
+& x = 2y + 2 \newline
+\end{aligned}
 $$</p>
 <p>It may not be as obvious at first but $x_{max} = 3$, $y_{max} = 0.5$ with objective equal to $2$.
 What is interesting here is that we maximize over variables $x$ and $y$, while $x$ is not explicitly present in our objective function.
@@ -133,9 +137,11 @@ $$</p>
 4y = 2(x-2) = 2x - 4
 $$</p>
 <p>$$
-\max_{x} 2x - 4 \newline
-\text{s.t.} \, x \le 3 \newline
-\quad y = (x - 2) / 2
+\begin{aligned}
+\max\quad & 2x - 4 \newline
+\text{Subject to} \quad & x \le 3 \newline
+& y = (x - 2) / 2 \newline
+\end{aligned}
 $$</p>
 <p>Problem written like this is much easier to solve by hand, and we eliminated one variable.</p>
 <h2 id=solving-optimization-problems-using-julia>Solving optimization problems using julia</h2>
@@ -187,6 +193,12 @@ Stay tuned for the next mathematical optimization post in which we will solve so
 <hr>
 </div>
 <div class=pagination__buttons>
+<span class="button previous">
+<a href=/posts/practical-mathematical-optimization/>
+<span class=button__icon>←</span>
+<span class=button__text>Practical Mathematical Optimization 🏡🛒🧃</span>
+</a>
+</span>
 <span class="button next">
 <a href=/posts/solar-panels-1/>
 <span class=button__text>Detecting Solar Panels from satellite images part 1 -- data preparation🛰️</span>

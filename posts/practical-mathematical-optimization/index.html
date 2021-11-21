@@ -1,0 +1,254 @@
+<!doctype html><html lang=en>
+<head>
+<title>
+Practical Mathematical Optimization 🏡🛒🧃 ::
+Pasza's blog — a simple blog about complex things
+</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="In the previous post I&amp;rsquo;ve presented the basics of stating mathematical optimization problems and JuMP framework in julia. Today let&amp;rsquo;s follow up with concrete examples! Please checkout the accompanying jupyter notebook even though you might not feel like a programmer. It&amp;rsquo;s very clear and shows how easy it is to obtain solutions!
+">
+<meta name=keywords content>
+<meta name=robots content="noodp">
+<link rel=canonical href=/posts/practical-mathematical-optimization/>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.css integrity=sha384-ysFyB7Is//Q1JNgERb0bLJokXKM8eWJsjEutGvthoHtBilHWgbdmbYkQZdwCIGIq crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.js integrity=sha384-UWjC+k927Mtx6WQF5SzKTXLLrOYmzs69HvkUjiKvUwSOljzc+C6PrGquNpOvJBBo crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PR8Z9SJC7F',{anonymize_ip:!1})}</script>
+<link rel=stylesheet href=/assets/style.css>
+<link rel=stylesheet href=/style.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=/img/favicon.png>
+<link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Practical Mathematical Optimization 🏡🛒🧃">
+<meta name=twitter:description content="In the previous post I&rsquo;ve presented the basics of stating mathematical optimization problems and JuMP framework in julia.
+Today let&rsquo;s follow up with concrete examples!
+Please checkout the accompanying jupyter notebook even though you might not feel like a programmer.
+It&rsquo;s very clear and shows how easy it is to obtain solutions!">
+<meta property="og:title" content="Practical Mathematical Optimization 🏡🛒🧃">
+<meta property="og:description" content="In the previous post I&rsquo;ve presented the basics of stating mathematical optimization problems and JuMP framework in julia.
+Today let&rsquo;s follow up with concrete examples!
+Please checkout the accompanying jupyter notebook even though you might not feel like a programmer.
+It&rsquo;s very clear and shows how easy it is to obtain solutions!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/practical-mathematical-optimization/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-11-21T14:18:35+01:00">
+<meta property="article:modified_time" content="2021-11-21T14:18:35+01:00"><meta property="og:site_name" content="Pasza's blog">
+</head>
+<body>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/ class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>pasza's blog</span>
+<span class=logo__cursor></span>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class="menu__inner menu__inner--desktop">
+<li><a href=/about>About me</a></li>
+<li><a href=/useful-materials>Useful materials</a></li>
+</ul>
+<ul class="menu__inner menu__inner--mobile">
+<li><a href=/about>About me</a></li>
+<li><a href=/useful-materials>Useful materials</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<div class=post>
+<h1 class=post-title>Practical Mathematical Optimization 🏡🛒🧃</h1>
+<div class=post-meta>
+<span class=post-date>
+2021-11-21
+</span>
+</div>
+<span class=post-tags>
+<a href=/tags/math/>#math</a>&nbsp;
+<a href=/tags/optimization/>#optimization</a>&nbsp;
+<a href=/tags/julia/>#julia</a>&nbsp;
+</span>
+<div class=post-content>
+<p>In <a href=/posts/mathematical-optimization/>the previous post</a> I&rsquo;ve presented the basics of stating mathematical optimization problems and JuMP framework in julia.
+Today let&rsquo;s follow up with concrete examples!
+Please checkout <a href=https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/practical-mathematical-optimization/main.ipynb>the accompanying jupyter notebook</a> even though you might not feel like a programmer.
+It&rsquo;s very clear and shows how easy it is to obtain solutions!</p>
+<h3 id=finding-maximum-garden-area->Finding maximum garden area 🏡</h3>
+<p>This one is the easiest.
+Imagine that you have to put a fence around your garden.
+You have 100m of fence.
+One side of your land is near rocks so you don&rsquo;t have to waste fence on it.
+Your task is to find a way of putting the fence so it maximizes the are inside.</p>
+<p><img src=/posts/practical-mathematical-optimization/example_garden.png alt="Example garden with rocks"></p>
+<p>Problem can be easily translated into mathematical optimization problem:</p>
+<p>$$
+\begin{aligned}
+\max\quad & x y \newline
+\text{Subject to} \quad & x + 2y = 100.0 \newline
+\end{aligned}
+$$</p>
+<p>Solution:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia>julia<span style=color:#f92672>&gt;</span> value(x), value(y), objective_value(model)
+(<span style=color:#ae81ff>50.0</span>, <span style=color:#ae81ff>25.0</span>, <span style=color:#ae81ff>1250.0</span>)
+</code></pre></div><p>So $x = 50$, $y=25$ and the garden area equals $1250$.
+The result looked strange for me at first glance.
+<em>It&rsquo;s an obvious fact</em> that square is the rectangular of maximum area from all rectangles with certain perimeter.
+Here however, one side is already covered by rocks so problem is a bit different and the optimal fence has shape of rectangular with sides 25 and 50. heh&mldr;</p>
+<p><img src=/posts/practical-mathematical-optimization/optimal_garden.png alt="Optimal garden with rocks"></p>
+<h3 id=size-of-square-fitted-in-quadratic>Size of square fitted in quadratic</h3>
+<p>Our next problem is finding the maximum area of the square that can fit inside parabola under some threshold $y_{max} = 10$.
+When you look first on this problem it seems complicated and not trivial.
+Let&rsquo;s do a nice visualization first.</p>
+<p><img src=/posts/practical-mathematical-optimization/quadratic.png alt="Example plot with quadratic and square"></p>
+<p>Our task is to maximize the green square area.
+To do so, our first observation should be that problem is symmetric with respect to line $x=0$.
+We can denote side of the square as $2a$.
+Instead of maximizing $(2a)^2$ we can just maximize $a$, this trick sometimes help solvers.
+It&rsquo;s also pretty reasonable to say that top of our square will be aligned with line $y = y_{max}$.
+The bottom-right corner of square will have coordinates $(a, y_{max} - 2a)$.
+When square will be growing, it will grow until it hits a parabola so until it&rsquo;s above $a^2$.</p>
+<p>$$ \begin{aligned}
+\max\quad & a \newline
+\text{Subject to} \quad & 10 - 2 a \geq a^2 \newline
+\end{aligned} $$</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia>julia<span style=color:#f92672>&gt;</span> value(a), objective_value(model)
+(<span style=color:#ae81ff>2.316624802924551</span>, <span style=color:#ae81ff>2.316624802924551</span>)
+
+julia<span style=color:#f92672>&gt;</span> (<span style=color:#ae81ff>2</span>value(a))<span style=color:#f92672>^</span><span style=color:#ae81ff>2</span>
+<span style=color:#ae81ff>21.467001910100855</span>
+</code></pre></div><p><img src=/posts/practical-mathematical-optimization/optimal_square.png alt="The optimal square plotted"></p>
+<p>You might realise that this whole optimization was not necessary as the biggest square will have simply $10 - 2 a = a^2 $ and we can solve it for $a$.
+I highly encourage you to write it on paper and solve.</p>
+<h3 id=size-of-rectangle-fitted-in-quadratic>Size of rectangle fitted in quadratic</h3>
+<p>The above problem looked complicated at first but in the end we&rsquo;ve discovered it can be easily solved via quadratic equation.
+Not let&rsquo;s consider <strong>rectangle</strong> instead of a square.
+Suddenly the problems is (I think) out of bounds for high-school math and requires the basics of calculus to solve it by hand.
+Fortunately with our framework the problem is not that hard to write in JuMP.
+Let&rsquo;s consider a rectangle of size $2a \times 2b$.
+We will be maximizing the area $(2a)\cdot (2b)$ with constraint $10 - 2 b \geq a^2$.
+This constraint will not be enough, we also have to make $a$ positive.</p>
+<p>$$ \begin{aligned}
+\max\quad & (2a)\cdot(2b) \newline
+\text{Subject to} \quad & 10 - 2 b \geq a^2 \newline
+& a \geq 0
+\end{aligned} $$</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia>julia<span style=color:#f92672>&gt;</span> value(a), value(b), objective_value(model)
+(<span style=color:#ae81ff>1.8257418674792618</span>, <span style=color:#ae81ff>3.333333366323534</span>, <span style=color:#ae81ff>24.343225140649853</span>)
+</code></pre></div><p><img src=/posts/practical-mathematical-optimization/optimal_rectangle.png alt="The optimal rectangle plotted"></p>
+<p>As with the previous problem, I highly encourage you to write this problem on paper and try to find the optimal $a$ and $b$ by hand, maybe with help of <a href=https://www.wolframalpha.com/>WolframAlpha</a>.</p>
+<h3 id=maximizing-sales-in-a-shop->Maximizing sales in a shop 🛒</h3>
+<p>John sells shirts.
+Right now he sells 16 shirts a day, £20 each.
+He observes that by decreasing price by £2 he is able to sell one shirt more.
+What is the optimal price of the shirt for John and what would be his profit then?
+Each shirt costs £5 to produce.
+It&rsquo;s a typical Matura Exam question.</p>
+<p>Let&rsquo;s denote $n$ as number of shirts sold and $p$ as a single shirt price.
+For sure we know that our objective function is $n (p - 5)$ as we want to maximize John&rsquo;s profit. Now we have to add some constraints.</p>
+<p>The problem is tricky to write using only those two variables.
+Fortunately we can introduce new if we need!
+New variable $s$ will denote how many more shirts are sold.
+Now amount of sold shirts will be $n = 16 + s$ for price $p = 20 - 2s$.</p>
+<p>If we had to do it on paper, we could eliminate $s$, find variable $n$ from constraints, and substitute it into objective function. We&rsquo;re left with a simple quadratic depended only on $p$.
+That&rsquo;s how we would solve it in high-school.
+With mathematical optimization framework we don&rsquo;t have to this!</p>
+<p>$$
+\begin{aligned}
+\max\quad & n (p - 5) \newline
+\text{Subject to} \quad & n = 16 + s \newline
+& p = 20 - 2s \newline
+\end{aligned}
+$$</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia>julia<span style=color:#f92672>&gt;</span> value<span style=color:#f92672>.</span>([n, p, s]), objective_value(model)
+([<span style=color:#ae81ff>11.75</span>, <span style=color:#ae81ff>28.5</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>4.249999999999999</span>], <span style=color:#ae81ff>276.125</span>)
+</code></pre></div><p>Here results require some interpretation as John might have trouble selling 11.75 shirts for total £276.125.
+The closest feasible solution is with $s = -4$, $n = 12$, $p=28$ with objective function £276.
+For John, surprisingly, he should raise the price to earn more.</p>
+<h3 id=optimizing-juice-factory->Optimizing juice factory 🧃</h3>
+<p>The last example for today is the most exciting and involves numerous interesting tricks!
+Suppose that you are the Production Engineer at The Tasty Juice.
+You have 500kg apples and 300kg pears.
+You can create apple-pear juice by using 2kg of apples and 1kg pear.
+Current market prices are:</p>
+<ul>
+<li>5€ for one kilogram of apples</li>
+<li>7€ for one kilogram of pears</li>
+<li>20€ for a liter of juice</li>
+</ul>
+<p>How to maximize your profit?</p>
+<p>It&rsquo;s easy to write out our objective function, it&rsquo;s just $5a + 7p + 20j$.
+Now we have to find some constraints.
+For sure we have to we can sell between 0 and 500kg of apples and between 0 and 300kg of pears.</p>
+<p>But how to <em>use</em> some fruits for juice and sell the rest?
+We can introduce new variables!
+Apples used for juice $a_j$ and the same with pears $p_j$.
+Now constraints are $a + a_j \le 500$ and $p + p_j \le 300$.</p>
+<p>It&rsquo;s important to not write $0 \le a + a_j \le 500$, as it doesn&rsquo;t restrict $a$ and $a_j$ to be positive, $a_j$ may be $5000$ and $a = -4990$ and still satisfy constraint.</p>
+<p>So how to <em>use</em> fruits?
+We can force $p_j$ to be equal to $j$ and $2a_j = j$.
+The reasoning behind the second equation is that the number apples kilograms used should be twice as large as produced liters of juice.</p>
+<p>Collecting everything, we can write:
+$$ \begin{aligned}
+\max\quad & 5 a + 7 p + 20 j \newline
+\text{Subject to} \quad & 2a_j - j = 0 \newline
+& p_j - j = 0 \newline
+& a \geq 0 \newline
+& a_j \geq 0 \newline
+& a + a_j \leq 500 \newline
+& p \geq 0 \newline
+& p_j \geq 0 \newline
+& p + p_j \leq 300 \newline
+\end{aligned} $$</p>
+<p>Our solver solution is:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia>julia<span style=color:#f92672>&gt;</span> round<span style=color:#f92672>.</span>(value<span style=color:#f92672>.</span>([a, aj, p, pj, j])), round(objective_value(model))
+([<span style=color:#f92672>-</span><span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>500.0</span>, <span style=color:#ae81ff>50.0</span>, <span style=color:#ae81ff>250.0</span>, <span style=color:#ae81ff>250.0</span>], <span style=color:#ae81ff>5350.0</span>)
+</code></pre></div><p>This means that we should use all 500kg of apples and 250kg of pears to produce 250 liters of juice. We will sell it together with reminding 50kg of pears for 5350€ in total.</p>
+<h2 id=the-summary-of-mathematical-optimization>The summary of mathematical optimization</h2>
+<p>In this post I tried to show some simple problems solved by JuMP.
+If you have some ideas for modifications, download the notebook and play with it!
+Stay tuned for the next post, it will finally explain the math behind circles in circle!</p>
+</div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Read other posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button next">
+<a href=/posts/mathematical-optimization/>
+<span class=button__text>Introduction Into Mathematical Optimization Way of Thinking 🧮</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">Piotr Pasza Storożenko</div>
+</div>
+</footer>
+<script src=/assets/main.js></script>
+<script src=/assets/prism.js></script>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PR8Z9SJC7F',{anonymize_ip:!1})}</script>
+</body>
+</html>
