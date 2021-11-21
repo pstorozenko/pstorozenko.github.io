@@ -41,8 +41,10 @@ We can introduce two types of constrains:
 For example:
 
 $$
-\min_x x^2 + 5 \newline
-\text{s.t.} \\, 4 \le x \le 10
+\begin{aligned}
+\min\quad & x^2 + 5 \newline
+\text{Subject to} \quad & 4 \le x \le 10 \newline
+\end{aligned}
 $$
 
 and here solution is $x_{min} = 4$ and objective function is $4^2 + 5 = 21$.
@@ -53,9 +55,11 @@ Try to think what it would mean.
 Let's consider:
 
 $$
-\max_{x, y} 4y \newline
-\text{s.t.} \\, x \le 3 \newline
-\quad x = 2y + 2
+\begin{aligned}
+\max\quad & 4y \newline
+\text{Subject to} \quad &  x \le 3 \newline
+& x = 2y + 2 \newline
+\end{aligned}
 $$
 
 It may not be as obvious at first but $x_{max} = 3$, $y_{max} = 0.5$ with objective equal to $2$.
@@ -71,9 +75,11 @@ $$
 $$
 
 $$
-\max_{x} 2x - 4 \newline
-\text{s.t.} \\, x \le 3 \newline
-\quad y = (x - 2) / 2
+\begin{aligned}
+\max\quad & 2x - 4 \newline
+\text{Subject to} \quad &  x \le 3 \newline
+& y = (x - 2) / 2 \newline
+\end{aligned}
 $$
 
 Problem written like this is much easier to solve by hand, and we eliminated one variable.
@@ -99,6 +105,7 @@ optimize!(model)
 ```
 
 To get the value of variable $x$ and objective function:
+
 ```julia
 julia> value(x), objective_value(model)
 (3.0000000297721905, 35.00000032749409)
