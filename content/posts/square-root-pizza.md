@@ -1,5 +1,5 @@
 ---
-title: "Square Root √2 Pizza Box"
+title: "Square Root √2 Pizza Box 🍕📦"
 date: 2021-11-26T21:34:30+01:00
 katex: true
 tags: ["math", "circles", "pizza"]
