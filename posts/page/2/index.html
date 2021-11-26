@@ -1,7 +1,7 @@
 <!doctype html><html lang=en>
 <head>
 <title>
-math ::
+Posts ::
 Pasza's blog — a simple blog about complex things
 </title>
 <meta charset=utf-8>
@@ -9,7 +9,7 @@ Pasza's blog — a simple blog about complex things
 <meta name=description content>
 <meta name=keywords content>
 <meta name=robots content="noodp">
-<link rel=canonical href=/tags/math/>
+<link rel=canonical href=/posts/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PR8Z9SJC7F',{anonymize_ip:!1})}</script>
 <link rel=stylesheet href=/assets/style.css>
@@ -23,13 +23,13 @@ Pasza's blog — a simple blog about complex things
 <link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
 <link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="math">
+<meta name=twitter:title content="Posts">
 <meta name=twitter:description content>
-<meta property="og:title" content="math">
+<meta property="og:title" content="Posts">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="/tags/math/"><meta property="og:site_name" content="Pasza's blog">
-<link rel=alternate type=application/rss+xml href=/tags/math/index.xml title="Pasza's blog">
+<meta property="og:url" content="/posts/"><meta property="og:site_name" content="Pasza's blog">
+<link rel=alternate type=application/rss+xml href=/posts/index.xml title="Pasza's blog">
 </head>
 <body>
 <div class=container>
@@ -123,6 +123,90 @@ Pizzas packed in pizza However, I would not like to assume that everyone is fami
 </div>
 </div>
 <div class="post on-list">
+<h1 class=post-title><a href=/posts/solar-panels-1/>Detecting Solar Panels from satellite images part 1 &ndash; data preparation🛰️</a></h1>
+<div class=post-meta>
+<span class=post-date>
+2021-11-02
+</span>
+</div>
+<span class=post-tags>
+<a href=/tags/machine-learning/>#machine-learning</a>&nbsp;
+<a href=/tags/python/>#python</a>&nbsp;
+<a href=/tags/appsilon/>#appsilon</a>&nbsp;
+</span>
+<div class=post-content>
+<p>I&rsquo;m writing a series of posts on detecting solar panels from satellite images at my company, <a href=https://appsilon.com>Appsilon</a>.
+To be honest, not from satellite images but from <a href=https://en.wikipedia.org/wiki/Orthophoto>orthophotos</a>.
+If you don&rsquo;t know what are orthophotos, the good news is that <a href=https://appsilon.com/using-ai-to-detect-solar-panels-part-1/>the first post has been released recently!</a>.</p>
+</div>
+<div>
+<a class="read-more button" href=/posts/solar-panels-1/>Read more →</a>
+</div>
+</div>
+<div class="post on-list">
+<h1 class=post-title><a href=/posts/how-to-sum-like-a-boss/>How to Sum Like a Boss (Almost) Σ</a></h1>
+<div class=post-meta>
+<span class=post-date>
+2021-10-16
+</span>
+</div>
+<span class=post-tags>
+<a href=/tags/performance/>#performance</a>&nbsp;
+<a href=/tags/summing/>#summing</a>&nbsp;
+<a href=/tags/julia/>#julia</a>&nbsp;
+</span>
+<div class=post-content>
+<p>In a recent post, I presented how memory layout may influence a matrix summing speed.
+It&rsquo;s interesting to see that there are plenty of pitfalls we might fall into when writing sum function and memory layout is not the only one.
+Please first <a href=/posts/speed-of-traversing-matrix/ title="Post on summing by rows vs cols first">read the previous post on summing</a> if you haven&rsquo;t already.</p>
+<p>Without thinking <em>why</em>, let&rsquo;s take a look at those two functions:</p>
+</div>
+<div>
+<a class="read-more button" href=/posts/how-to-sum-like-a-boss/>Read more →</a>
+</div>
+</div>
+<div class="post on-list">
+<h1 class=post-title><a href=/posts/ml-data-versioning-with-dvc/>ML Data Versioning With DVC: How to manage machine learning data 🗃</a></h1>
+<div class=post-meta>
+<span class=post-date>
+2021-10-13
+</span>
+</div>
+<span class=post-tags>
+<a href=/tags/machine-learning/>#machine-learning</a>&nbsp;
+<a href=/tags/dvc/>#dvc</a>&nbsp;
+<a href=/tags/appsilon/>#appsilon</a>&nbsp;
+</span>
+<div class=post-content>
+Recently I wrote a post about DVC at my company&rsquo;s, Appsilon blog. DVC is like a git, but for data, models and experiments. It also allows for creating an automated experiments pipelines.
+As a teaser I&rsquo;ll just say that, having prepared scripts for model training and evaluating, when new data is added to the repo, the whole training is run automatically. Metrics are saved to appropriate files alongside with parameters, same with plots.
+</div>
+<div>
+<a class="read-more button" href=/posts/ml-data-versioning-with-dvc/>Read more →</a>
+</div>
+</div>
+<div class="post on-list">
+<h1 class=post-title><a href=/posts/speed-of-traversing-matrix/>Speed of Traversing Matrix → vs ↓</a></h1>
+<div class=post-meta>
+<span class=post-date>
+2021-10-01
+</span>
+</div>
+<span class=post-tags>
+<a href=/tags/programming/>#programming</a>&nbsp;
+<a href=/tags/julia/>#julia</a>&nbsp;
+<a href=/tags/performance/>#performance</a>&nbsp;
+<a href=/tags/sums/>#sums</a>&nbsp;
+</span>
+<div class=post-content>
+Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
+Why it differs whetter matrix is traversed by rows or columns? Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively.
+</div>
+<div>
+<a class="read-more button" href=/posts/speed-of-traversing-matrix/>Read more →</a>
+</div>
+</div>
+<div class="post on-list">
 <h1 class=post-title><a href=/posts/leuven-ring-problem/>The Leuven Ring Problem ○</a></h1>
 <div class=post-meta>
 <span class=post-date>
@@ -183,8 +267,29 @@ I decided not to argue nor check the data source, but rather give it a try.
 <a class="read-more button" href=/posts/comparing-fractions-of-fractions/>Read more →</a>
 </div>
 </div>
+<div class="post on-list">
+<h1 class=post-title><a href=/posts/my-first-post/>My First Post!</a></h1>
+<div class=post-meta>
+<span class=post-date>
+2021-08-20
+</span>
+</div>
+<div class=post-content>
+Hello, my name is Pasza /ˈpaʃa/ and I welcome you to my blog. My plan is to share with you many insights I find on interesting topics. Some will be probably understandable for primary school kids and some will require university level math. This is however my blog and I can do what I want ^^.
+You can find more about me in related pages. As for now you can check out useful materials.
+</div>
+<div>
+<a class="read-more button" href=/posts/my-first-post/>Read more →</a>
+</div>
+</div>
 <div class=pagination>
 <div class=pagination__buttons>
+<span class="button previous">
+<a href=/posts/>
+<span class=button__icon>←</span>
+<span class=button__text>Newer posts</span>
+</a>
+</span>
 </div>
 </div>
 </div>
