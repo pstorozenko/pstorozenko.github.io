@@ -1,5 +1,5 @@
 ---
-title: "Using Streamlit to Deploy a PoC App 🎈"
+title: "Detecting Solar Panels from satellite images part 3 - PoC model deployment in streamlit 🎈"
 date: 2022-01-14T20:23:36+01:00
 tags: ["machine-learning", "streamlit", "python", "appsilon"]
 ---
