@@ -28,7 +28,7 @@ It might come handy, e.g., for student's project or recruitment assignment if yo
 We will go through the beginning of the [Neural style transfer](https://www.tensorflow.org/tutorials/generative/style_transfer) tutorial.
 Press the big **Run in Google Colab** button on top and wait till the environment loads.
 
-![](/posts/playing-with-style-transfer/run_in_colab.png)
+[![](/posts/playing-with-style-transfer/run_in_colab.png)](https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/generative/style_transfer.ipynb)
 
 You can work in colab almost the same you would work with jupyter notebooks!
 The whole tutorial is just one massive jupyter notebook.
@@ -77,8 +77,8 @@ style_image = load_img(style_path)
 to
 
 ```python
-content_image = load_img("my_content_file.jpg")
-style_image = load_img("my_style_file.jpg")
+content_image = load_img("the-eiffel-tower.jpg")
+style_image = load_img("a-summer-evening-in-the-city.jpg")
 ```
 
 and re run everything.

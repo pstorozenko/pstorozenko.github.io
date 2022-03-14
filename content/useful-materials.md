@@ -15,6 +15,7 @@ Here I pay my small tribute to some of my favorite scientific videos creators.
 * [3blue1brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) - a BRILLIANT channel, the best math channel ever. So many interesting topics explained so nicely with such nice visualizations. Topics range from fundamentals of calculus to perfect visualizations of Fourier transforms.
 * [computerphile](https://www.youtube.com/user/Computerphile) - a great channel with various topics from programming world. Very nice material on ideas behind machine learning and cryptography.
 * [Mathologer](https://www.youtube.com/channel/UC1_uAIS3r8Vu6JjXWvastJg) - kind of longer videos on interesting mathematical topics.
+* [mCoding](https://www.youtube.com/c/mCodingWithJamesMurphy) - a perfect place to polish your python skills.
 * [Michael Penn](https://www.youtube.com/channel/UC6jM0RFkr4eSkzT5Gx0HOAw) - Higher math explained in a very clear and concise way.
 * [MinuteEarth](https://www.youtube.com/user/minuteearth) - short videos about nature.
 * [minutephysics](https://www.youtube.com/user/minutephysics) - short videos about physics.

@@ -16,7 +16,7 @@ On this blog I share things I find interesting.
 Experience:
 
 * 2021 - now  ML Engineer@[Appsilon](https://appsilon.com/)
-  * Research in 3D rigging modeling using unusual GANs while working with the leading world experts in that field.
+  * Research in 3D animation modeling using unusual GANs while working with the leading world experts in that field.
   * Research in artistic sketch to photorealistic 3D model area. Working with SoTA GANs models.
 * 2020 - 2021 Data Scientist@[ING Bank Śląski](https://www.ing.pl/)
   * Part of ING Poland Center of Expertise - Artificial Intelligence. Data Science consulting for various internal teams. Both problem understanding as well as delivering quick PoCs.
