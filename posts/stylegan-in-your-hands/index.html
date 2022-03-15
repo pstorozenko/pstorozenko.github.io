@@ -56,12 +56,13 @@ For example like that:</p><div class=highlight><pre tabindex=0 style=color:#f8f8
 </span></span></code></pre></div><p>Feed it into the earlier code to get your first generated face!</p><p>If you have latents <code>l1</code> and <code>l2</code> you want to create face from first 8 layers of <code>l1</code> and last 10 of <code>l2</code> you can do:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>l12 <span style=color:#f92672>=</span> torch<span style=color:#f92672>.</span>cat((l1[:, :<span style=color:#ae81ff>8</span>, :], l2[:, <span style=color:#ae81ff>8</span>:, :]), dim<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>)
 </span></span></code></pre></div><p>In my case I got this scarry face this time.
 Please, do not blame me for your nightmares later. 👻</p><p><img src=strange_mix.jpg alt></p><h2 id=why-this-all-is-possible>Why this all is possible</h2><p>While this all is magnificent we can only speculate why random vectors are giving us reasonable faces and why those age/rotation directions exist.
-People say that because the latent space of size 512 is very dense in terms of contained information.
-It has to be able to carry information on all 1024x1024px of people of all ethnicities, ages we can chose almost any point in $R^{512}$ and it will produce plausible results.
+People say it is because the latent space of size 512 is very dense in terms of contained information.
+It has to be able to carry information on about 1024x1024 pixel of people of all ethnicities, ages.
+We can choose almost any point in $R^{512}$ and it will produce plausible results.
 It is also important to remember that the network saw all those ages and ethnicities in the training data.</p><p>This also explains the existence of directions responsible for aging and face rotation.
 Since network saw a lot of faces rotated by different angles, this information located in latent space.
 The same goes for aging.
-On the other hand there is no up-down head rotation as there were not that much examples of people tilting their head in the training data.
+On the other hand there is no up-down head direction in SG as there were not that much examples of people tilting forward and backward their heads in the training data.
 Network can generate brilliant results, but only of the same kind as it saw.</p><h2 id=summary>Summary</h2><p>In this post I presented what can be achieved with StyleGAN and how you can play with it using free google colab.
 I hope you liked that and your experiments were fruitful ;)</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button next"><a href=/posts/solar-panels-4/><span class=button__text>Streamlit Tutorial: How to Deploy Streamlit Apps on RStudio Connect 💰</span>
 <span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user">Piotr Pasza Storożenko</div></div></footer><script src=/assets/main.js></script>
