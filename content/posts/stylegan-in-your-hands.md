@@ -15,7 +15,7 @@ Here I would like to focus on showing how to make your own experiments with SG i
 
 The post is divided in two parts.
 In the first, I present some results and ideas behind them.
-In the second, I show how to obtain similar results and what can you do **on your own computer** (with an access to the internet).
+[In the second](/posts/stylegan-in-your-hands#stylegan-and-e4e-at-home), I show how to obtain similar results and what can you do **on your own computer** (with an access to the internet).
 
 ## What do I need to know about StyleGAN before the experiments?
 
@@ -85,6 +85,9 @@ Following a common pattern to use [the US presidents](https://github.com/ageitge
 ## StyleGAN and e4e at home
 
 Similarly to the previous post, encoder4editing model authors provided [a colab notebook for experimenting](https://colab.research.google.com/github/omertov/encoder4editing/blob/main/notebooks/inference_playground.ipynb)!
+
+ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://colab.research.google.com/github/omertov/encoder4editing/blob/main/notebooks/inference_playground.ipynb)
+
 Here it will not be as easy and straightforward as earlier because the model is not included in any kind of model zoo.
 You have to follow the notebook step by step, cells might require some time to run.
 On one point, you will have to grant the Google Cloud SDK access to your Google Drive.
