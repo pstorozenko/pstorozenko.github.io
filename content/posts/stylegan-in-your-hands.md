@@ -8,16 +8,16 @@ tags: ["python", "machine-learning", "conference", "SFI 2022"]
 This is the second post from micro-series preceding the SFI conference.
 In [the first post](/posts/playing-with-style-transfer) I showed how easy it is to do the style transfer at home.
 Now, I would like to present you how to play with [StyleGANv2](https://github.com/NVlabs/stylegan2).
-StyleGANv2 is the second version of StyleGAN, they are very similar in core principals.
+StyleGANv2 is [the second version of StyleGAN](https://indipest.files.wordpress.com/2021/03/bw6d5zz.gif), they are very similar in core principals.
 We will be working with StyleGANv2 but I will refer to it as SG.
 There is a lot that can be said/explained about SG.
 Here I would like to focus on showing how to make your own experiments with SG instead of getting into SG's details.
 
 The post is divided in two parts.
-In the first I present some results.
-In the second I show how to obtain similar results and what can you do **on your own computer** (with an access to the internet).
+In the first, I present some results and ideas behind them.
+In the second, I show how to obtain similar results and what can you do **on your own computer** (with an access to the internet).
 
-## What do I need to know about StyleGAN before experiments?
+## What do I need to know about StyleGAN before the experiments?
 
 ### Simple face generations
 
@@ -53,9 +53,11 @@ This introduces more features from $w_2$ into result:
 ![](black_guy2.jpg)
 
 We can also generate faces from $w_i$ interpolated between $w_1$ and $w_2$.
-For example if we would like to have 30 faces in-between we can create them from the following $w_i$
+For example if we would like to have $n=30$ faces in-between we can create them from the following $w_i$
 
-$w_k = (30 - k) w_1 + k w_2$
+$$
+w_k = \left(1 - \frac{k}{n}\right) w_1 + \frac{k}{n} w_2, \quad k = 1..n
+$$
 
 Animation from generated faces from $w_i$
 
@@ -74,28 +76,30 @@ We can also generate the image for some intermediate poses and create the gif:
 So far we have operated on faces generated from random vectors.
 This might be a great fun, but we might want to _edit_ some photo using StyleGAN.
 Surprisingly enough it is _somehow_ possible with [encoder4editing](https://github.com/omertov/encoder4editing)!
-Using this technique along with aging and pose directions I created this mashup between e4e approximations of aging presidents Andrzej Duda and Volodymyr Zelenskyy.
+Using this technique along with aging and pose directions we can create interesting mashups.
+Following a common pattern to use [the US presidents](https://github.com/ageitgey/face_recognition) for benchmarking [CV](https://en.wikipedia.org/wiki/Computer_vision) algorithms, I present you the mashup between aging presidents Andrzej Duda and Volodymyr Zelenskyy.
+
 
 ![](presidents.webp)
 
 ## StyleGAN and e4e at home
 
 Similarly to the previous post, encoder4editing model authors provided [a colab notebook for experimenting](https://colab.research.google.com/github/omertov/encoder4editing/blob/main/notebooks/inference_playground.ipynb)!
-Here it will not be as easy straightforward as earlier because the model is not included in any kind of model zoo.
+Here it will not be as easy and straightforward as earlier because the model is not included in any kind of model zoo.
 You have to follow the notebook step by step, cells might require some time to run.
-On one point, you will have to grant Google Cloud SDK access to your Google Drive.
-It will be necessary to download the pretrained e4e model and load it into your colab environment (model weights over 1GB), don't be scared.
+On one point, you will have to grant the Google Cloud SDK access to your Google Drive.
+It will be necessary to download the pretrained e4e model and load it into your colab environment (model weights over 1GB), don't be scared (the code will do it automatically for you).
 
-Some explanations regarding experiments in notebook:
+Some explanations regarding experiments in the notebook:
 
-- `ffhq_encode` - our focus StyleGAN trained on [FFHQ - dataset of high quality images](https://github.com/NVlabs/ffhq-dataset)
+- `ffhq_encode` - our focus, StyleGAN trained on [FFHQ - dataset of high quality images](https://github.com/NVlabs/ffhq-dataset)
 - `cars_encode` - StyleGAN on cars
 - `horse_encode` - StyleGAN on horse
 - `church_encode` - StyleGAN on church
 
 ### Working with real images approximations
 
-To provide your own photo for e4e to use, you can upload your photo to colab and change the first line in cell:
+To provide your own photo for e4e to use, you can upload your photo to colab (I explained it [in the previous post](/posts/playing-with-style-transfer#adjusting-for-images-from-you-local-disk)) and change the first line in cell:
 
 ```python
 image_path = EXPERIMENT_DATA_ARGS[experiment_type]["image_path"]
@@ -121,7 +125,7 @@ with torch.no_grad():
 ```
 
 you get `latents`, the key part of what you need.
-This is what we called $w$ and is later used.
+This is what we called $w$ and is later used to generate the face.
 
 If you have `latents`, you can create image from them with
 
@@ -133,11 +137,11 @@ with torch.no_grad():
 
 The resulting `img_t` is `[3, 1024, 1024]` tensor that can be converted to image with 
 `img = tensor2im(img)`.
-It is convenient to resize images to something smaller while working in colab with `img.resize((256, 256))` as working with 1024x1024 images is slow from my experience.
+It is convenient to resize images to something smaller with `img.resize((256, 256))` as working with 1024x1024 images is rather slow in colab from my experience.
 
 ### Creating random images
 
-In this implementation of SG you have to create $w$ from separate $z$.
+In this implementation of SG you have to create all 18 $w$/`latents` from separate $z$.
 For example like that:
 
 ```python
@@ -157,7 +161,20 @@ Please, do not blame me for your nightmares later. 👻
 
 ![](strange_mix.jpg)
 
+## Why this all is possible
+
+While this all is magnificent we can only speculate why random vectors are giving us reasonable faces and why those age/rotation directions exist.
+People say that because the latent space of size 512 is very dense in terms of contained information. 
+It has to be able to carry information on all 1024x1024px of people of all ethnicities, ages we can chose almost any point in $R^{512}$ and it will produce plausible results.
+It is also important to remember that the network saw all those ages and ethnicities in the training data.
+
+This also explains the existence of directions responsible for aging and face rotation.
+Since network saw a lot of faces rotated by different angles, this information located in latent space.
+The same goes for aging.
+On the other hand there is no up-down head rotation as there were not that much examples of people tilting their head in the training data.
+Network can generate brilliant results, but only of the same kind as it saw.
+
 ## Summary
 
-In this pretty post I presented what can be achieved with StyleGAN and how you can play with it using free google colab.
+In this post I presented what can be achieved with StyleGAN and how you can play with it using free google colab.
 I hope you liked that and your experiments were fruitful ;)

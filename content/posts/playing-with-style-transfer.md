@@ -6,19 +6,19 @@ tags: ["python", "machine-learning", "conference", "SFI 2022"]
 ---
 
 [As mentioned earlier](/posts/sfi-conference), I will be giving a talk on [the 17th SFI IT Academic Festival](https://sfi.pl/en/) on the topic of style transfer and StyleGAN.
-In this post I would like to show how easy it is to play with style transfer on your own!
+In this post I would like to show you how easy it is to play with style transfer on your own!
 
 ## To tutorial or not to tutorial
 
 It might be obvious for you to check Tensorflow/PyTorch tutorials if you wanted to learn how to create style-transfer system.
 But what if you do not want to learn anything?
 Maybe all you want is just to do the style transfer on your photos?
-Tutorials with colab notebooks are the place where you can find all you need!
+Apparently tutorials with colab notebooks are all you need!
 
 ## What are the colab notebooks?
 
 Some long time ago Google launched the service [Google Colab](https://colab.research.google.com/).
-This is an online place where you can run your jupyter notebooks on machine with attached GPU for free!
+This is an online place where you can run your jupyter notebooks on a machine with attached GPU for free!
 Of course there is a limit on GPU time you can use, but it is usually enough to train some simple networks or fine-tune the pre-trained model.
 If you are not familiar with colab yet, definitely try it out.
 It might come handy, e.g., for student's project or recruitment assignment if you do not have GPU at home.
@@ -41,7 +41,7 @@ If you do the same with some further cells you will quickly obtain the following
 ![](/posts/playing-with-style-transfer/dog.png)
 
 Just look how quick, painless and easy it was!
-No need for environment setting or doing any other difficult stuff!
+No need for environment setting up or doing any other difficult stuff!
 
 ### Adjusting for images from the web
 
@@ -62,7 +62,7 @@ content_path = tf.keras.utils.get_file('1280px-Gmach_G%C5%82%C3%B3wny_Politechni
 
 ### Adjusting for images from you local disk
 
-If you want to upload an image from disk to process you can do it as well!
+If you want to upload an image from your local disk to process you can do it as well!
 Just click here and there:
 
 ![](/posts/playing-with-style-transfer/upload.png)
@@ -89,5 +89,6 @@ A summer evening ~~in the city~~ with the Eiffel Tower.
 
 ## Summary
 
+Colab notebooks is a great online service.
 I hope this post made it clear how to do your own experiments with style transfer.
-If you are curious how it works, what are the details of methods used, just follow the notebook till the end!
+And the best part is that if you are curious how style transfer works, what are the details of methods used, just follow the notebook till the end!
