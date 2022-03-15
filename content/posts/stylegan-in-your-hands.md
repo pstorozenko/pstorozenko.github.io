@@ -164,14 +164,15 @@ Please, do not blame me for your nightmares later. 👻
 ## Why this all is possible
 
 While this all is magnificent we can only speculate why random vectors are giving us reasonable faces and why those age/rotation directions exist.
-People say that because the latent space of size 512 is very dense in terms of contained information. 
-It has to be able to carry information on all 1024x1024px of people of all ethnicities, ages we can chose almost any point in $R^{512}$ and it will produce plausible results.
+People say it is because the latent space of size 512 is very dense in terms of contained information. 
+It has to be able to carry information on about 1024x1024 pixel of people of all ethnicities, ages.
+We can choose almost any point in $R^{512}$ and it will produce plausible results.
 It is also important to remember that the network saw all those ages and ethnicities in the training data.
 
 This also explains the existence of directions responsible for aging and face rotation.
 Since network saw a lot of faces rotated by different angles, this information located in latent space.
 The same goes for aging.
-On the other hand there is no up-down head rotation as there were not that much examples of people tilting their head in the training data.
+On the other hand there is no up-down head direction in SG as there were not that much examples of people tilting forward and backward their heads in the training data.
 Network can generate brilliant results, but only of the same kind as it saw.
 
 ## Summary
