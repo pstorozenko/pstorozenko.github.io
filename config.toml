@@ -30,7 +30,7 @@ paginate = 10
   [languages.en]
     title = "Pasza's blog"
     subtitle = "a simple blog about complex things"
-    keywords = ""
+    keywords = "piotr pasza pasha storozenko ml data science machine learning"
     copyright = "Piotr Pasza Storożenko"
     menuMore = "Show more"
     writtenBy = "Written by Piotr Pasza Storożenko"
