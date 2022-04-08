@@ -18,6 +18,8 @@ Experience:
 * 2021 - now  ML Engineer@[Appsilon](https://appsilon.com/)
   * Research in 3D animation modeling using unusual GANs while working with the leading world experts in that field.
   * Research in artistic sketch to photorealistic 3D model area. Working with SoTA GANs models.
+  * Improvements in [Mbaza project](https://appsilon.com/gabon-wildlife-ai-for-biodiversity-conservation/) - production classification models for camera traps, deployed in Gabon
+  * Collaboration with professor [Frédéric Maps](http://www.takuvik.ulaval.ca/team/maps_frederic.php) from [Université Laval](https://www.ulaval.ca/en) on [detecting oil sacs in copepods](https://dropsu.sorbonne-universite.fr/s/w5Lm7P4sR8rMKtB?dir=undefined&openfile=117720445) - real-world image segmentation problem.
 * 2020 - 2021 Data Scientist@[ING Bank Śląski](https://www.ing.pl/)
   * Part of ING Poland Center of Expertise - Artificial Intelligence. Data Science consulting for various internal teams. Both problem understanding as well as delivering quick PoCs.
   * Creating Polish language NLP model for sentence multi-label classification, Corporate Clients Department. Mixing various techniques of transformers with classic ML.
