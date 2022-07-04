@@ -1,6 +1,6 @@
 ---
 title: "PyTorch-Lightning + Hydra to Boost Your PyTorch ⚡🐉"
-date: 2022-06-014T00:38:25+02:00
+date: 2022-06-09T00:38:25+02:00
 katex: true
 tags: ["appsilon", "python", "pytorch", "machine-learning"]
 ---
