@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pasza's blog</title><link>/</link><description>Recent content on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Fri, 01 Jul 2022 23:07:06 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>SFI Conference Recording 🎥</title><link>/posts/sfi-conference-recording/</link><pubDate>Fri, 01 Jul 2022 23:07:06 +0200</pubDate><guid>/posts/sfi-conference-recording/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pasza's blog</title><link>/</link><description>Recent content on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Thu, 07 Jul 2022 20:52:14 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>PyTorch Serialization 📦⚙️</title><link>/posts/pytorch-serialization/</link><pubDate>Thu, 07 Jul 2022 20:52:14 +0200</pubDate><guid>/posts/pytorch-serialization/</guid><description>
+&lt;p>One thing is to train the model, but another is to serve it.
+In between those two phases, model serialization and deserialization occurs.
+In simpler words it&amp;rsquo;s just model saving and loading.
+It&amp;rsquo;s important because different methods result in different:&lt;/p>
+&lt;ol>
+&lt;li>Inference speed&lt;/li>
+&lt;li>Model size&lt;/li>
+&lt;li>Python environment size&lt;/li>
+&lt;/ol>
+&lt;p>If you are curious what are the ways to serialize model in PyTorch and how they compare, checkout my &lt;a href="https://appsilon.com/model-serialization-in-machine-learning/">new post on Appsilon blog&lt;/a>.&lt;/p></description></item><item><title>SFI Conference Recording 🎥</title><link>/posts/sfi-conference-recording/</link><pubDate>Fri, 01 Jul 2022 23:07:06 +0200</pubDate><guid>/posts/sfi-conference-recording/</guid><description>
 &lt;p>Finally the recording of THE talk &lt;em>StyleGAN w Twoich rękach&lt;/em> from SFI 2022 is available online! 🎉&lt;/p></description></item><item><title>SFINKS 2022 △✎📜</title><link>/posts/sfinks-2022/</link><pubDate>Wed, 29 Jun 2022 22:24:50 +0200</pubDate><guid>/posts/sfinks-2022/</guid><description>
 &lt;p>&lt;a href="http://sfinks.fizyka.pw.edu.pl/">SFINKS&lt;/a> is a small conference on complex systems and interdisciplinary physics.
 I wanted to present something there since the first edition in 2016, but I never stood a chance.
