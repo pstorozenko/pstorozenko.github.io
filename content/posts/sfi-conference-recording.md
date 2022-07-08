@@ -5,7 +5,7 @@ katex: true
 tags: ["conference", "SFI 2022", "machine-learning"]
 ---
 
-Finally the recording of THE talk _StyleGAN w Twoich rękach_ from SFI 2022 is available online! 🎉
+Finally the recording of the talk _StyleGAN w Twoich rękach_ from SFI 2022 is available online! 🎉
 
 <!--more--> 
 
