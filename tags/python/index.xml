@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on Pasza's blog</title><link>/tags/python/</link><description>Recent content in python on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Thu, 07 Jul 2022 20:52:14 +0200</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>PyTorch Serialization 📦⚙️</title><link>/posts/pytorch-serialization/</link><pubDate>Thu, 07 Jul 2022 20:52:14 +0200</pubDate><guid>/posts/pytorch-serialization/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on Pasza's blog</title><link>/tags/python/</link><description>Recent content in python on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Tue, 13 Sep 2022 23:01:52 +0200</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Jupyter Notebooks and Quarto 📓📃</title><link>/posts/jupyter-quarto/</link><pubDate>Tue, 13 Sep 2022 23:01:52 +0200</pubDate><guid>/posts/jupyter-quarto/</guid><description>
+&lt;p>What if you just don&amp;rsquo;t like &lt;code>rmd&lt;/code>/&lt;code>qmd&lt;/code> format anymore?
+You love jupyter notebooks and that&amp;rsquo;s your way of working (that&amp;rsquo;s me).
+Still, you must generate report from time to time.
+Fortunately &lt;code>quarto&lt;/code> solves this problem brilliantly!&lt;/p>
+&lt;p>The reports look beautifully.
+Not only htmls what we might expect, but pdfs as well!&lt;/p>
+&lt;p>I wrote &lt;a href="https://medium.com/appsilon-data-science/jupyter-notebook-quarto-9e449f6336bf">a post for Appsilon that has been published on medium&lt;/a> regarding this topic.
+Be sure to check it out, it was a real game-changer for me!&lt;/p></description></item><item><title>Quarto, Python, and VSCode 📃🐍</title><link>/posts/quarto-python-vscode/</link><pubDate>Thu, 25 Aug 2022 23:01:36 +0200</pubDate><guid>/posts/quarto-python-vscode/</guid><description>
+&lt;p>Working with &lt;code>quarto&lt;/code> files in RStudio is probably the suggested way.
+However, you may prefer to use VS Code.
+Especially if you work mainly in python.
+It&amp;rsquo;s not a problem by any means!&lt;/p>
+&lt;p>I wrote a post on medium on &lt;a href="https://medium.com/appsilon-data-science/quarto-python-and-vs-code-fc89e87fdd20">working with &lt;code>quarto&lt;/code> in VS Code on python files&lt;/a>.&lt;/p></description></item><item><title>Quarto, The New Rmarkdown 📃📜</title><link>/posts/quarto/</link><pubDate>Thu, 28 Jul 2022 23:08:22 +0200</pubDate><guid>/posts/quarto/</guid><description>
+&lt;p>Do you remember good old &lt;code>rmarkdown&lt;/code>?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-md" data-lang="md">&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>title: &amp;#34;R markdown&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>output: html_document
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Hello ~world~ problems!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We have a great successor in the form of &lt;a href="https://quarto.org/">&lt;code>quarto&lt;/code>&lt;/a> that is ready for 2022 and beyond!&lt;/p></description></item><item><title>PyTorch Serialization 📦⚙️</title><link>/posts/pytorch-serialization/</link><pubDate>Thu, 07 Jul 2022 20:52:14 +0200</pubDate><guid>/posts/pytorch-serialization/</guid><description>
 &lt;p>One thing is to train the model, but another is to serve it.
 In between those two phases, model serialization and deserialization occurs.
 In simpler words it&amp;rsquo;s just model saving and loading.
