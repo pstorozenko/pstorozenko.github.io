@@ -4,7 +4,7 @@ I have this opportunity during work at Appsilon where from time to time we work 
 One such project was &lt;a href="posts/copepods-blogpost.md">copepods/plankton project&lt;/a> where I was doing segmentation of the oil sac in the Arctic plankton.
 This time I&amp;rsquo;d like to share something from the other pole of the globe.&lt;/p>
 &lt;p>Currently we work on detecting the Antarctic shags nests on the Antarctic islands.
-Together with Jędrzej Świerzewski and Joanna Kaleta we were cooperating with researchers from &lt;a href="https://ibb.edu.pl/en/laboratory/robert-bialik/">IBB PAS&lt;/a> on this task.
+Together with Jędrzej Świeżewski and Joanna Kaleta we were cooperating with researchers from &lt;a href="https://ibb.edu.pl/en/laboratory/robert-bialik/">IBB PAS&lt;/a> on this task.
 Checkout &lt;a href="https://appsilon.com/yolo-counting-nests-antarctic-birds/">the engagement summary blog post on the Appsilon blog&lt;/a>.&lt;/p></description></item><item><title>Jupyter Notebooks and Quarto 📓📃</title><link>/posts/jupyter-quarto/</link><pubDate>Tue, 13 Sep 2022 23:01:52 +0200</pubDate><guid>/posts/jupyter-quarto/</guid><description>
 &lt;p>What if you just don&amp;rsquo;t like &lt;code>rmd&lt;/code>/&lt;code>qmd&lt;/code> format anymore?
 You love jupyter notebooks and that&amp;rsquo;s your way of working (that&amp;rsquo;s me).
