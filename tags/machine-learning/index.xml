@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>machine-learning on Pasza's blog</title><link>/tags/machine-learning/</link><description>Recent content in machine-learning on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Sat, 01 Oct 2022 23:02:24 +0200</lastBuildDate><atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml"/><item><title>Detecting Antarctic Shag Nests 🐧🐻‍❄️🇦🇶</title><link>/posts/antarctic-shag/</link><pubDate>Sat, 01 Oct 2022 23:02:24 +0200</pubDate><guid>/posts/antarctic-shag/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>machine-learning on Pasza's blog</title><link>/tags/machine-learning/</link><description>Recent content in machine-learning on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Sun, 16 Jul 2023 23:00:00 +0100</lastBuildDate><atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml"/><item><title>OxML Report Day4 📜</title><link>/posts/oxml-report-day4/</link><pubDate>Sun, 16 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day4/</guid><description>
+&lt;p>The report of all talks during the fourth day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>..&lt;/p>
+&lt;p>This day talks were on:&lt;/p>
+&lt;ol>
+&lt;li>Insightful Lecture on ML for Mental Health - &lt;a href="http://www.munmund.net/">Munmun De Chodhury&lt;/a>&lt;/li>
+&lt;li>Drug Discovery with ML - &lt;a href="https://www.linkedin.com/in/ravi-patel-841a52138/">Ravi Patel&lt;/a>&lt;/li>
+&lt;li>How to make sure the Market wants your solution - &lt;a href="https://www.swissre.com/profile/Reza_Khorshidi/ep_cd4b47">Reza Khorshidi&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>OxML Report Day3 📜</title><link>/posts/oxml-report-day3/</link><pubDate>Sat, 15 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day3/</guid><description>
+&lt;p>The report of all talks during the third day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>..&lt;/p>
+&lt;p>This day talks were on:&lt;/p>
+&lt;ol>
+&lt;li>Introduction to Neural Networks - &lt;a href="https://www.ai.math.uni-muenchen.de/members/professor/kutyniok/index.html">Gitta Kutyniok&lt;/a>&lt;/li>
+&lt;li>Medical Expert&amp;rsquo;s View on Impactful and Responsible ML in Health with EHR &lt;a href="https://www.oxfordmartin.ox.ac.uk/people/kazem-rahimi/">Kazem Rahimi&lt;/a>&lt;/li>
+&lt;li>Chaotic Lecture on Graphs and ML &lt;a href="https://www.cl.cam.ac.uk/~pl219/">Pietro Liò&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>OxML Report Day2 📜</title><link>/posts/oxml-report-day2/</link><pubDate>Fri, 14 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day2/</guid><description>
+&lt;p>The report of all talks during the second day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>..&lt;/p>
+&lt;p>This day talks were on:&lt;/p>
+&lt;ol>
+&lt;li>The State of Computer Vision and Many CV Experiments - &lt;a href="https://chrirupp.github.io/">Cristian Rupprecht&lt;/a>&lt;/li>
+&lt;li>ML Challenges in Oncology and Multi-omics data - &lt;a href="https://www.oncology.cam.ac.uk/research/our-research/crispin">Mireira Crispin&lt;/a>&lt;/li>
+&lt;li>What is a Multimodality and How To Work With It? - &lt;a href="https://www.cs.cmu.edu/~morency/">Louis-Philippe (LP) Morency&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>OxML Report Day 1 📜</title><link>/posts/oxml-report-day1/</link><pubDate>Thu, 13 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day1/</guid><description>
+&lt;p>The report of all talks during the first day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>.&lt;/p>
+&lt;p>This day talks were on:&lt;/p>
+&lt;ol>
+&lt;li>Casual Inference - &lt;a href="https://www.microsoft.com/en-us/research/people/chezha/">Cheng Zhang&lt;/a>&lt;/li>
+&lt;li>Computer Vision in medicine - &lt;a href="https://www.kcl.ac.uk/people/jorge-cardoso">Jorge Cardoso&lt;/a>&lt;/li>
+&lt;li>Knowledge Representation - &lt;a href="http://arkitus.com/">Ali Eslami&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Detecting Antarctic Shag Nests 🐧🐻‍❄️🇦🇶</title><link>/posts/antarctic-shag/</link><pubDate>Sat, 01 Oct 2022 23:02:24 +0200</pubDate><guid>/posts/antarctic-shag/</guid><description>
 &lt;p>It&amp;rsquo;s always nice if you can use your technical skills for something &lt;em>good&lt;/em> for our planet.
 I have this opportunity during work at Appsilon where from time to time we work on &lt;a href="/tags/data4good/" title="Data4Good projects">Data4Good projects&lt;/a>.
 One such project was &lt;a href="posts/copepods-blogpost.md">copepods/plankton project&lt;/a> where I was doing segmentation of the oil sac in the Arctic plankton.
