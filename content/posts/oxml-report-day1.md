@@ -1,6 +1,6 @@
 ---
 title: "OxML Report Day 1 📜"
-date: 2023-07-13T23:00:00+01:00
+date: 2023-07-21T23:00:00+01:00
 katex: true
 tags: ["conference", "OxML", "Oxford", "machine-learning", "appsilon"]
 ---

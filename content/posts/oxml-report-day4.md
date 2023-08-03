@@ -1,6 +1,6 @@
 ---
 title: "OxML Report Day4 📜"
-date: 2023-07-16T23:00:00+01:00
+date: 2023-07-24T23:00:00+01:00
 katex: true
 tags: ["conference", "OxML", "Oxford", "machine-learning", "appsilon"]
 ---
@@ -34,7 +34,7 @@ Munmun De Chodhury, an Associate Professor in the School of Interactive Computin
 
 Ravi Patel, an Advanced AI Scientist at [BenevolentAI](https://www.linkedin.com/company/benevolentai/), delivered a talk on the role of machine learning in drug discovery. While specifics on the approach and technologies used were kept confidential, he discussed the general pipeline, challenges, and strategies used in their work.
 
-1. Patel outlined the typically long and expensive process of drug discovery, citing research that indicated an average of $2.6 bln and 10 years are needed for a single drug study. He also noted the high failure rate of drug studies, with 90% failing and 30-50% of patients responding poorly to approved drugs.
+1. Patel outlined the typically long and expensive process of drug discovery, citing research that indicated an average of \$2.6 bln and 10 years are needed for a single drug study. He also noted the high failure rate of drug studies, with 90% failing and 30-50% of patients responding poorly to approved drugs.
 2. BenevolentAI's drug discovery pipeline aims to combine patient data, such as multiomics, with unstructured literature and an internal knowledge graph. This is intended to facilitate a comprehensive understanding of the drug discovery process.
 3. To better understand the needs of drug discovery experts, BenevolentAI sought to comprehend their strengths and weaknesses. They identified the main limitations as the speed of reviewing materials and the sheer quantity of materials one can go through.
 4. Patel proposed two methods for making the system explainable:

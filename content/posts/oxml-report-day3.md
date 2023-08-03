@@ -1,7 +1,7 @@
 ---
 title: "OxML Report Day3 📜"
-date: 2023-07-15T23:00:00+01:00
-katex: true
+date: 2023-07-23T23:00:00+01:00
+katex: false
 tags: ["conference", "OxML", "Oxford", "machine-learning", "appsilon"]
 ---
 
@@ -10,8 +10,8 @@ The report of all talks during the third day of OxML Health 2023 where I've been
 This day talks were on:
 
 1. Introduction to Neural Networks - [Gitta Kutyniok](https://www.ai.math.uni-muenchen.de/members/professor/kutyniok/index.html)
-2. Medical Expert's View on Impactful and Responsible ML in Health with EHR [Kazem Rahimi](https://www.oxfordmartin.ox.ac.uk/people/kazem-rahimi/)
-3. Chaotic Lecture on Graphs and ML [Pietro Liò](https://www.cl.cam.ac.uk/~pl219/)
+2. Medical Expert's View on Impactful and Responsible ML in Health with EHR - [Kazem Rahimi](https://www.oxfordmartin.ox.ac.uk/people/kazem-rahimi/)
+3. Chaotic Lecture on Graphs and ML - [Pietro Liò](https://www.cl.cam.ac.uk/~pl219/)
 
 <!--more--> 
 
