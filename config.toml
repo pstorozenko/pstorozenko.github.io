@@ -36,7 +36,7 @@ unsafe = true
   [languages.en]
     title = "Pasza's blog"
     subtitle = "a simple blog about complex things"
-    keywords = "piotr pasza pasha storozenko ml data science machine learning"
+    keywords = "piotr pasza storozenko ml data science machine learning appsilon"
     copyright = "Piotr Pasza Storożenko"
     menuMore = "Show more"
     writtenBy = "Written by Piotr Pasza Storożenko"

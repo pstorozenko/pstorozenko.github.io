@@ -6,7 +6,6 @@ Hi, my name is Piotr Pasza Storożenko located in Warsaw, Poland.
 I'm a machine learning engineer, physicist, by heart with love for programming.
 Wannabe applied mathematician.
 A huge julia enthusiast, but I code mostly in python and R.
-I prefer PyTorch⚡ to TensorFlow. :)
 Some small chunks of code and simulations in C++17 and newer are also fine ^^.
 On this blog I share things I find interesting.
 
@@ -17,13 +16,13 @@ On this blog I share things I find interesting.
 
 * Fall 2023 - Now -- Innovation Lead@[Appsilon](https://appsilon.com/)
 
-  Who's the Innovation Lead? Experienced engineer outside of regular projects who helps to make company future-ready. [Glue work](https://www.noidea.dog/glue) is my work. I'm the go-to person that connects the tech team, delivery, marketing, sales, supports the board when it comes to new technologies, architectures, and methodologies, or innovation to put it simply. In the meantime, I try to code, below are some of the projects and initiatives I am or was involved in:
+  Who's the Innovation Lead? An experienced engineer outside of regular projects who helps to make company future-ready. [Glue work](https://www.noidea.dog/glue) is my work. I'm the go-to person that connects the tech team, delivery, marketing, sales, supports the board when it comes to new technologies, architectures, and methodologies, or innovation to put it simply. In the meantime, I try to code, below are some of the projects and initiatives I am or was involved in:
   * ML Systems Development
     * Architected and deployed image classification ML system using BentoML (FastAPI + Docker) on GCP Cloud Run, implementing cost-efficient serverless infrastructure
     * Developed high-performance data visualization dashboard for ML research, handling _a lot_ of data points and contributing to a [Nature publication](https://www.appsilon.com/post/interactive-cell-analysis)
     * Evaluated and implemented [Nextflow](https://www.appsilon.com/post/nextflow-for-computational-biology-workflows) for ML workflow management, resulting in successful client adoption and multiple project extensions
   * Technical Leadership
-    * Built LLM-powered application Flow, that is like customizable Claude Artifact, but for RShiny apps, Quarto reports and other applications.
+    * [Built LLM-powered application Flow](https://www.appsilon.com/post/llm-quarto-automation), this is like customizable Claude Artifact, but for RShiny apps, Quarto reports and other applications.
     * Created an open-source [Tapyr](https://github.com/Appsilon/tapyr-template) package for Shiny for Python application bootstrapping
     * Created full-stack architecture connecting ML models with modern frontend frameworks (React, Next.js, Observable Framework)
     * The main code reviewer for python code in the company.
