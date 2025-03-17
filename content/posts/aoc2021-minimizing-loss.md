@@ -1,7 +1,6 @@
 ---
 title: "Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄"
 date: 2022-01-04T21:00:59+01:00
-katex: true
 tags: ["math", "programing", "julia", "aoc2021"]
 ---
 

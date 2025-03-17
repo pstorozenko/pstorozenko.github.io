@@ -1,7 +1,6 @@
 ---
 title: "Streamlit Tutorial: How to Deploy Streamlit Apps on RStudio Connect 💰"
 date: 2022-02-28T20:23:42+01:00
-katex: true
 
 tags: ["machine-learning", "streamlit", "python", "R", "appsilon"]
 ---

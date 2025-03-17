@@ -1,7 +1,6 @@
 ---
 title: "SFI Conference Recording 🎥"
 date: 2022-07-01T23:07:06+02:00
-katex: true
 tags: ["conference", "SFI 2022", "machine-learning"]
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "StyleGANv2 in Your Hands 💇👻"
 date: 2022-03-14T22:30:09+01:00
-katex: true
 tags: ["python", "machine-learning", "conference", "SFI 2022"]
 ---
 

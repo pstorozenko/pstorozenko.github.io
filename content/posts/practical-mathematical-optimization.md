@@ -1,7 +1,6 @@
 ---
 title: "Practical Mathematical Optimization 🏡🛒🧃"
 date: 2021-11-21T14:18:35+01:00
-katex: true
 tags: ["math", "optimization", "julia"]
 ---
 

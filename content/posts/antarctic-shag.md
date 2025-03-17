@@ -1,7 +1,6 @@
 ---
 title: "Detecting Antarctic Shag Nests 🐧🐻‍❄️🇦🇶"
 date: 2022-10-01T23:02:24+02:00
-katex: true
 tags: ["data4good", "machine-learning", "appsilon"]
 ---
 

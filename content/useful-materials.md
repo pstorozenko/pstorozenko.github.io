@@ -1,6 +1,6 @@
 ---
 title: "Useful materials"
-katex: true
+
 ---
 
 Here I present some resources I found very useful when learning various stuff:

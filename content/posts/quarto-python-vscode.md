@@ -1,7 +1,6 @@
 ---
 title: "Quarto, Python, and VSCode 📃🐍"
 date: 2022-08-25T23:01:36+02:00
-katex: true
 tags: ["appsilon", "python", "quarto"]
 ---
 

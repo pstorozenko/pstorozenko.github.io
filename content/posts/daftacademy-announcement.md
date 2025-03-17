@@ -1,7 +1,6 @@
 ---
 title: "DaftAcademy Announcement 🐍👨‍🏫"
 date: 2022-04-30T23:32:17+02:00
-katex: true
 tags: ["course", "python", "data science", "appsilon", "daftacademy"]
 ---
 

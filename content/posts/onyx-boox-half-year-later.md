@@ -1,7 +1,6 @@
 ---
 title: "Onyx Boox Half Year Later 📚"
 date: 2024-04-06T20:02:24+02:00
-katex: true
 tags: ["random"]
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "Quarto, The New Rmarkdown 📃📜"
 date: 2022-07-28T23:08:22+02:00
-katex: true
 tags: ["r", "python", "quarto"]
 ---
 

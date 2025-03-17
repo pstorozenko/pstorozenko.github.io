@@ -1,7 +1,6 @@
 ---
 title: "Copepods Oil Sac 🌊🛢👜"
 date: 2022-04-15T16:25:14+02:00
-katex: true
 tags: ["appsilon", "data4good", "machine-learning"]
 ---
 

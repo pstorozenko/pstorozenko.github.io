@@ -1,7 +1,6 @@
 ---
 title: "SFINKS 2022 △✎📜"
 date: 2022-06-29T22:24:50+02:00
-katex: true
 tags: ["conference", "math", "physics"]
 ---
 

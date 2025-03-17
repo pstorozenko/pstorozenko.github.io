@@ -1,7 +1,6 @@
 ---
 title: "OxML Health 2023 - Summary 🌍📚❤️‍🩹"
 date: 2023-07-20T23:00:00+01:00
-katex: true
 tags: ["conference", "OxML", "Oxford", "machine-learning", "appsilon"]
 ---
 

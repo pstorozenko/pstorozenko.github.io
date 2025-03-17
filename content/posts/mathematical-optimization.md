@@ -1,7 +1,6 @@
 ---
 title: "Introduction Into Mathematical Optimization Way of Thinking 🧮"
 date: 2021-11-07T19:40:13+01:00
-katex: true
 tags: ["math", "optimization", "julia"]
 ---
 

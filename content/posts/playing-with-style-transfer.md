@@ -1,10 +1,9 @@
 ---
 title: "Playing With Style Transfer 🎨"
 date: 2022-02-05T21:12:18+01:00
-katex: true
 tags: ["python", "machine-learning", "conference", "SFI 2022"]
 ---
-
+ 
 [As mentioned earlier](/posts/sfi-conference), I will be giving a talk on [the 17th SFI IT Academic Festival](https://sfi.pl/en/) on the topic of style transfer and StyleGAN.
 In this post I would like to show you how easy it is to play with style transfer on your own!
 
@@ -86,7 +85,7 @@ and re run everything.
 ![Eiffel Tower in Van Gogh Style](/posts/playing-with-style-transfer/eiffel.png)
 
 A summer evening ~~in the city~~ with the Eiffel Tower.
-
+ 
 ## Summary
 
 Colab notebooks is a great online service.

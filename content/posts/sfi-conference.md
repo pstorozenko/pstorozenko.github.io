@@ -1,7 +1,6 @@
 ---
 title: "SFI Conference 👨‍🏫🎉"
 date: 2022-01-20T14:55:23+01:00
-katex: true
 tags: ["conference", "SFI 2022", "machine-learning"]
 ---
 

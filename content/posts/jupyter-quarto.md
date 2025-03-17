@@ -1,7 +1,6 @@
 ---
 title: "Jupyter Notebooks and Quarto 📓📃"
 date: 2022-09-13T23:01:52+02:00
-katex: true
 tags: ["appsilon", "python", "quarto"]
 ---
 

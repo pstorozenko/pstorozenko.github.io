@@ -1,7 +1,6 @@
 ---
 title: "Comparing fractions of fractions on COVID case 😷"
 date: 2021-08-26T21:38:08+02:00
-katex: true
 tags: ["math", "probability"]
 ---
 

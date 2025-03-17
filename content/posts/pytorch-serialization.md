@@ -1,7 +1,6 @@
 ---
 title: "PyTorch Serialization 📦⚙️"
 date: 2022-07-07T20:52:14+02:00
-katex: true
 tags: ["appsilon", "python", "pytorch", "machine-learning"]
 ---
 

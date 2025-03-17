@@ -1,7 +1,6 @@
 ---
 title: "How to Sum Like a Boss (Almost) Σ"
 date: 2021-10-16T08:42:59+02:00
-katex: true
 tags: ["performance", "summing", "julia"]
 ---
 

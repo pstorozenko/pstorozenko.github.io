@@ -1,7 +1,6 @@
 ---
 title: "DaftAcademy Course Finished 🐍🏁"
 date: 2022-06-19T23:44:43+02:00
-katex: true
 tags: ["course", "python", "data science", "appsilon", "daftacademy"]
 ---
 

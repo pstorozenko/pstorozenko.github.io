@@ -1,8 +1,13 @@
 baseurl = "/"
 languageCode = "en-us"
-theme = "hello-friend"
+theme = "PaperMod"
 googleAnalytics = "G-PR8Z9SJC7F"
-paginate = 10
+
+[pagination]
+pagerSize = 10
+
+[markup.goldmark.renderer]
+unsafe = true
 
 [params]
   # dir name of your blog content (default is `content/posts`).
@@ -11,6 +16,7 @@ paginate = 10
 
   # "light" or "dark"
   defaultTheme = "light"
+  math = true
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 3

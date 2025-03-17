@@ -1,7 +1,6 @@
 ---
 title: "Speed of Traversing Matrix → vs ↓"
 date: 2021-10-01T22:24:55+02:00
-katex: true
 tags: ["programming", "julia", "performance", "sums"]
 ---
 
