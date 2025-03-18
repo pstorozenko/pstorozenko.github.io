@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pizza on Pasza's blog</title><link>/tags/pizza/</link><description>Recent content in Pizza on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Fri, 26 Nov 2021 21:34:30 +0100</lastBuildDate><atom:link href="/tags/pizza/index.xml" rel="self" type="application/rss+xml"/><item><title>Square Root √2 Pizza Box 🍕📦</title><link>/posts/square-root-pizza/</link><pubDate>Fri, 26 Nov 2021 21:34:30 +0100</pubDate><guid>/posts/square-root-pizza/</guid><description>
-Today I have a short one, a follow-up to the post on pizza sizes. Recently, I was in my local pizza place where I had to choose between 32 and 46cm pizza. The bigger one cost 5 PLN more. Even without looking at my table, I chose the bigger one. I knew, however, that I&amp;rsquo;m going to eat only half of my pizza so I asked to pack the remaining half.</description></item><item><title>Pizza Twice as Big 🍕</title><link>/posts/pizza-twice-as-big/</link><pubDate>Sat, 04 Sep 2021 11:01:14 +0200</pubDate><guid>/posts/pizza-twice-as-big/</guid><description>
-One morning I was standing in a queue in my local bakery, and I&amp;rsquo;ve seen a woman buying one of those small quasi-pizzas. Pizzas ~20cm in diameter. Immediately I thought about how profitable it is when compared to the full-size 42cm pizza. Since the area of a larger pizza is 4 times bigger, of course, it&amp;rsquo;s not worth buying smaller pizzas.
-Then I thought about fitting smaller pizzas inside the bigger one.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pizza on Pasza&#39;s blog</title>
+    <link>/tags/pizza/</link>
+    <description>Recent content in Pizza on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Fri, 26 Nov 2021 21:34:30 +0100</lastBuildDate>
+    <atom:link href="/tags/pizza/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Square Root √2 Pizza Box 🍕📦</title>
+      <link>/posts/square-root-pizza/</link>
+      <pubDate>Fri, 26 Nov 2021 21:34:30 +0100</pubDate>
+      <guid>/posts/square-root-pizza/</guid>
+      <description>&lt;p&gt;Today I have a short one, a follow-up to &lt;a href=&#34;/posts/pizza-twice-as-big/&#34;&gt;the post on pizza sizes&lt;/a&gt;.
+Recently, I was in my local pizza place where I had to choose between 32 and 46cm pizza.
+The bigger one cost 5 PLN more.
+Even without looking at &lt;a href=&#34;/posts/pizza-twice-as-big/&#34;&gt;my table&lt;/a&gt;, I chose the bigger one.
+I knew, however, that I&amp;rsquo;m going to eat only half of my pizza so I asked to pack the remaining half.
+This is what I&amp;rsquo;ve got:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pizza Twice as Big 🍕</title>
+      <link>/posts/pizza-twice-as-big/</link>
+      <pubDate>Sat, 04 Sep 2021 11:01:14 +0200</pubDate>
+      <guid>/posts/pizza-twice-as-big/</guid>
+      <description>&lt;p&gt;One morning I was standing in a queue in my local bakery, and I&amp;rsquo;ve seen a woman buying one of those small quasi-pizzas.
+Pizzas ~20cm in diameter.
+Immediately I thought about how profitable it is when compared to the full-size 42cm pizza.
+Since the area of a larger pizza is 4 times bigger, of course, it&amp;rsquo;s not worth buying smaller pizzas.&lt;/p&gt;
+&lt;p&gt;Then I thought about fitting smaller pizzas inside the bigger one.
+But first let&amp;rsquo;s think about filling a square with smaller squares.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

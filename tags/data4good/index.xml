@@ -1,11 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data4good on Pasza's blog</title><link>/tags/data4good/</link><description>Recent content in Data4good on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Sat, 01 Oct 2022 23:02:24 +0200</lastBuildDate><atom:link href="/tags/data4good/index.xml" rel="self" type="application/rss+xml"/><item><title>Detecting Antarctic Shag Nests 🐧🐻‍❄️🇦🇶</title><link>/posts/antarctic-shag/</link><pubDate>Sat, 01 Oct 2022 23:02:24 +0200</pubDate><guid>/posts/antarctic-shag/</guid><description>
-&lt;p>It&amp;rsquo;s always nice if you can use your technical skills for something &lt;em>good&lt;/em> for our planet.
-I have this opportunity during work at Appsilon where from time to time we work on &lt;a href="/tags/data4good/" title="Data4Good projects">Data4Good projects&lt;/a>.
-One such project was &lt;a href="/posts/copepods-blogpost/">copepods/plankton project&lt;/a> where I was doing segmentation of the oil sac in the Arctic plankton.
-This time I&amp;rsquo;d like to share something from the other pole of the globe.&lt;/p>
-&lt;p>Currently we work on detecting the Antarctic shags nests on the Antarctic islands.
-Together with Jędrzej Świeżewski and Joanna Kaleta we were cooperating with researchers from &lt;a href="https://ibb.edu.pl/en/laboratory/robert-bialik/">IBB PAS&lt;/a> on this task.
-Checkout &lt;a href="https://appsilon.com/yolo-counting-nests-antarctic-birds/">the engagement summary blog post on the Appsilon blog&lt;/a>.&lt;/p></description></item><item><title>Copepods Oil Sac 🌊🛢👜</title><link>/posts/copepods-blogpost/</link><pubDate>Fri, 15 Apr 2022 16:25:14 +0200</pubDate><guid>/posts/copepods-blogpost/</guid><description>
-&lt;p>Some time ago, I&amp;rsquo;ve worked on an oil sac (energy reservoir) detection in copepods (kind of zooplankton) for Université Laval.
-&lt;a href="/posts/ml4plankton-conference/">Apart from presenting the results on the ML4Plankton conference&lt;/a> I&amp;rsquo;ve published a detailed blog post on &lt;a href="https://appsilon.com/monitoring-marine-ecosystems-with-machine-learning/">the Appsilon blog&lt;/a> that I strongly encourage you to read!&lt;/p></description></item><item><title>Presentation at ML4Plankton Conference 🌊🐟</title><link>/posts/ml4plankton-conference/</link><pubDate>Fri, 08 Apr 2022 09:50:09 +0200</pubDate><guid>/posts/ml4plankton-conference/</guid><description>
-Recently I was working at work on detecting the oil sac in copepods. This is was a super cool problem in which we received data from professor Frédéric Maps from Université Laval. We together gave a talk on conference ML4Plankton that you can watch online! First Frederic gives some context on why this problem is important and later I explain methods used and problems you can find. Our talk is available online here:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Data4good on Pasza&#39;s blog</title>
+    <link>/tags/data4good/</link>
+    <description>Recent content in Data4good on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Sat, 01 Oct 2022 23:02:24 +0200</lastBuildDate>
+    <atom:link href="/tags/data4good/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Detecting Antarctic Shag Nests 🐧🐻‍❄️🇦🇶</title>
+      <link>/posts/antarctic-shag/</link>
+      <pubDate>Sat, 01 Oct 2022 23:02:24 +0200</pubDate>
+      <guid>/posts/antarctic-shag/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s always nice if you can use your technical skills for something &lt;em&gt;good&lt;/em&gt; for our planet.
+I have this opportunity during work at Appsilon where from time to time we work on &lt;a href=&#34;/tags/data4good/&#34; title=&#34;Data4Good projects&#34;&gt;Data4Good projects&lt;/a&gt;.
+One such project was &lt;a href=&#34;/posts/copepods-blogpost/&#34;&gt;copepods/plankton project&lt;/a&gt; where I was doing segmentation of the oil sac in the Arctic plankton.
+This time I&amp;rsquo;d like to share something from the other pole of the globe.&lt;/p&gt;
+&lt;p&gt;Currently we work on detecting the Antarctic shags nests on the Antarctic islands.
+Together with Jędrzej Świeżewski and Joanna Kaleta we were cooperating with researchers from &lt;a href=&#34;https://ibb.edu.pl/en/laboratory/robert-bialik/&#34;&gt;IBB PAS&lt;/a&gt; on this task.
+Checkout &lt;a href=&#34;https://appsilon.com/yolo-counting-nests-antarctic-birds/&#34;&gt;the engagement summary blog post on the Appsilon blog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Copepods Oil Sac 🌊🛢👜</title>
+      <link>/posts/copepods-blogpost/</link>
+      <pubDate>Fri, 15 Apr 2022 16:25:14 +0200</pubDate>
+      <guid>/posts/copepods-blogpost/</guid>
+      <description>&lt;p&gt;Some time ago, I&amp;rsquo;ve worked on an oil sac (energy reservoir) detection in copepods (kind of zooplankton) for Université Laval.
+&lt;a href=&#34;/posts/ml4plankton-conference/&#34;&gt;Apart from presenting the results on the ML4Plankton conference&lt;/a&gt; I&amp;rsquo;ve published a detailed blog post on &lt;a href=&#34;https://appsilon.com/monitoring-marine-ecosystems-with-machine-learning/&#34;&gt;the Appsilon blog&lt;/a&gt; that I strongly encourage you to read!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Presentation at ML4Plankton Conference 🌊🐟</title>
+      <link>/posts/ml4plankton-conference/</link>
+      <pubDate>Fri, 08 Apr 2022 09:50:09 +0200</pubDate>
+      <guid>/posts/ml4plankton-conference/</guid>
+      <description>&lt;p&gt;Recently I was working at work on detecting the oil sac in &lt;a href=&#34;https://en.wikipedia.org/wiki/Copepod&#34;&gt;copepods&lt;/a&gt;.
+This is was a super cool problem in which we received data from professor &lt;a href=&#34;http://www.takuvik.ulaval.ca/team/maps_frederic.php&#34;&gt;Frédéric Maps&lt;/a&gt; from &lt;a href=&#34;https://www.ulaval.ca/en&#34;&gt;Université Laval&lt;/a&gt;.
+We together gave a talk on conference ML4Plankton that you can watch online!
+First Frederic gives some context on why this problem is important and later I explain methods used and problems you can find.
+Our talk is available online here:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

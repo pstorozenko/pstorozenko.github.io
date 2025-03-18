@@ -1,3 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programing on Pasza's blog</title><link>/tags/programing/</link><description>Recent content in Programing on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Tue, 04 Jan 2022 21:00:59 +0100</lastBuildDate><atom:link href="/tags/programing/index.xml" rel="self" type="application/rss+xml"/><item><title>Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄</title><link>/posts/aoc2021-minimizing-loss/</link><pubDate>Tue, 04 Jan 2022 21:00:59 +0100</pubDate><guid>/posts/aoc2021-minimizing-loss/</guid><description>
-This year I took part in the advent of code event. If you&amp;rsquo;ve never heard about it, I attach tl;dr bellow. Today, I&amp;rsquo;d like to share my solution for Day 7 problem, because I find it very interesting.
-In the first half of the post I describe comparison in time complexity of two solutions (programming). In the second half I outline the proof of one solution (math). What is the Advent of Code # For sure you had some kind of advent calendar in the past (or you still have), e.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Programing on Pasza&#39;s blog</title>
+    <link>/tags/programing/</link>
+    <description>Recent content in Programing on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Tue, 04 Jan 2022 21:00:59 +0100</lastBuildDate>
+    <atom:link href="/tags/programing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄</title>
+      <link>/posts/aoc2021-minimizing-loss/</link>
+      <pubDate>Tue, 04 Jan 2022 21:00:59 +0100</pubDate>
+      <guid>/posts/aoc2021-minimizing-loss/</guid>
+      <description>&lt;p&gt;This year I took part in the &lt;a href=&#34;https://adventofcode.com/&#34;&gt;advent of code event&lt;/a&gt;.
+If you&amp;rsquo;ve never heard about it, I attach tl;dr bellow.
+Today, I&amp;rsquo;d like to share my solution for &lt;a href=&#34;https://adventofcode.com/2021/day/7&#34;&gt;Day 7 problem&lt;/a&gt;, because I find it &lt;a href=&#34;https://c.tenor.com/cU06Rf0SxeEAAAAC/rhel1-captain-obvious.gif&#34;&gt;very interesting&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In the first half of the post I describe comparison in time complexity of two solutions (programming).&lt;/li&gt;
+&lt;li&gt;In the second half I outline the proof of one solution (math).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;what-is-the-advent-of-code&#34;&gt;What is the Advent of Code&lt;/h2&gt;
+&lt;p&gt;For sure you had some kind of advent calendar in the past (or you still have), e.g. with little chocolates.
+You are supposed to eat one chocolate per day while counting days to Christmas Eve.
+AoC is an advent calendar for coders.
+Every day, a new programming task is revealed.
+You can compete to be high either in a global ranking (which is unreasonably difficult) or among your friends in a private ranking (that&amp;rsquo;s feasible, depending on your friends).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,12 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>R on Pasza's blog</title><link>/tags/r/</link><description>Recent content in R on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Thu, 28 Jul 2022 23:08:22 +0200</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml"/><item><title>Quarto, The New Rmarkdown 📃📜</title><link>/posts/quarto/</link><pubDate>Thu, 28 Jul 2022 23:08:22 +0200</pubDate><guid>/posts/quarto/</guid><description>
-&lt;p>Do you remember good old &lt;code>rmarkdown&lt;/code>?&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-md" data-lang="md">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>title: &amp;#34;R markdown&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>output: html_document
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Hello ~world~ problems!
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We have a great successor in the form of &lt;a href="https://quarto.org/">&lt;code>quarto&lt;/code>&lt;/a> that is ready for 2022 and beyond!&lt;/p></description></item><item><title>Streamlit Tutorial: How to Deploy Streamlit Apps on RStudio Connect 💰</title><link>/posts/solar-panels-4/</link><pubDate>Mon, 28 Feb 2022 20:23:42 +0100</pubDate><guid>/posts/solar-panels-4/</guid><description>
-I wrote another post for Appsilon, this time about deploying streamlit applications on RStudio Connect infrastructure.
-This post might be totally useless for majority of audience, but a pure gold for a few 💰. What is streamlit you can understand from my previous post.
-Having a running app in your browser is already cool, but how cool is it to deploy your app on the internet? If you need an enterprise solution for hosting dashboards in RShiny/streamlit, RSConnect is the way!</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>R on Pasza&#39;s blog</title>
+    <link>/tags/r/</link>
+    <description>Recent content in R on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Thu, 28 Jul 2022 23:08:22 +0200</lastBuildDate>
+    <atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quarto, The New Rmarkdown 📃📜</title>
+      <link>/posts/quarto/</link>
+      <pubDate>Thu, 28 Jul 2022 23:08:22 +0200</pubDate>
+      <guid>/posts/quarto/</guid>
+      <description>&lt;p&gt;Do you remember good old &lt;code&gt;rmarkdown&lt;/code&gt;?&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title: &amp;#34;R markdown&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;output: html_document
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Hello ~world~ problems!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We have a great successor in the form of &lt;a href=&#34;https://quarto.org/&#34;&gt;&lt;code&gt;quarto&lt;/code&gt;&lt;/a&gt; that is ready for 2022 and beyond!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Streamlit Tutorial: How to Deploy Streamlit Apps on RStudio Connect 💰</title>
+      <link>/posts/solar-panels-4/</link>
+      <pubDate>Mon, 28 Feb 2022 20:23:42 +0100</pubDate>
+      <guid>/posts/solar-panels-4/</guid>
+      <description>&lt;p&gt;I wrote &lt;a href=&#34;https://appsilon.com/streamlit-tutorial-rstudio-connect/&#34;&gt;another post&lt;/a&gt; for Appsilon, this time about deploying &lt;a href=&#34;https://streamlit.io/&#34;&gt;streamlit&lt;/a&gt; applications on &lt;a href=&#34;https://www.rstudio.com/products/connect/&#34;&gt;RStudio Connect&lt;/a&gt; infrastructure.&lt;/p&gt;
+&lt;p&gt;This post might be totally useless for majority of audience, but &lt;strong&gt;a pure gold&lt;/strong&gt; for a few 💰.
+What is streamlit you can understand from &lt;a href=&#34;/posts/solar-panels-3/&#34;&gt;my previous post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Having a running app in your browser is already cool, but how cool is it to deploy your app on the internet?
+If you need an enterprise solution for hosting dashboards in RShiny/streamlit, RSConnect is the way!
+In &lt;a href=&#34;https://appsilon.com/streamlit-tutorial-rstudio-connect/&#34;&gt;this blog post&lt;/a&gt; I focused on presenting solutions for common problems you might encounter.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

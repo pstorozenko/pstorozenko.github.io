@@ -1,75 +1,398 @@
-<!doctype html><html lang=en><head><title>Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄 ::
-Pasza's blog — a simple blog about complex things
-</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="This year I took part in the advent of code event. If you&amp;rsquo;ve never heard about it, I attach tl;dr bellow. Today, I&amp;rsquo;d like to share my solution for Day 7 problem, because I find it very interesting.
-In the first half of the post I describe comparison in time complexity of two solutions (programming). In the second half I outline the proof of one solution (math). What is the Advent of Code # For sure you had some kind of advent calendar in the past (or you still have), e."><meta name=keywords content="piotr pasza pasha storozenko ml data science machine learning"><meta name=robots content="noodp"><link rel=canonical href=/posts/aoc2021-minimizing-loss/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.css integrity=sha384-ysFyB7Is//Q1JNgERb0bLJokXKM8eWJsjEutGvthoHtBilHWgbdmbYkQZdwCIGIq crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.js integrity=sha384-UWjC+k927Mtx6WQF5SzKTXLLrOYmzs69HvkUjiKvUwSOljzc+C6PrGquNpOvJBBo crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-PR8Z9SJC7F",{anonymize_ip:!1})}</script><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄"><meta name=twitter:description content="This year I took part in the advent of code event. If you&rsquo;ve never heard about it, I attach tl;dr bellow. Today, I&rsquo;d like to share my solution for Day 7 problem, because I find it very interesting.
-In the first half of the post I describe comparison in time complexity of two solutions (programming). In the second half I outline the proof of one solution (math). What is the Advent of Code # For sure you had some kind of advent calendar in the past (or you still have), e."><meta property="og:title" content="Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄"><meta property="og:description" content="This year I took part in the advent of code event. If you&rsquo;ve never heard about it, I attach tl;dr bellow. Today, I&rsquo;d like to share my solution for Day 7 problem, because I find it very interesting.
-In the first half of the post I describe comparison in time complexity of two solutions (programming). In the second half I outline the proof of one solution (math). What is the Advent of Code # For sure you had some kind of advent calendar in the past (or you still have), e."><meta property="og:type" content="article"><meta property="og:url" content="/posts/aoc2021-minimizing-loss/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-01-04T21:00:59+01:00"><meta property="article:modified_time" content="2022-01-04T21:00:59+01:00"></head><body class=light-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span><span class=logo__text>pasza's blog</span>
-<span class=logo__cursor></span>
-</a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About me</a></li><li><a href=/useful-materials>Useful materials</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About me</a></li><li><a href=/useful-materials>Useful materials</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-</span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Minimizing The Sum of Absolute Values &ndash; Day 7 Advent of Code part 1 🎄</h1><div class=post-meta><span class=post-date>2022-01-04</span></div><span class=post-tags><a href=/tags/math/>#math</a>&nbsp;
-<a href=/tags/programing/>#programing</a>&nbsp;
-<a href=/tags/julia/>#julia</a>&nbsp;
-<a href=/tags/aoc2021/>#aoc2021</a>&nbsp;</span><div class=post-content><p>This year I took part in the <a href=https://adventofcode.com/>advent of code event</a>.
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄 | Pasza&#39;s blog</title>
+<meta name="keywords" content="math, programing, julia, aoc2021">
+<meta name="description" content="This year I took part in the advent of code event.
 If you&rsquo;ve never heard about it, I attach tl;dr bellow.
-Today, I&rsquo;d like to share my solution for <a href=https://adventofcode.com/2021/day/7>Day 7 problem</a>, because I find it <a href=https://c.tenor.com/cU06Rf0SxeEAAAAC/rhel1-captain-obvious.gif>very interesting</a>.</p><ol><li>In the first half of the post I describe comparison in time complexity of two solutions (programming).</li><li>In the second half I outline the proof of one solution (math).</li></ol><h2 id=what-is-the-advent-of-code>What is the Advent of Code
-<a href=#what-is-the-advent-of-code class=h-anchor aria-hidden=true>#</a></h2><p>For sure you had some kind of advent calendar in the past (or you still have), e.g. with little chocolates.
+Today, I&rsquo;d like to share my solution for Day 7 problem, because I find it very interesting.
+
+In the first half of the post I describe comparison in time complexity of two solutions (programming).
+In the second half I outline the proof of one solution (math).
+
+What is the Advent of Code
+For sure you had some kind of advent calendar in the past (or you still have), e.g. with little chocolates.
 You are supposed to eat one chocolate per day while counting days to Christmas Eve.
 AoC is an advent calendar for coders.
 Every day, a new programming task is revealed.
-You can compete to be high either in a global ranking (which is unreasonably difficult) or among your friends in a private ranking (that&rsquo;s feasible, depending on your friends).</p><h2 id=day-7-problem>Day 7 problem
-<a href=#day-7-problem class=h-anchor aria-hidden=true>#</a></h2><p>This year you have to help Santa get to the bottom of the Mariana Trench.
-Cutting story short, <a href=https://adventofcode.com/2021/day/7>on the way down you encounter a line with crabs</a>.
+You can compete to be high either in a global ranking (which is unreasonably difficult) or among your friends in a private ranking (that&rsquo;s feasible, depending on your friends).">
+<meta name="author" content="">
+<link rel="canonical" href="/posts/aoc2021-minimizing-loss/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="/posts/aoc2021-minimizing-loss/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PR8Z9SJC7F');
+        }
+      </script><meta property="og:url" content="/posts/aoc2021-minimizing-loss/">
+  <meta property="og:site_name" content="Pasza&#39;s blog">
+  <meta property="og:title" content="Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄">
+  <meta property="og:description" content="This year I took part in the advent of code event. If you’ve never heard about it, I attach tl;dr bellow. Today, I’d like to share my solution for Day 7 problem, because I find it very interesting.
+In the first half of the post I describe comparison in time complexity of two solutions (programming). In the second half I outline the proof of one solution (math). What is the Advent of Code For sure you had some kind of advent calendar in the past (or you still have), e.g. with little chocolates. You are supposed to eat one chocolate per day while counting days to Christmas Eve. AoC is an advent calendar for coders. Every day, a new programming task is revealed. You can compete to be high either in a global ranking (which is unreasonably difficult) or among your friends in a private ranking (that’s feasible, depending on your friends).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-01-04T21:00:59+01:00">
+    <meta property="article:modified_time" content="2022-01-04T21:00:59+01:00">
+    <meta property="article:tag" content="Math">
+    <meta property="article:tag" content="Programing">
+    <meta property="article:tag" content="Julia">
+    <meta property="article:tag" content="Aoc2021">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄">
+<meta name="twitter:description" content="This year I took part in the advent of code event.
+If you&rsquo;ve never heard about it, I attach tl;dr bellow.
+Today, I&rsquo;d like to share my solution for Day 7 problem, because I find it very interesting.
+
+In the first half of the post I describe comparison in time complexity of two solutions (programming).
+In the second half I outline the proof of one solution (math).
+
+What is the Advent of Code
+For sure you had some kind of advent calendar in the past (or you still have), e.g. with little chocolates.
+You are supposed to eat one chocolate per day while counting days to Christmas Eve.
+AoC is an advent calendar for coders.
+Every day, a new programming task is revealed.
+You can compete to be high either in a global ranking (which is unreasonably difficult) or among your friends in a private ranking (that&rsquo;s feasible, depending on your friends).">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/posts/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄",
+      "item": "/posts/aoc2021-minimizing-loss/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄",
+  "name": "Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄",
+  "description": "This year I took part in the advent of code event. If you\u0026rsquo;ve never heard about it, I attach tl;dr bellow. Today, I\u0026rsquo;d like to share my solution for Day 7 problem, because I find it very interesting.\nIn the first half of the post I describe comparison in time complexity of two solutions (programming). In the second half I outline the proof of one solution (math). What is the Advent of Code For sure you had some kind of advent calendar in the past (or you still have), e.g. with little chocolates. You are supposed to eat one chocolate per day while counting days to Christmas Eve. AoC is an advent calendar for coders. Every day, a new programming task is revealed. You can compete to be high either in a global ranking (which is unreasonably difficult) or among your friends in a private ranking (that\u0026rsquo;s feasible, depending on your friends).\n",
+  "keywords": [
+    "math", "programing", "julia", "aoc2021"
+  ],
+  "articleBody": "This year I took part in the advent of code event. If you’ve never heard about it, I attach tl;dr bellow. Today, I’d like to share my solution for Day 7 problem, because I find it very interesting.\nIn the first half of the post I describe comparison in time complexity of two solutions (programming). In the second half I outline the proof of one solution (math). What is the Advent of Code For sure you had some kind of advent calendar in the past (or you still have), e.g. with little chocolates. You are supposed to eat one chocolate per day while counting days to Christmas Eve. AoC is an advent calendar for coders. Every day, a new programming task is revealed. You can compete to be high either in a global ranking (which is unreasonably difficult) or among your friends in a private ranking (that’s feasible, depending on your friends).\nDay 7 problem This year you have to help Santa get to the bottom of the Mariana Trench. Cutting story short, on the way down you encounter a line with crabs. Those crabs are distributed somewhere along the line on positions $x_i$. Each crab can move left or right. You have to align all crabs on a single position $m$. Choose $m$ so the total energy crabs have to use is minimized and find the cost of aligning crabs at $m$. The energy of moving a single crab from location $x$ to $y$ equals $|x - y|$.\nSo to summarize:\nYou are given a vector of crabs positions e.g. $x = [4, 1, 12, 2, 6, 7, 0, 6]$. Note that all positions are integers. Moving a single crab costs $d_i = |x_i - m|$. You have to find $m$ to minimize $\\sum d_i = \\sum |x_i - m|$ and return $\\text{cost}(m)$. Naive approach to finding $m$ We can observe that the optimal $m$ must lie somewhere between $\\min x$ and $\\max x$, so we can just calculate $\\text{cost}(m) = \\sum_i^N |x_i - m|$ for every $m \\in (\\min x, \\max x)$ and choose the minimal cost.\nfunction solution(x) cost(m) = sum(abs.(x .- m)) min_x, max_x = extrema(x) costs = cost.(min_x:max_x) return minimum(costs) end Note that in julia using a function followed by dot . vectorizes it. Writing min_x:max_x creates a range, think of it as a sequence of numbers from min_x to max_x. So even though cost function expects a single number m as an input, calling cost.(min_x:max_x) calculates cost(m) for every m in min_x:max_x and stores it in the vector. One could also write [cost(m) for m in min_x:max_x] which would be less juliatic.\nThis function is nice, but works only because x values are integers. Imagine what would happen if minimum(x) == -9223372036854775808 and maximum(x) == 4611686018427387904… It would take a looooong time to run this code, no mather how many elements would be in $x$.\nTo put it into some mathematical terms, we would say it has a time complexity of $O(n \\times r)$ where $r$ is the range of vector $x$ so $r = x_{max} - x_{min}$ in our case and $n$ is the length of $x$. We make $O(n)$ operation by calling cost(m) function. Every call requires subtracting $m$ from every element of $x$ ($n$ operations), calculating the absolute value of every element ($n$ operations), summing the vector of length $n$ – $n$ operations. We have to call cost(m) $r$ times, hence $O(n \\times r)$. If you’ve never seen a big O notation, take a look on the Wikipedia.\nIn case of our example vector $x$ it means a time required to run the algorithm would be proportional to $8$ (number of vector elements) times $12$ (range of $x$ i.e. $12 - 0$). Proportional by no means means equal, but by doubling elements range, we would double the execution time. Doubling the range and doubling the vector length would quadruple the execution time and so on.\nA mathematical observation on minimizing the sum of absolute values From my statistics and machine learning classes I remember a commonly known fact that the median minimizes the sum of absolute differences.\nThis mean that our solution can be rewritten as\nfunction solution2(x) return sum(abs.(x .- median(x))) end which is much shorter…\nBut is it faster? Well, it surely is. To calculate the median we have to sort the vector $x$ and take the middle element (or the average of two middle elements). Sorting can be done in time $O(n\\log(n))$. Then we have to call the previously defined cost function for a single value of $m$ with $O(n)$. Since $n\\log(n) \u003e n$ for large $n$, we say that term $n\\log(n)$ dominates and the complexity of solution2(x) is of $O(n\\log(n))$ where $n$ is the length of vector $x$. The difference is more visible for large ranges and lengths of $x$, pick a few example $n$ and $r$ values.\nWhy the median minimizes the sum of absolute values Unfortunately it’s not that easy to show formally that median minimizes the sum of absolute values $C(m;x) = \\sum_i |x_i-m|$.\nWe can try to outline the idea behind why median might minimize this cost!\nTo find the minimum of function, we can take a derivative and set it to $0$. Derivative of $C(m;x)$ with respect to $m$ is $ C’(m;x) = \\sum_i \\text{sgn}(x_i-m)$ when $x_i-m \\neq 0$, with: $$ \\text{sgn}(x_i-m) = \\begin{cases} -1 \u0026 \\text{if } x_i-m \u003c 0, \\\\ 0 \u0026 \\text{if } x_i-m = 0, \\\\ 1 \u0026 \\text{if } x_i-m \u003e 0. \\end{cases}, $$ Situation when $x_i -m = 0$ is what makes this problem hard so we will act as if it never occurs 😎. Now let’s think what must happen so sum of numbers $1$ and $-1$ equals $0$. This arise when there is an equal number of ones and minus ones. In our case it means that the same number of $x_i-m$ have to be equal to one and minus one. So half of $x_i$ elements must be lower than $m$ and half must be greater, this is exactly what median is!\nThis is not a formal proof as there might be no numbers like that. Think of vector $x = [1, 1, 2]$. There is no $m$ that would satisfy our requirements. Median still works though. If you are interested, there are a few resources that may help you understand it better :\nA nice StackExchange discussion that takes look at different cases. This video that uses calculus.. Summary There are two things I wanted share in this post:\nLearning math is important and it can really help you when dealing with algorithmic problems. Very often we can take advantage of some mathematical fact, without proving it from the scratch. ",
+  "wordCount" : "1117",
+  "inLanguage": "en",
+  "datePublished": "2022-01-04T21:00:59+01:00",
+  "dateModified": "2022-01-04T21:00:59+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/posts/aoc2021-minimizing-loss/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pasza's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Pasza&#39;s blog (Alt + H)">Pasza&#39;s blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="/about" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+            <li>
+                <a href="/useful-materials" title="Useful materials">
+                    <span>Useful materials</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄
+    </h1>
+    <div class="post-meta"><span title='2022-01-04 21:00:59 +0100 +0100'>January 4, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>This year I took part in the <a href="https://adventofcode.com/">advent of code event</a>.
+If you&rsquo;ve never heard about it, I attach tl;dr bellow.
+Today, I&rsquo;d like to share my solution for <a href="https://adventofcode.com/2021/day/7">Day 7 problem</a>, because I find it <a href="https://c.tenor.com/cU06Rf0SxeEAAAAC/rhel1-captain-obvious.gif">very interesting</a>.</p>
+<ol>
+<li>In the first half of the post I describe comparison in time complexity of two solutions (programming).</li>
+<li>In the second half I outline the proof of one solution (math).</li>
+</ol>
+<h2 id="what-is-the-advent-of-code">What is the Advent of Code<a hidden class="anchor" aria-hidden="true" href="#what-is-the-advent-of-code">#</a></h2>
+<p>For sure you had some kind of advent calendar in the past (or you still have), e.g. with little chocolates.
+You are supposed to eat one chocolate per day while counting days to Christmas Eve.
+AoC is an advent calendar for coders.
+Every day, a new programming task is revealed.
+You can compete to be high either in a global ranking (which is unreasonably difficult) or among your friends in a private ranking (that&rsquo;s feasible, depending on your friends).</p>
+<h2 id="day-7-problem">Day 7 problem<a hidden class="anchor" aria-hidden="true" href="#day-7-problem">#</a></h2>
+<p>This year you have to help Santa get to the bottom of the Mariana Trench.
+Cutting story short, <a href="https://adventofcode.com/2021/day/7">on the way down you encounter a line with crabs</a>.
 Those crabs are distributed somewhere along the line on positions $x_i$.
 Each crab can move left or right.
 You have to align all crabs on a single position $m$.
 Choose $m$ so the total energy crabs have to use is minimized and find the cost of aligning crabs at $m$.
-The energy of moving a single crab from location $x$ to $y$ equals $|x - y|$.</p><p>So to summarize:</p><ol><li>You are given a vector of crabs positions e.g. $x = [4, 1, 12, 2, 6, 7, 0, 6]$. Note that all positions are integers.</li><li>Moving a single crab costs $d_i = |x_i - m|$.</li><li>You have to find $m$ to minimize $\sum d_i = \sum |x_i - m|$ and return $\text{cost}(m)$.</li></ol><h3 id=naive-approach-to-finding-m>Naive approach to finding $m$
-<a href=#naive-approach-to-finding-m class=h-anchor aria-hidden=true>#</a></h3><p>We can observe that the optimal $m$ must lie somewhere between $\min x$ and $\max x$, so we can just calculate $\text{cost}(m) = \sum_i^N |x_i - m|$ for every $m \in (\min x, \max x)$ and choose the minimal cost.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia><span style=display:flex><span><span style=color:#66d9ef>function</span> solution(x)
-</span></span><span style=display:flex><span>    cost(m) <span style=color:#f92672>=</span> sum(abs<span style=color:#f92672>.</span>(x <span style=color:#f92672>.-</span> m))
-</span></span><span style=display:flex><span>    min_x, max_x <span style=color:#f92672>=</span> extrema(x)
-</span></span><span style=display:flex><span>    costs <span style=color:#f92672>=</span> cost<span style=color:#f92672>.</span>(min_x<span style=color:#f92672>:</span>max_x)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> minimum(costs)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+The energy of moving a single crab from location $x$ to $y$ equals $|x - y|$.</p>
+<p>So to summarize:</p>
+<ol>
+<li>You are given a vector of crabs positions e.g. $x = [4, 1, 12, 2, 6, 7, 0, 6]$. Note that all positions are integers.</li>
+<li>Moving a single crab costs $d_i = |x_i - m|$.</li>
+<li>You have to find $m$ to minimize $\sum d_i = \sum |x_i - m|$ and return $\text{cost}(m)$.</li>
+</ol>
+<h3 id="naive-approach-to-finding-m">Naive approach to finding $m$<a hidden class="anchor" aria-hidden="true" href="#naive-approach-to-finding-m">#</a></h3>
+<p>We can observe that the optimal $m$ must lie somewhere between $\min x$ and $\max x$, so we can just calculate $\text{cost}(m) = \sum_i^N |x_i - m|$ for every $m \in (\min x, \max x)$ and choose the minimal cost.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> solution(x)
+</span></span><span style="display:flex;"><span>    cost(m) <span style="color:#f92672">=</span> sum(abs<span style="color:#f92672">.</span>(x <span style="color:#f92672">.-</span> m))
+</span></span><span style="display:flex;"><span>    min_x, max_x <span style="color:#f92672">=</span> extrema(x)
+</span></span><span style="display:flex;"><span>    costs <span style="color:#f92672">=</span> cost<span style="color:#f92672">.</span>(min_x<span style="color:#f92672">:</span>max_x)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> minimum(costs)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
 </span></span></code></pre></div><p>Note that in <code>julia</code> using a function followed by dot <code>.</code> vectorizes it.
 Writing <code>min_x:max_x</code> creates a range, think of it as a sequence of numbers from <code>min_x</code> to <code>max_x</code>.
 So even though <code>cost</code> function expects a single number <code>m</code> as an input, calling <code>cost.(min_x:max_x)</code> calculates <code>cost(m)</code> for every <code>m</code> in <code>min_x:max_x</code> and stores it in the vector.
-One could also write <code>[cost(m) for m in min_x:max_x]</code> which would be less <em>juliatic</em>.</p><p>This function is nice, but works only because <code>x</code> values are integers.
-Imagine what would happen if <code>minimum(x) == -9223372036854775808</code> and <code>maximum(x) == 4611686018427387904</code>&mldr;
-It would take a looooong time to run this code, no mather how many elements would be in $x$.</p><p>To put it into some mathematical terms, we would say it has <a href=https://en.wikipedia.org/wiki/Time_complexity>a time complexity</a> of $O(n \times r)$ where $r$ is the range of vector $x$ so $r = x_{max} - x_{min}$ in our case and $n$ is the length of $x$.
+One could also write <code>[cost(m) for m in min_x:max_x]</code> which would be less <em>juliatic</em>.</p>
+<p>This function is nice, but works only because <code>x</code> values are integers.
+Imagine what would happen if <code>minimum(x) == -9223372036854775808</code> and <code>maximum(x) == 4611686018427387904</code>&hellip;
+It would take a looooong time to run this code, no mather how many elements would be in $x$.</p>
+<p>To put it into some mathematical terms, we would say it has <a href="https://en.wikipedia.org/wiki/Time_complexity">a time complexity</a> of $O(n \times r)$ where $r$ is the range of vector $x$ so $r = x_{max} - x_{min}$ in our case and $n$ is the length of $x$.
 We make $O(n)$ operation by calling <code>cost(m)</code> function.
 Every call requires subtracting $m$ from every element of $x$ ($n$ operations), calculating the absolute value of every element ($n$ operations), summing the vector of length $n$ &ndash; $n$ operations.
 We have to call <code>cost(m)</code> $r$ times, hence $O(n \times r)$.
-If you&rsquo;ve never seen a big O notation, <a href=https://en.wikipedia.org/wiki/Big_O_notation>take a look on the Wikipedia</a>.</p><p>In case of our example vector $x$ it means a time required to run the algorithm would be <em>proportional</em> to $8$ (number of vector elements) times $12$ (range of $x$ i.e. $12 - 0$).
+If you&rsquo;ve never seen a big O notation, <a href="https://en.wikipedia.org/wiki/Big_O_notation">take a look on the Wikipedia</a>.</p>
+<p>In case of our example vector $x$ it means a time required to run the algorithm would be <em>proportional</em> to $8$ (number of vector elements) times $12$ (range of $x$ i.e. $12 - 0$).
 Proportional by no means means equal, but by doubling elements range, we would double the execution time.
-Doubling the range and doubling the vector length would quadruple the execution time and so on.</p><h3 id=a-mathematical-observation-on-minimizing-the-sum-of-absolute-values>A mathematical observation on minimizing the sum of absolute values
-<a href=#a-mathematical-observation-on-minimizing-the-sum-of-absolute-values class=h-anchor aria-hidden=true>#</a></h3><p>From my statistics and machine learning classes I remember <em>a commonly known fact</em> that the <strong>median</strong> minimizes the sum of absolute differences.</p><p>This mean that our solution can be rewritten as</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia><span style=display:flex><span><span style=color:#66d9ef>function</span> solution2(x)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> sum(abs<span style=color:#f92672>.</span>(x <span style=color:#f92672>.-</span> median(x)))
-</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
-</span></span></code></pre></div><p>which is much shorter&mldr;</p><p>But is it faster?
+Doubling the range and doubling the vector length would quadruple the execution time and so on.</p>
+<h3 id="a-mathematical-observation-on-minimizing-the-sum-of-absolute-values">A mathematical observation on minimizing the sum of absolute values<a hidden class="anchor" aria-hidden="true" href="#a-mathematical-observation-on-minimizing-the-sum-of-absolute-values">#</a></h3>
+<p>From my statistics and machine learning classes I remember <em>a commonly known fact</em> that the <strong>median</strong> minimizes the sum of absolute differences.</p>
+<p>This mean that our solution can be rewritten as</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> solution2(x)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum(abs<span style="color:#f92672">.</span>(x <span style="color:#f92672">.-</span> median(x)))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>which is much shorter&hellip;</p>
+<p>But is it faster?
 Well, it surely is.
 To calculate the median we have to sort the vector $x$ and take the middle element (or the average of two middle elements).
 Sorting can be done in time $O(n\log(n))$.
 Then we have to call the previously defined <code>cost</code> function for a single value of $m$ with $O(n)$.
-Since $n\log(n) > n$ for large $n$, we say that term $n\log(n)$ dominates and the complexity of <code>solution2(x)</code> is of $O(n\log(n))$ where $n$ is the length of vector $x$.
-The difference is more visible for large ranges and lengths of $x$, pick a few example $n$ and $r$ values.</p><h3 id=why-the-median-minimizes-the-sum-of-absolute-values>Why the median minimizes the sum of absolute values
-<a href=#why-the-median-minimizes-the-sum-of-absolute-values class=h-anchor aria-hidden=true>#</a></h3><p>Unfortunately it&rsquo;s not that easy to show formally that median minimizes the sum of absolute values $C(m;x) = \sum_i |x_i-m|$.</p><p>We can try to outline the idea behind why median might minimize this cost!</p><p>To find the minimum of function, we can take a derivative and set it to $0$.
+Since $n\log(n) &gt; n$ for large $n$, we say that term $n\log(n)$ dominates and the complexity of <code>solution2(x)</code> is of $O(n\log(n))$ where $n$ is the length of vector $x$.
+The difference is more visible for large ranges and lengths of $x$, pick a few example $n$ and $r$ values.</p>
+<h3 id="why-the-median-minimizes-the-sum-of-absolute-values">Why the median minimizes the sum of absolute values<a hidden class="anchor" aria-hidden="true" href="#why-the-median-minimizes-the-sum-of-absolute-values">#</a></h3>
+<p>Unfortunately it&rsquo;s not that easy to show formally that median minimizes the sum of absolute values $C(m;x) = \sum_i |x_i-m|$.</p>
+<p>We can try to outline the idea behind why median might minimize this cost!</p>
+<p>To find the minimum of function, we can take a derivative and set it to $0$.
 Derivative of $C(m;x)$ with respect to $m$ is $ C&rsquo;(m;x) = \sum_i \text{sgn}(x_i-m)$ when $x_i-m \neq 0$, with:
 $$
 \text{sgn}(x_i-m) = \begin{cases}
--1 & \text{if } x_i-m &lt; 0, \\ 0 & \text{if } x_i-m = 0, \\ 1 & \text{if } x_i-m > 0.
+-1 &amp; \text{if } x_i-m &lt; 0, \\ 0 &amp; \text{if } x_i-m = 0, \\ 1 &amp; \text{if } x_i-m &gt; 0.
 \end{cases},
 $$
 Situation when $x_i -m = 0$ is what makes this problem hard so we will act as if it never occurs 😎.
 Now let&rsquo;s think what must happen so sum of numbers $1$ and $-1$ equals $0$.
 This arise when there is an equal number of ones and minus ones.
 In our case it means that the same number of $x_i-m$ have to be equal to one and minus one.
-So half of $x_i$ elements must be lower than $m$ and half must be greater, this is exactly what median is!</p><p>This is not a formal proof as there might be no numbers like that.
+So half of $x_i$ elements must be lower than $m$ and half must be greater, this is exactly what median is!</p>
+<p>This is not a formal proof as there might be no numbers like that.
 Think of vector $x = [1, 1, 2]$.
 There is no $m$ that would satisfy our requirements.
 Median still works though.
-If you are interested, there are a few resources that may help you understand it better :</p><ol><li><a href=https://math.stackexchange.com/questions/113270/the-median-minimizes-the-sum-of-absolute-deviations-the-ell-1-norm>A nice StackExchange discussion</a> that takes look at different cases.</li><li><a href="https://www.youtube.com/watch?v=Skwtx8b3gsA">This video that uses calculus.</a>.</li></ol><h2 id=summary>Summary
-<a href=#summary class=h-anchor aria-hidden=true>#</a></h2><p>There are two things I wanted share in this post:</p><ol><li>Learning math is important and it can really help you when dealing with algorithmic problems.</li><li>Very often we can take advantage of some mathematical fact, without proving it from the scratch.</li></ol></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=/posts/solar-panels-3/><span class=button__icon>←</span>
-<span class=button__text>Detecting Solar Panels from satellite images part 3 - PoC model deployment in streamlit 🎈</span>
-</a></span><span class="button next"><a href=/posts/solar-panels-2/><span class=button__text>Detecting Solar Panels from satellite images part 2 -- machine learning in fastai 🤖</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user">Piotr Pasza Storożenko</div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-PR8Z9SJC7F",{anonymize_ip:!1})}</script></body></html>
+If you are interested, there are a few resources that may help you understand it better :</p>
+<ol>
+<li><a href="https://math.stackexchange.com/questions/113270/the-median-minimizes-the-sum-of-absolute-deviations-the-ell-1-norm">A nice StackExchange discussion</a> that takes look at different cases.</li>
+<li><a href="https://www.youtube.com/watch?v=Skwtx8b3gsA">This video that uses calculus.</a>.</li>
+</ol>
+<h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>There are two things I wanted share in this post:</p>
+<ol>
+<li>Learning math is important and it can really help you when dealing with algorithmic problems.</li>
+<li>Very often we can take advantage of some mathematical fact, without proving it from the scratch.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/math/">Math</a></li>
+      <li><a href="/tags/programing/">Programing</a></li>
+      <li><a href="/tags/julia/">Julia</a></li>
+      <li><a href="/tags/aoc2021/">Aoc2021</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>Piotr Pasza Storożenko</span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

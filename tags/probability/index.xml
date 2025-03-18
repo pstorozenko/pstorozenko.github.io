@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Probability on Pasza's blog</title><link>/tags/probability/</link><description>Recent content in Probability on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Thu, 26 Aug 2021 21:38:08 +0200</lastBuildDate><atom:link href="/tags/probability/index.xml" rel="self" type="application/rss+xml"/><item><title>Comparing fractions of fractions on COVID case 😷</title><link>/posts/comparing-fractions-of-fractions/</link><pubDate>Thu, 26 Aug 2021 21:38:08 +0200</pubDate><guid>/posts/comparing-fractions-of-fractions/</guid><description>
-I had a little argue recently with one anti-vaxxer and I thought it will make an interesting blog content. I tried to convince them that vaccinating is good because people are at least not dieing and what I&amp;rsquo;ve heard was:
-Ohh, vaccines are not helping at all. A friend of mine is working at the hospital at says that 50% of covid patients were already vaccinated.
-I decided not to argue nor check the data source, but rather give it a try.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Probability on Pasza&#39;s blog</title>
+    <link>/tags/probability/</link>
+    <description>Recent content in Probability on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Thu, 26 Aug 2021 21:38:08 +0200</lastBuildDate>
+    <atom:link href="/tags/probability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comparing fractions of fractions on COVID case 😷</title>
+      <link>/posts/comparing-fractions-of-fractions/</link>
+      <pubDate>Thu, 26 Aug 2021 21:38:08 +0200</pubDate>
+      <guid>/posts/comparing-fractions-of-fractions/</guid>
+      <description>&lt;p&gt;I had a little argue recently with one anti-vaxxer and I thought it will make an interesting blog content.
+I tried to convince them that vaccinating is good because people are at least not dieing and what I&amp;rsquo;ve heard was:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ohh, vaccines are not helping at all. A friend of mine is working at the hospital at says that &lt;strong&gt;50%&lt;/strong&gt; of covid patients were already vaccinated.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;I decided not to argue nor check the data source, but rather &lt;em&gt;give it a try&lt;/em&gt;.
+What is important, it took place in the UK where over &lt;strong&gt;70%&lt;/strong&gt; of population received at least one dose of vaccine.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

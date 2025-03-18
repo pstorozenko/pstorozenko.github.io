@@ -1,7 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Optimization on Pasza's blog</title><link>/tags/optimization/</link><description>Recent content in Optimization on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Sun, 21 Nov 2021 14:18:35 +0100</lastBuildDate><atom:link href="/tags/optimization/index.xml" rel="self" type="application/rss+xml"/><item><title>Practical Mathematical Optimization 🏡🛒🧃</title><link>/posts/practical-mathematical-optimization/</link><pubDate>Sun, 21 Nov 2021 14:18:35 +0100</pubDate><guid>/posts/practical-mathematical-optimization/</guid><description>
-&lt;p>In &lt;a href="/posts/mathematical-optimization/">the previous post&lt;/a> I&amp;rsquo;ve presented the basics of stating mathematical optimization problems and JuMP framework in julia.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Optimization on Pasza&#39;s blog</title>
+    <link>/tags/optimization/</link>
+    <description>Recent content in Optimization on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Sun, 21 Nov 2021 14:18:35 +0100</lastBuildDate>
+    <atom:link href="/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Practical Mathematical Optimization 🏡🛒🧃</title>
+      <link>/posts/practical-mathematical-optimization/</link>
+      <pubDate>Sun, 21 Nov 2021 14:18:35 +0100</pubDate>
+      <guid>/posts/practical-mathematical-optimization/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;/posts/mathematical-optimization/&#34;&gt;the previous post&lt;/a&gt; I&amp;rsquo;ve presented the basics of stating mathematical optimization problems and JuMP framework in julia.
 Today let&amp;rsquo;s follow up with concrete examples!
-Please checkout &lt;a href="https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/practical-mathematical-optimization/main.ipynb">the accompanying jupyter notebook&lt;/a> even though you might not feel like a programmer.
-It&amp;rsquo;s very clear and shows how easy it is to obtain solutions!&lt;/p></description></item><item><title>Introduction Into Mathematical Optimization Way of Thinking 🧮</title><link>/posts/mathematical-optimization/</link><pubDate>Sun, 07 Nov 2021 19:40:13 +0100</pubDate><guid>/posts/mathematical-optimization/</guid><description>
-In the post about fitting pizzas inside another pizza I&amp;rsquo;ve shown the following picture and promised a post about recreating it.
-Pizzas packed in pizza However, I would not like to assume that everyone is familiar with the optimization theory (you may graduate from Computer Science and still not know a lot) so I want to present an introduction here as high school math and quadratic equations are enough to understand those concepts.</description></item></channel></rss>
+Please checkout &lt;a href=&#34;https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/practical-mathematical-optimization/main.ipynb&#34;&gt;the accompanying jupyter notebook&lt;/a&gt; even though you might not feel like a programmer.
+It&amp;rsquo;s very clear and shows how easy it is to obtain solutions!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introduction Into Mathematical Optimization Way of Thinking 🧮</title>
+      <link>/posts/mathematical-optimization/</link>
+      <pubDate>Sun, 07 Nov 2021 19:40:13 +0100</pubDate>
+      <guid>/posts/mathematical-optimization/</guid>
+      <description>&lt;p&gt;In the post about fitting pizzas inside another pizza I&amp;rsquo;ve shown the following picture and promised a post about recreating it.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;/posts/pizza-twice-as-big/circles_in_circle.png&#34;
+         alt=&#34;Pizzas packed in pizza&#34;/&gt; &lt;figcaption&gt;
+            pizzas in pizza&lt;p&gt;Pizzas packed in pizza&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;However, I would not like to assume that everyone is familiar with the &lt;a href=&#34;https://en.wikipedia.org/wiki/Mathematical_optimization&#34;&gt;optimization theory&lt;/a&gt; (you may graduate from Computer Science and still not know a lot) so I want to present an introduction here as high school math and quadratic equations are enough to understand those concepts.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,8 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Course on Pasza's blog</title><link>/tags/course/</link><description>Recent content in Course on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Sun, 19 Jun 2022 23:44:43 +0200</lastBuildDate><atom:link href="/tags/course/index.xml" rel="self" type="application/rss+xml"/><item><title>DaftAcademy Course Finished 🐍🏁</title><link>/posts/daftacademy-finished/</link><pubDate>Sun, 19 Jun 2022 23:44:43 +0200</pubDate><guid>/posts/daftacademy-finished/</guid><description>
-&lt;p>I&amp;rsquo;d like to inform that the course has finished and the total of 56 people received a graduation certificate (which required passing homeworks for over 70%), congratulations! 🎉
-It was a great experience and I&amp;rsquo;m happy that I was able to teach so many young students!&lt;/p></description></item><item><title>DaftAcademy Announcement 🐍👨‍🏫</title><link>/posts/daftacademy-announcement/</link><pubDate>Sat, 30 Apr 2022 23:32:17 +0200</pubDate><guid>/posts/daftacademy-announcement/</guid><description>
-&lt;p>I&amp;rsquo;m happy to announce that I&amp;rsquo;ll create and teach the course &lt;a href="https://www.daftacademy.pl/python-levelup-data-sciene-by-appsilon">&lt;em>Python LevelUP: Data Science by Appsilon&lt;/em>&lt;/a> in collaboration with &lt;a href="https://www.daftacademy.pl/">DaftAcademy&lt;/a>, part of &lt;a href="https://daftcode.pl/">DaftCode&lt;/a>.&lt;/p>
-&lt;p>This will be a five-week course on the basics of Data Science in python.
-&lt;strong>The course materials will be available on GitHub for free&lt;/strong>.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Course on Pasza&#39;s blog</title>
+    <link>/tags/course/</link>
+    <description>Recent content in Course on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Sun, 19 Jun 2022 23:44:43 +0200</lastBuildDate>
+    <atom:link href="/tags/course/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DaftAcademy Course Finished 🐍🏁</title>
+      <link>/posts/daftacademy-finished/</link>
+      <pubDate>Sun, 19 Jun 2022 23:44:43 +0200</pubDate>
+      <guid>/posts/daftacademy-finished/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;d like to inform that the course has finished and the total of 56 people received a graduation certificate (which required passing homeworks for over 70%), congratulations! 🎉
+It was a great experience and I&amp;rsquo;m happy that I was able to teach so many young students!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DaftAcademy Announcement 🐍👨‍🏫</title>
+      <link>/posts/daftacademy-announcement/</link>
+      <pubDate>Sat, 30 Apr 2022 23:32:17 +0200</pubDate>
+      <guid>/posts/daftacademy-announcement/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m happy to announce that I&amp;rsquo;ll create and teach the course &lt;a href=&#34;https://www.daftacademy.pl/python-levelup-data-sciene-by-appsilon&#34;&gt;&lt;em&gt;Python LevelUP: Data Science by Appsilon&lt;/em&gt;&lt;/a&gt; in collaboration with &lt;a href=&#34;https://www.daftacademy.pl/&#34;&gt;DaftAcademy&lt;/a&gt;, part of &lt;a href=&#34;https://daftcode.pl/&#34;&gt;DaftCode&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This will be a five-week course on the basics of Data Science in python.
+&lt;strong&gt;The course materials will be available on GitHub for free&lt;/strong&gt;.
 Apart from teaching the classic stuff, I&amp;rsquo;ll try to show some of the newest and coolest libraries out there.
-Even if you already know most of this stuff, I really recommend to take a closer look on the unknown packages.&lt;/p></description></item></channel></rss>
+Even if you already know most of this stuff, I really recommend to take a closer look on the unknown packages.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

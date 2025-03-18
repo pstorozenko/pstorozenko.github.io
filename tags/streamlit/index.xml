@@ -1,6 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Streamlit on Pasza's blog</title><link>/tags/streamlit/</link><description>Recent content in Streamlit on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Mon, 28 Feb 2022 20:23:42 +0100</lastBuildDate><atom:link href="/tags/streamlit/index.xml" rel="self" type="application/rss+xml"/><item><title>Streamlit Tutorial: How to Deploy Streamlit Apps on RStudio Connect 💰</title><link>/posts/solar-panels-4/</link><pubDate>Mon, 28 Feb 2022 20:23:42 +0100</pubDate><guid>/posts/solar-panels-4/</guid><description>
-I wrote another post for Appsilon, this time about deploying streamlit applications on RStudio Connect infrastructure.
-This post might be totally useless for majority of audience, but a pure gold for a few 💰. What is streamlit you can understand from my previous post.
-Having a running app in your browser is already cool, but how cool is it to deploy your app on the internet? If you need an enterprise solution for hosting dashboards in RShiny/streamlit, RSConnect is the way!</description></item><item><title>Detecting Solar Panels from satellite images part 3 - PoC model deployment in streamlit 🎈</title><link>/posts/solar-panels-3/</link><pubDate>Fri, 14 Jan 2022 20:23:36 +0100</pubDate><guid>/posts/solar-panels-3/</guid><description>
-This one is short. :)
-Usually when we are doing ML experiments, training models, preparing EDA, we want to share the results with the World at some point. One of the quickest and easiest ways to do so in python, to create a simple webapp with results, is a super-cool library streamlit! If you thought building an app in flask is easy, you will be amazed by streamlit simplicity. Actually you do not have to create an ML related app, nobody checks that ;).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Streamlit on Pasza&#39;s blog</title>
+    <link>/tags/streamlit/</link>
+    <description>Recent content in Streamlit on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Mon, 28 Feb 2022 20:23:42 +0100</lastBuildDate>
+    <atom:link href="/tags/streamlit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Streamlit Tutorial: How to Deploy Streamlit Apps on RStudio Connect 💰</title>
+      <link>/posts/solar-panels-4/</link>
+      <pubDate>Mon, 28 Feb 2022 20:23:42 +0100</pubDate>
+      <guid>/posts/solar-panels-4/</guid>
+      <description>&lt;p&gt;I wrote &lt;a href=&#34;https://appsilon.com/streamlit-tutorial-rstudio-connect/&#34;&gt;another post&lt;/a&gt; for Appsilon, this time about deploying &lt;a href=&#34;https://streamlit.io/&#34;&gt;streamlit&lt;/a&gt; applications on &lt;a href=&#34;https://www.rstudio.com/products/connect/&#34;&gt;RStudio Connect&lt;/a&gt; infrastructure.&lt;/p&gt;
+&lt;p&gt;This post might be totally useless for majority of audience, but &lt;strong&gt;a pure gold&lt;/strong&gt; for a few 💰.
+What is streamlit you can understand from &lt;a href=&#34;/posts/solar-panels-3/&#34;&gt;my previous post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Having a running app in your browser is already cool, but how cool is it to deploy your app on the internet?
+If you need an enterprise solution for hosting dashboards in RShiny/streamlit, RSConnect is the way!
+In &lt;a href=&#34;https://appsilon.com/streamlit-tutorial-rstudio-connect/&#34;&gt;this blog post&lt;/a&gt; I focused on presenting solutions for common problems you might encounter.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Detecting Solar Panels from satellite images part 3 - PoC model deployment in streamlit 🎈</title>
+      <link>/posts/solar-panels-3/</link>
+      <pubDate>Fri, 14 Jan 2022 20:23:36 +0100</pubDate>
+      <guid>/posts/solar-panels-3/</guid>
+      <description>&lt;p&gt;This one is short. :)&lt;/p&gt;
+&lt;p&gt;Usually when we are doing ML experiments, training models, preparing &lt;a href=&#34;https://en.wikipedia.org/wiki/Exploratory_data_analysis&#34;&gt;EDA&lt;/a&gt;, we want to share the results with the World at some point.
+One of the quickest and easiest ways to do so in python, to create a simple webapp with results, is a super-cool library &lt;a href=&#34;https://streamlit.io/&#34;&gt;streamlit&lt;/a&gt;!
+If you thought building an app in &lt;code&gt;flask&lt;/code&gt; is easy, you will be amazed by streamlit simplicity.
+Actually you do not have to create an ML related app, nobody checks that ;).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

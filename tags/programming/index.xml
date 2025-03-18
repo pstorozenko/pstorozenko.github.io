@@ -1,3 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on Pasza's blog</title><link>/tags/programming/</link><description>Recent content in Programming on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Fri, 01 Oct 2021 22:24:55 +0200</lastBuildDate><atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Speed of Traversing Matrix → vs ↓</title><link>/posts/speed-of-traversing-matrix/</link><pubDate>Fri, 01 Oct 2021 22:24:55 +0200</pubDate><guid>/posts/speed-of-traversing-matrix/</guid><description>
-Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
-Why it differs whetter matrix is traversed by rows or columns? # Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Programming on Pasza&#39;s blog</title>
+    <link>/tags/programming/</link>
+    <description>Recent content in Programming on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Fri, 01 Oct 2021 22:24:55 +0200</lastBuildDate>
+    <atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Speed of Traversing Matrix → vs ↓</title>
+      <link>/posts/speed-of-traversing-matrix/</link>
+      <pubDate>Fri, 01 Oct 2021 22:24:55 +0200</pubDate>
+      <guid>/posts/speed-of-traversing-matrix/</guid>
+      <description>&lt;p&gt;Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.&lt;/p&gt;
+&lt;h2 id=&#34;why-it-differs-whetter-matrix-is-traversed-by-rows-or-columns&#34;&gt;Why it differs whetter matrix is traversed by rows or columns?&lt;/h2&gt;
+&lt;p&gt;Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers.
+Therefore there are two schemas one can follow, row-first and column-first.
+Historically they are called C-style and Fortran-style respectively.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

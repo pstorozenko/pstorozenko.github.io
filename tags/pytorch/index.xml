@@ -1,12 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pytorch on Pasza's blog</title><link>/tags/pytorch/</link><description>Recent content in Pytorch on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Thu, 07 Jul 2022 20:52:14 +0200</lastBuildDate><atom:link href="/tags/pytorch/index.xml" rel="self" type="application/rss+xml"/><item><title>PyTorch Serialization 📦⚙️</title><link>/posts/pytorch-serialization/</link><pubDate>Thu, 07 Jul 2022 20:52:14 +0200</pubDate><guid>/posts/pytorch-serialization/</guid><description>
-&lt;p>One thing is to train the model, but another is to serve it.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pytorch on Pasza&#39;s blog</title>
+    <link>/tags/pytorch/</link>
+    <description>Recent content in Pytorch on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Thu, 07 Jul 2022 20:52:14 +0200</lastBuildDate>
+    <atom:link href="/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PyTorch Serialization 📦⚙️</title>
+      <link>/posts/pytorch-serialization/</link>
+      <pubDate>Thu, 07 Jul 2022 20:52:14 +0200</pubDate>
+      <guid>/posts/pytorch-serialization/</guid>
+      <description>&lt;p&gt;One thing is to train the model, but another is to serve it.
 In between those two phases, model serialization and deserialization occurs.
 In simpler words it&amp;rsquo;s just model saving and loading.
-It&amp;rsquo;s important because different methods result in different:&lt;/p>
-&lt;ol>
-&lt;li>Inference speed&lt;/li>
-&lt;li>Model size&lt;/li>
-&lt;li>Python environment size&lt;/li>
-&lt;/ol>
-&lt;p>If you are curious what are the ways to serialize model in PyTorch and how they compare, checkout my &lt;a href="https://appsilon.com/model-serialization-in-machine-learning/">new post on Appsilon blog&lt;/a>.&lt;/p></description></item><item><title>PyTorch-Lightning + Hydra to Boost Your PyTorch ⚡🐉</title><link>/posts/pytorch-hydra/</link><pubDate>Thu, 09 Jun 2022 00:38:25 +0200</pubDate><guid>/posts/pytorch-hydra/</guid><description>
-When working with deep learning problems I usually use PyTorch. I like this framework as it gives me a lot of freedom and allows to write code in the pythonic way. Using bare pytorch unfortunately often means writing a lot of boilerplate code, which no-one like. Another problem that arises during longer and larger projects is experiments running and configuration maintenance. I tackle those two problems by using pytorch-lightning and Hydra.</description></item></channel></rss>
+It&amp;rsquo;s important because different methods result in different:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Inference speed&lt;/li&gt;
+&lt;li&gt;Model size&lt;/li&gt;
+&lt;li&gt;Python environment size&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you are curious what are the ways to serialize model in PyTorch and how they compare, checkout my &lt;a href=&#34;https://appsilon.com/model-serialization-in-machine-learning/&#34;&gt;new post on Appsilon blog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PyTorch-Lightning &#43; Hydra to Boost Your PyTorch ⚡🐉</title>
+      <link>/posts/pytorch-hydra/</link>
+      <pubDate>Thu, 09 Jun 2022 00:38:25 +0200</pubDate>
+      <guid>/posts/pytorch-hydra/</guid>
+      <description>&lt;p&gt;When working with deep learning problems I usually use &lt;a href=&#34;https://pytorch.org/&#34;&gt;PyTorch&lt;/a&gt;.
+I like this framework as it gives me a lot of freedom and allows to write code in &lt;a href=&#34;https://docs.python-guide.org/writing/style/&#34;&gt;the pythonic way&lt;/a&gt;.
+Using bare pytorch unfortunately often means writing a lot of &lt;a href=&#34;https://en.wikipedia.org/wiki/Boilerplate_code&#34;&gt;boilerplate code&lt;/a&gt;, which no-one like.
+Another problem that arises during longer and larger projects is experiments running and configuration maintenance.
+I tackle those two problems by using &lt;a href=&#34;https://www.pytorchlightning.ai/&#34;&gt;&lt;code&gt;pytorch-lightning&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://hydra.cc/&#34;&gt;Hydra&lt;/a&gt;.
+Recently I described my approach in &lt;a href=&#34;https://appsilon.com/pytorch-lightning-hydra-templates-in-machine-learning/&#34;&gt;a post on the Appsilon blog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

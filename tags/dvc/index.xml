@@ -1,3 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dvc on Pasza's blog</title><link>/tags/dvc/</link><description>Recent content in Dvc on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Wed, 13 Oct 2021 07:23:26 +0200</lastBuildDate><atom:link href="/tags/dvc/index.xml" rel="self" type="application/rss+xml"/><item><title>ML Data Versioning With DVC: How to manage machine learning data 🗃</title><link>/posts/ml-data-versioning-with-dvc/</link><pubDate>Wed, 13 Oct 2021 07:23:26 +0200</pubDate><guid>/posts/ml-data-versioning-with-dvc/</guid><description>
-Recently I wrote a post about DVC at my company&amp;rsquo;s, Appsilon blog. DVC is like a git, but for data, models and experiments. It also allows for creating an automated experiments pipelines.
-As a teaser I&amp;rsquo;ll just say that, having prepared scripts for model training and evaluating, when new data is added to the repo, the whole training is run automatically. Metrics are saved to appropriate files alongside with parameters, same with plots.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Dvc on Pasza&#39;s blog</title>
+    <link>/tags/dvc/</link>
+    <description>Recent content in Dvc on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Wed, 13 Oct 2021 07:23:26 +0200</lastBuildDate>
+    <atom:link href="/tags/dvc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ML Data Versioning With DVC: How to manage machine learning data 🗃</title>
+      <link>/posts/ml-data-versioning-with-dvc/</link>
+      <pubDate>Wed, 13 Oct 2021 07:23:26 +0200</pubDate>
+      <guid>/posts/ml-data-versioning-with-dvc/</guid>
+      <description>&lt;p&gt;Recently I wrote &lt;a href=&#34;https://appsilon.com/ml-data-versioning-with-dvc/&#34;&gt;a post about DVC at my company&amp;rsquo;s, Appsilon blog&lt;/a&gt;.
+&lt;a href=&#34;https://dvc.org/&#34;&gt;DVC&lt;/a&gt; is like a git, but for data, models and experiments.
+It also allows for creating an automated experiments pipelines.&lt;/p&gt;
+&lt;p&gt;As a teaser I&amp;rsquo;ll just say that, having prepared scripts for model training and evaluating, when new data is added to the repo, the whole training is run automatically.
+Metrics are saved to appropriate files alongside with parameters, same with plots.
+However, if you just upload a new test data, a part of pipeline will be run only.
+This is a pretty simple case, but DVC is a very powerful tool, check out &lt;a href=&#34;https://dvc.org/doc/use-cases&#34;&gt;different use cases in their docs&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

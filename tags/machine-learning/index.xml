@@ -1,70 +1,242 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine-Learning on Pasza's blog</title><link>/tags/machine-learning/</link><description>Recent content in Machine-Learning on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Mon, 24 Jul 2023 23:00:00 +0100</lastBuildDate><atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml"/><item><title>OxML Report Day4 📜</title><link>/posts/oxml-report-day4/</link><pubDate>Mon, 24 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day4/</guid><description>
-&lt;p>The report of all talks during the fourth day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>..&lt;/p>
-&lt;p>This day talks were on:&lt;/p>
-&lt;ol>
-&lt;li>Insightful Lecture on ML for Mental Health - &lt;a href="http://www.munmund.net/">Munmun De Chodhury&lt;/a>&lt;/li>
-&lt;li>Drug Discovery with ML - &lt;a href="https://www.linkedin.com/in/ravi-patel-841a52138/">Ravi Patel&lt;/a>&lt;/li>
-&lt;li>How to make sure the Market wants your solution - &lt;a href="https://www.swissre.com/profile/Reza_Khorshidi/ep_cd4b47">Reza Khorshidi&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>OxML Report Day3 📜</title><link>/posts/oxml-report-day3/</link><pubDate>Sun, 23 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day3/</guid><description>
-&lt;p>The report of all talks during the third day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>..&lt;/p>
-&lt;p>This day talks were on:&lt;/p>
-&lt;ol>
-&lt;li>Introduction to Neural Networks - &lt;a href="https://www.ai.math.uni-muenchen.de/members/professor/kutyniok/index.html">Gitta Kutyniok&lt;/a>&lt;/li>
-&lt;li>Medical Expert&amp;rsquo;s View on Impactful and Responsible ML in Health with EHR - &lt;a href="https://www.oxfordmartin.ox.ac.uk/people/kazem-rahimi/">Kazem Rahimi&lt;/a>&lt;/li>
-&lt;li>Chaotic Lecture on Graphs and ML - &lt;a href="https://www.cl.cam.ac.uk/~pl219/">Pietro Liò&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>OxML Report Day2 📜</title><link>/posts/oxml-report-day2/</link><pubDate>Sat, 22 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day2/</guid><description>
-&lt;p>The report of all talks during the second day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>..&lt;/p>
-&lt;p>This day talks were on:&lt;/p>
-&lt;ol>
-&lt;li>The State of Computer Vision and Many CV Experiments - &lt;a href="https://chrirupp.github.io/">Cristian Rupprecht&lt;/a>&lt;/li>
-&lt;li>ML Challenges in Oncology and Multi-omics data - &lt;a href="https://www.oncology.cam.ac.uk/research/our-research/crispin">Mireira Crispin&lt;/a>&lt;/li>
-&lt;li>What is a Multimodality and How To Work With It? - &lt;a href="https://www.cs.cmu.edu/~morency/">Louis-Philippe (LP) Morency&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>OxML Report Day 1 📜</title><link>/posts/oxml-report-day1/</link><pubDate>Fri, 21 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day1/</guid><description>
-&lt;p>The report of all talks during the first day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>.&lt;/p>
-&lt;p>This day talks were on:&lt;/p>
-&lt;ol>
-&lt;li>Casual Inference - &lt;a href="https://www.microsoft.com/en-us/research/people/chezha/">Cheng Zhang&lt;/a>&lt;/li>
-&lt;li>Computer Vision in medicine - &lt;a href="https://www.kcl.ac.uk/people/jorge-cardoso">Jorge Cardoso&lt;/a>&lt;/li>
-&lt;li>Knowledge Representation - &lt;a href="http://arkitus.com/">Ali Eslami&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>OxML Health 2023 - Summary 🌍📚❤️‍🩹</title><link>/posts/oxml-summary/</link><pubDate>Thu, 20 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-summary/</guid><description>
-&lt;p>Long time no see ^^
-Today, I&amp;rsquo;d like to share my experience from &lt;a href="https://www.oxfordml.school/">OxML Health Summer School&lt;/a> that I attended in person this year on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>.&lt;/p></description></item><item><title>Detecting Antarctic Shag Nests 🐧🐻‍❄️🇦🇶</title><link>/posts/antarctic-shag/</link><pubDate>Sat, 01 Oct 2022 23:02:24 +0200</pubDate><guid>/posts/antarctic-shag/</guid><description>
-&lt;p>It&amp;rsquo;s always nice if you can use your technical skills for something &lt;em>good&lt;/em> for our planet.
-I have this opportunity during work at Appsilon where from time to time we work on &lt;a href="/tags/data4good/" title="Data4Good projects">Data4Good projects&lt;/a>.
-One such project was &lt;a href="/posts/copepods-blogpost/">copepods/plankton project&lt;/a> where I was doing segmentation of the oil sac in the Arctic plankton.
-This time I&amp;rsquo;d like to share something from the other pole of the globe.&lt;/p>
-&lt;p>Currently we work on detecting the Antarctic shags nests on the Antarctic islands.
-Together with Jędrzej Świeżewski and Joanna Kaleta we were cooperating with researchers from &lt;a href="https://ibb.edu.pl/en/laboratory/robert-bialik/">IBB PAS&lt;/a> on this task.
-Checkout &lt;a href="https://appsilon.com/yolo-counting-nests-antarctic-birds/">the engagement summary blog post on the Appsilon blog&lt;/a>.&lt;/p></description></item><item><title>PyTorch Serialization 📦⚙️</title><link>/posts/pytorch-serialization/</link><pubDate>Thu, 07 Jul 2022 20:52:14 +0200</pubDate><guid>/posts/pytorch-serialization/</guid><description>
-&lt;p>One thing is to train the model, but another is to serve it.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Machine-Learning on Pasza&#39;s blog</title>
+    <link>/tags/machine-learning/</link>
+    <description>Recent content in Machine-Learning on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Tue, 18 Mar 2025 00:39:07 +0100</lastBuildDate>
+    <atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud Run as Cold Storage for ML Models</title>
+      <link>/posts/coldstorage-for-models/</link>
+      <pubDate>Tue, 18 Mar 2025 00:39:07 +0100</pubDate>
+      <guid>/posts/coldstorage-for-models/</guid>
+      <description>&lt;p&gt;Where to store your models if you want to access them &lt;em&gt;rarely&lt;/em&gt;?
+Let&amp;rsquo;s say you want to be able to access them in few months, but you don&amp;rsquo;t want to pay for the running server all the time.&lt;/p&gt;
+&lt;p&gt;This may not be the regular issue, but we faced this challenge when working on some PoC that was supposed to be shown to clients every few months.
+We didn&amp;rsquo;t want to pay for the server all the time, didn&amp;rsquo;t have to maintain it, but we wanted to have the model ready to be served in a few minutes.
+&lt;strong&gt;The way I solved this was by wrapping the ML model in a FastAPI app with BentoML and deploying it on Google Cloud Run as a docker container.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OxML Report Day4 📜</title>
+      <link>/posts/oxml-report-day4/</link>
+      <pubDate>Mon, 24 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-report-day4/</guid>
+      <description>&lt;p&gt;The report of all talks during the fourth day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;..&lt;/p&gt;
+&lt;p&gt;This day talks were on:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Insightful Lecture on ML for Mental Health - &lt;a href=&#34;http://www.munmund.net/&#34;&gt;Munmun De Chodhury&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Drug Discovery with ML - &lt;a href=&#34;https://www.linkedin.com/in/ravi-patel-841a52138/&#34;&gt;Ravi Patel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;How to make sure the Market wants your solution - &lt;a href=&#34;https://www.swissre.com/profile/Reza_Khorshidi/ep_cd4b47&#34;&gt;Reza Khorshidi&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>OxML Report Day3 📜</title>
+      <link>/posts/oxml-report-day3/</link>
+      <pubDate>Sun, 23 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-report-day3/</guid>
+      <description>&lt;p&gt;The report of all talks during the third day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;..&lt;/p&gt;
+&lt;p&gt;This day talks were on:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Introduction to Neural Networks - &lt;a href=&#34;https://www.ai.math.uni-muenchen.de/members/professor/kutyniok/index.html&#34;&gt;Gitta Kutyniok&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Medical Expert&amp;rsquo;s View on Impactful and Responsible ML in Health with EHR - &lt;a href=&#34;https://www.oxfordmartin.ox.ac.uk/people/kazem-rahimi/&#34;&gt;Kazem Rahimi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chaotic Lecture on Graphs and ML - &lt;a href=&#34;https://www.cl.cam.ac.uk/~pl219/&#34;&gt;Pietro Liò&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>OxML Report Day2 📜</title>
+      <link>/posts/oxml-report-day2/</link>
+      <pubDate>Sat, 22 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-report-day2/</guid>
+      <description>&lt;p&gt;The report of all talks during the second day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;..&lt;/p&gt;
+&lt;p&gt;This day talks were on:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The State of Computer Vision and Many CV Experiments - &lt;a href=&#34;https://chrirupp.github.io/&#34;&gt;Cristian Rupprecht&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ML Challenges in Oncology and Multi-omics data - &lt;a href=&#34;https://www.oncology.cam.ac.uk/research/our-research/crispin&#34;&gt;Mireira Crispin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;What is a Multimodality and How To Work With It? - &lt;a href=&#34;https://www.cs.cmu.edu/~morency/&#34;&gt;Louis-Philippe (LP) Morency&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>OxML Report Day 1 📜</title>
+      <link>/posts/oxml-report-day1/</link>
+      <pubDate>Fri, 21 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-report-day1/</guid>
+      <description>&lt;p&gt;The report of all talks during the first day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This day talks were on:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Casual Inference - &lt;a href=&#34;https://www.microsoft.com/en-us/research/people/chezha/&#34;&gt;Cheng Zhang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Computer Vision in medicine - &lt;a href=&#34;https://www.kcl.ac.uk/people/jorge-cardoso&#34;&gt;Jorge Cardoso&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Knowledge Representation - &lt;a href=&#34;http://arkitus.com/&#34;&gt;Ali Eslami&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>OxML Health 2023 - Summary 🌍📚❤️‍🩹</title>
+      <link>/posts/oxml-summary/</link>
+      <pubDate>Thu, 20 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-summary/</guid>
+      <description>&lt;p&gt;Long time no see ^^
+Today, I&amp;rsquo;d like to share my experience from &lt;a href=&#34;https://www.oxfordml.school/&#34;&gt;OxML Health Summer School&lt;/a&gt; that I attended in person this year on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Detecting Antarctic Shag Nests 🐧🐻‍❄️🇦🇶</title>
+      <link>/posts/antarctic-shag/</link>
+      <pubDate>Sat, 01 Oct 2022 23:02:24 +0200</pubDate>
+      <guid>/posts/antarctic-shag/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s always nice if you can use your technical skills for something &lt;em&gt;good&lt;/em&gt; for our planet.
+I have this opportunity during work at Appsilon where from time to time we work on &lt;a href=&#34;/tags/data4good/&#34; title=&#34;Data4Good projects&#34;&gt;Data4Good projects&lt;/a&gt;.
+One such project was &lt;a href=&#34;/posts/copepods-blogpost/&#34;&gt;copepods/plankton project&lt;/a&gt; where I was doing segmentation of the oil sac in the Arctic plankton.
+This time I&amp;rsquo;d like to share something from the other pole of the globe.&lt;/p&gt;
+&lt;p&gt;Currently we work on detecting the Antarctic shags nests on the Antarctic islands.
+Together with Jędrzej Świeżewski and Joanna Kaleta we were cooperating with researchers from &lt;a href=&#34;https://ibb.edu.pl/en/laboratory/robert-bialik/&#34;&gt;IBB PAS&lt;/a&gt; on this task.
+Checkout &lt;a href=&#34;https://appsilon.com/yolo-counting-nests-antarctic-birds/&#34;&gt;the engagement summary blog post on the Appsilon blog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PyTorch Serialization 📦⚙️</title>
+      <link>/posts/pytorch-serialization/</link>
+      <pubDate>Thu, 07 Jul 2022 20:52:14 +0200</pubDate>
+      <guid>/posts/pytorch-serialization/</guid>
+      <description>&lt;p&gt;One thing is to train the model, but another is to serve it.
 In between those two phases, model serialization and deserialization occurs.
 In simpler words it&amp;rsquo;s just model saving and loading.
-It&amp;rsquo;s important because different methods result in different:&lt;/p>
-&lt;ol>
-&lt;li>Inference speed&lt;/li>
-&lt;li>Model size&lt;/li>
-&lt;li>Python environment size&lt;/li>
-&lt;/ol>
-&lt;p>If you are curious what are the ways to serialize model in PyTorch and how they compare, checkout my &lt;a href="https://appsilon.com/model-serialization-in-machine-learning/">new post on Appsilon blog&lt;/a>.&lt;/p></description></item><item><title>SFI Conference Recording 🎥</title><link>/posts/sfi-conference-recording/</link><pubDate>Fri, 01 Jul 2022 23:07:06 +0200</pubDate><guid>/posts/sfi-conference-recording/</guid><description>
-&lt;p>Finally the recording of the talk &lt;em>StyleGAN w Twoich rękach&lt;/em> from SFI 2022 is available online! 🎉&lt;/p></description></item><item><title>PyTorch-Lightning + Hydra to Boost Your PyTorch ⚡🐉</title><link>/posts/pytorch-hydra/</link><pubDate>Thu, 09 Jun 2022 00:38:25 +0200</pubDate><guid>/posts/pytorch-hydra/</guid><description>
-When working with deep learning problems I usually use PyTorch. I like this framework as it gives me a lot of freedom and allows to write code in the pythonic way. Using bare pytorch unfortunately often means writing a lot of boilerplate code, which no-one like. Another problem that arises during longer and larger projects is experiments running and configuration maintenance. I tackle those two problems by using pytorch-lightning and Hydra.</description></item><item><title>Copepods Oil Sac 🌊🛢👜</title><link>/posts/copepods-blogpost/</link><pubDate>Fri, 15 Apr 2022 16:25:14 +0200</pubDate><guid>/posts/copepods-blogpost/</guid><description>
-&lt;p>Some time ago, I&amp;rsquo;ve worked on an oil sac (energy reservoir) detection in copepods (kind of zooplankton) for Université Laval.
-&lt;a href="/posts/ml4plankton-conference/">Apart from presenting the results on the ML4Plankton conference&lt;/a> I&amp;rsquo;ve published a detailed blog post on &lt;a href="https://appsilon.com/monitoring-marine-ecosystems-with-machine-learning/">the Appsilon blog&lt;/a> that I strongly encourage you to read!&lt;/p></description></item><item><title>Presentation at ML4Plankton Conference 🌊🐟</title><link>/posts/ml4plankton-conference/</link><pubDate>Fri, 08 Apr 2022 09:50:09 +0200</pubDate><guid>/posts/ml4plankton-conference/</guid><description>
-Recently I was working at work on detecting the oil sac in copepods. This is was a super cool problem in which we received data from professor Frédéric Maps from Université Laval. We together gave a talk on conference ML4Plankton that you can watch online! First Frederic gives some context on why this problem is important and later I explain methods used and problems you can find. Our talk is available online here:</description></item><item><title>StyleGANv2 in Your Hands 💇👻</title><link>/posts/stylegan-in-your-hands/</link><pubDate>Mon, 14 Mar 2022 22:30:09 +0100</pubDate><guid>/posts/stylegan-in-your-hands/</guid><description>
-This is the second post from micro-series preceding the SFI conference. In the first post I showed how easy it is to do the style transfer at home. Now, I would like to present you how to play with StyleGANv2. StyleGANv2 is the second version of StyleGAN, they are very similar in core principals. We will be working with StyleGANv2 but I will refer to it as SG. There is a lot that can be said/explained about SG.</description></item><item><title>Streamlit Tutorial: How to Deploy Streamlit Apps on RStudio Connect 💰</title><link>/posts/solar-panels-4/</link><pubDate>Mon, 28 Feb 2022 20:23:42 +0100</pubDate><guid>/posts/solar-panels-4/</guid><description>
-I wrote another post for Appsilon, this time about deploying streamlit applications on RStudio Connect infrastructure.
-This post might be totally useless for majority of audience, but a pure gold for a few 💰. What is streamlit you can understand from my previous post.
-Having a running app in your browser is already cool, but how cool is it to deploy your app on the internet? If you need an enterprise solution for hosting dashboards in RShiny/streamlit, RSConnect is the way!</description></item><item><title>Playing With Style Transfer 🎨</title><link>/posts/playing-with-style-transfer/</link><pubDate>Sat, 05 Feb 2022 21:12:18 +0100</pubDate><guid>/posts/playing-with-style-transfer/</guid><description>
-As mentioned earlier, I will be giving a talk on the 17th SFI IT Academic Festival on the topic of style transfer and StyleGAN. In this post I would like to show you how easy it is to play with style transfer on your own!
-To tutorial or not to tutorial # It might be obvious for you to check Tensorflow/PyTorch tutorials if you wanted to learn how to create style-transfer system.</description></item><item><title>SFI Conference 👨‍🏫🎉</title><link>/posts/sfi-conference/</link><pubDate>Thu, 20 Jan 2022 14:55:23 +0100</pubDate><guid>/posts/sfi-conference/</guid><description>
-I am happy to share that I was invited (for the first time in my life!) to give a talk on a conference. 🎉 It will be the 17th SFI IT Academic Festival, organized by students from the Jagiellonian University in Cracow. The conference will be held on 14-16 of March 2022.
-My lecture will be in Polish on topic StyleGAN w Twoich rękach -&amp;gt; StyleGAN in Your Hands, I will talk about transfer learning in general and later about StyleGANv2.</description></item><item><title>Detecting Solar Panels from satellite images part 3 - PoC model deployment in streamlit 🎈</title><link>/posts/solar-panels-3/</link><pubDate>Fri, 14 Jan 2022 20:23:36 +0100</pubDate><guid>/posts/solar-panels-3/</guid><description>
-This one is short. :)
-Usually when we are doing ML experiments, training models, preparing EDA, we want to share the results with the World at some point. One of the quickest and easiest ways to do so in python, to create a simple webapp with results, is a super-cool library streamlit! If you thought building an app in flask is easy, you will be amazed by streamlit simplicity. Actually you do not have to create an ML related app, nobody checks that ;).</description></item><item><title>Detecting Solar Panels from satellite images part 2 -- machine learning in fastai 🤖</title><link>/posts/solar-panels-2/</link><pubDate>Mon, 29 Nov 2021 16:18:26 +0100</pubDate><guid>/posts/solar-panels-2/</guid><description>
-&lt;p>&lt;a href="/posts/solar-panels-1/">As mentioned a month ago&lt;/a>, I write a series of posts on detecting solar panels from satellite images at my company, &lt;a href="https://appsilon.com">Appsilon&lt;/a>.
-In this post I focus on using &lt;code>fastai&lt;/code> python library to deliver a working ML model in few hours!&lt;/p></description></item><item><title>Detecting Solar Panels from satellite images part 1 -- data preparation🛰️</title><link>/posts/solar-panels-1/</link><pubDate>Tue, 02 Nov 2021 11:18:26 +0100</pubDate><guid>/posts/solar-panels-1/</guid><description>
-&lt;p>I&amp;rsquo;m writing a series of posts on detecting solar panels from satellite images at my company, &lt;a href="https://appsilon.com">Appsilon&lt;/a>.
-To be honest, not from satellite images but from &lt;a href="https://en.wikipedia.org/wiki/Orthophoto">orthophotos&lt;/a>.
-If you don&amp;rsquo;t know what are orthophotos, the good news is that &lt;a href="https://appsilon.com/using-ai-to-detect-solar-panels-part-1/">the first post has been released recently!&lt;/a>.&lt;/p></description></item><item><title>ML Data Versioning With DVC: How to manage machine learning data 🗃</title><link>/posts/ml-data-versioning-with-dvc/</link><pubDate>Wed, 13 Oct 2021 07:23:26 +0200</pubDate><guid>/posts/ml-data-versioning-with-dvc/</guid><description>
-Recently I wrote a post about DVC at my company&amp;rsquo;s, Appsilon blog. DVC is like a git, but for data, models and experiments. It also allows for creating an automated experiments pipelines.
-As a teaser I&amp;rsquo;ll just say that, having prepared scripts for model training and evaluating, when new data is added to the repo, the whole training is run automatically. Metrics are saved to appropriate files alongside with parameters, same with plots.</description></item></channel></rss>
+It&amp;rsquo;s important because different methods result in different:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Inference speed&lt;/li&gt;
+&lt;li&gt;Model size&lt;/li&gt;
+&lt;li&gt;Python environment size&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you are curious what are the ways to serialize model in PyTorch and how they compare, checkout my &lt;a href=&#34;https://appsilon.com/model-serialization-in-machine-learning/&#34;&gt;new post on Appsilon blog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SFI Conference Recording 🎥</title>
+      <link>/posts/sfi-conference-recording/</link>
+      <pubDate>Fri, 01 Jul 2022 23:07:06 +0200</pubDate>
+      <guid>/posts/sfi-conference-recording/</guid>
+      <description>&lt;p&gt;Finally the recording of the talk &lt;em&gt;StyleGAN w Twoich rękach&lt;/em&gt; from SFI 2022 is available online! 🎉&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PyTorch-Lightning &#43; Hydra to Boost Your PyTorch ⚡🐉</title>
+      <link>/posts/pytorch-hydra/</link>
+      <pubDate>Thu, 09 Jun 2022 00:38:25 +0200</pubDate>
+      <guid>/posts/pytorch-hydra/</guid>
+      <description>&lt;p&gt;When working with deep learning problems I usually use &lt;a href=&#34;https://pytorch.org/&#34;&gt;PyTorch&lt;/a&gt;.
+I like this framework as it gives me a lot of freedom and allows to write code in &lt;a href=&#34;https://docs.python-guide.org/writing/style/&#34;&gt;the pythonic way&lt;/a&gt;.
+Using bare pytorch unfortunately often means writing a lot of &lt;a href=&#34;https://en.wikipedia.org/wiki/Boilerplate_code&#34;&gt;boilerplate code&lt;/a&gt;, which no-one like.
+Another problem that arises during longer and larger projects is experiments running and configuration maintenance.
+I tackle those two problems by using &lt;a href=&#34;https://www.pytorchlightning.ai/&#34;&gt;&lt;code&gt;pytorch-lightning&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://hydra.cc/&#34;&gt;Hydra&lt;/a&gt;.
+Recently I described my approach in &lt;a href=&#34;https://appsilon.com/pytorch-lightning-hydra-templates-in-machine-learning/&#34;&gt;a post on the Appsilon blog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Copepods Oil Sac 🌊🛢👜</title>
+      <link>/posts/copepods-blogpost/</link>
+      <pubDate>Fri, 15 Apr 2022 16:25:14 +0200</pubDate>
+      <guid>/posts/copepods-blogpost/</guid>
+      <description>&lt;p&gt;Some time ago, I&amp;rsquo;ve worked on an oil sac (energy reservoir) detection in copepods (kind of zooplankton) for Université Laval.
+&lt;a href=&#34;/posts/ml4plankton-conference/&#34;&gt;Apart from presenting the results on the ML4Plankton conference&lt;/a&gt; I&amp;rsquo;ve published a detailed blog post on &lt;a href=&#34;https://appsilon.com/monitoring-marine-ecosystems-with-machine-learning/&#34;&gt;the Appsilon blog&lt;/a&gt; that I strongly encourage you to read!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Presentation at ML4Plankton Conference 🌊🐟</title>
+      <link>/posts/ml4plankton-conference/</link>
+      <pubDate>Fri, 08 Apr 2022 09:50:09 +0200</pubDate>
+      <guid>/posts/ml4plankton-conference/</guid>
+      <description>&lt;p&gt;Recently I was working at work on detecting the oil sac in &lt;a href=&#34;https://en.wikipedia.org/wiki/Copepod&#34;&gt;copepods&lt;/a&gt;.
+This is was a super cool problem in which we received data from professor &lt;a href=&#34;http://www.takuvik.ulaval.ca/team/maps_frederic.php&#34;&gt;Frédéric Maps&lt;/a&gt; from &lt;a href=&#34;https://www.ulaval.ca/en&#34;&gt;Université Laval&lt;/a&gt;.
+We together gave a talk on conference ML4Plankton that you can watch online!
+First Frederic gives some context on why this problem is important and later I explain methods used and problems you can find.
+Our talk is available online here:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>StyleGANv2 in Your Hands 💇👻</title>
+      <link>/posts/stylegan-in-your-hands/</link>
+      <pubDate>Mon, 14 Mar 2022 22:30:09 +0100</pubDate>
+      <guid>/posts/stylegan-in-your-hands/</guid>
+      <description>&lt;p&gt;This is the second post from micro-series preceding the SFI conference.
+In &lt;a href=&#34;/posts/playing-with-style-transfer/&#34;&gt;the first post&lt;/a&gt; I showed how easy it is to do the style transfer at home.
+Now, I would like to present you how to play with &lt;a href=&#34;https://github.com/NVlabs/stylegan2&#34;&gt;StyleGANv2&lt;/a&gt;.
+StyleGANv2 is &lt;a href=&#34;https://indipest.files.wordpress.com/2021/03/bw6d5zz.gif&#34;&gt;the second version of StyleGAN&lt;/a&gt;, they are very similar in core principals.
+We will be working with StyleGANv2 but I will refer to it as SG.
+There is a lot that can be said/explained about SG.
+Here I would like to focus on showing how to make your own experiments with SG instead of getting into SG&amp;rsquo;s details.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Streamlit Tutorial: How to Deploy Streamlit Apps on RStudio Connect 💰</title>
+      <link>/posts/solar-panels-4/</link>
+      <pubDate>Mon, 28 Feb 2022 20:23:42 +0100</pubDate>
+      <guid>/posts/solar-panels-4/</guid>
+      <description>&lt;p&gt;I wrote &lt;a href=&#34;https://appsilon.com/streamlit-tutorial-rstudio-connect/&#34;&gt;another post&lt;/a&gt; for Appsilon, this time about deploying &lt;a href=&#34;https://streamlit.io/&#34;&gt;streamlit&lt;/a&gt; applications on &lt;a href=&#34;https://www.rstudio.com/products/connect/&#34;&gt;RStudio Connect&lt;/a&gt; infrastructure.&lt;/p&gt;
+&lt;p&gt;This post might be totally useless for majority of audience, but &lt;strong&gt;a pure gold&lt;/strong&gt; for a few 💰.
+What is streamlit you can understand from &lt;a href=&#34;/posts/solar-panels-3/&#34;&gt;my previous post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Having a running app in your browser is already cool, but how cool is it to deploy your app on the internet?
+If you need an enterprise solution for hosting dashboards in RShiny/streamlit, RSConnect is the way!
+In &lt;a href=&#34;https://appsilon.com/streamlit-tutorial-rstudio-connect/&#34;&gt;this blog post&lt;/a&gt; I focused on presenting solutions for common problems you might encounter.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Playing With Style Transfer 🎨</title>
+      <link>/posts/playing-with-style-transfer/</link>
+      <pubDate>Sat, 05 Feb 2022 21:12:18 +0100</pubDate>
+      <guid>/posts/playing-with-style-transfer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;/posts/sfi-conference/&#34;&gt;As mentioned earlier&lt;/a&gt;, I will be giving a talk on &lt;a href=&#34;https://sfi.pl/en/&#34;&gt;the 17th SFI IT Academic Festival&lt;/a&gt; on the topic of style transfer and StyleGAN.
+In this post I would like to show you how easy it is to play with style transfer on your own!&lt;/p&gt;
+&lt;h2 id=&#34;to-tutorial-or-not-to-tutorial&#34;&gt;To tutorial or not to tutorial&lt;/h2&gt;
+&lt;p&gt;It might be obvious for you to check Tensorflow/PyTorch tutorials if you wanted to learn how to create style-transfer system.
+But what if you do not want to learn anything?
+Maybe all you want is just to do the style transfer on your photos?
+Apparently tutorials with colab notebooks are all you need!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SFI Conference 👨‍🏫🎉</title>
+      <link>/posts/sfi-conference/</link>
+      <pubDate>Thu, 20 Jan 2022 14:55:23 +0100</pubDate>
+      <guid>/posts/sfi-conference/</guid>
+      <description>&lt;p&gt;I am happy to share that I was invited (for the first time in my life!) to give a talk on a conference. 🎉
+It will be the &lt;a href=&#34;https://sfi.pl/en/&#34;&gt;17th SFI IT Academic Festival&lt;/a&gt;, organized by students from the &lt;a href=&#34;https://en.uj.edu.pl/en_GB/start&#34;&gt;Jagiellonian University&lt;/a&gt; in Cracow.
+The conference will be held on 14-16 of March 2022.&lt;/p&gt;
+&lt;p&gt;My lecture will be in Polish on topic &lt;em&gt;StyleGAN w Twoich rękach&lt;/em&gt; -&amp;gt; &lt;em&gt;StyleGAN in Your Hands&lt;/em&gt;, I will talk about transfer learning in general and later about &lt;a href=&#34;https://github.com/NVlabs/stylegan2&#34;&gt;StyleGANv2&lt;/a&gt;.
+The exact time and place will posted on SFI webpage.
+You can expect some materials regarding the talk later on my blog!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Detecting Solar Panels from satellite images part 3 - PoC model deployment in streamlit 🎈</title>
+      <link>/posts/solar-panels-3/</link>
+      <pubDate>Fri, 14 Jan 2022 20:23:36 +0100</pubDate>
+      <guid>/posts/solar-panels-3/</guid>
+      <description>&lt;p&gt;This one is short. :)&lt;/p&gt;
+&lt;p&gt;Usually when we are doing ML experiments, training models, preparing &lt;a href=&#34;https://en.wikipedia.org/wiki/Exploratory_data_analysis&#34;&gt;EDA&lt;/a&gt;, we want to share the results with the World at some point.
+One of the quickest and easiest ways to do so in python, to create a simple webapp with results, is a super-cool library &lt;a href=&#34;https://streamlit.io/&#34;&gt;streamlit&lt;/a&gt;!
+If you thought building an app in &lt;code&gt;flask&lt;/code&gt; is easy, you will be amazed by streamlit simplicity.
+Actually you do not have to create an ML related app, nobody checks that ;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Detecting Solar Panels from satellite images part 2 -- machine learning in fastai 🤖</title>
+      <link>/posts/solar-panels-2/</link>
+      <pubDate>Mon, 29 Nov 2021 16:18:26 +0100</pubDate>
+      <guid>/posts/solar-panels-2/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;/posts/solar-panels-1/&#34;&gt;As mentioned a month ago&lt;/a&gt;, I write a series of posts on detecting solar panels from satellite images at my company, &lt;a href=&#34;https://appsilon.com&#34;&gt;Appsilon&lt;/a&gt;.
+In this post I focus on using &lt;code&gt;fastai&lt;/code&gt; python library to deliver a working ML model in few hours!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Detecting Solar Panels from satellite images part 1 -- data preparation🛰️</title>
+      <link>/posts/solar-panels-1/</link>
+      <pubDate>Tue, 02 Nov 2021 11:18:26 +0100</pubDate>
+      <guid>/posts/solar-panels-1/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m writing a series of posts on detecting solar panels from satellite images at my company, &lt;a href=&#34;https://appsilon.com&#34;&gt;Appsilon&lt;/a&gt;.
+To be honest, not from satellite images but from &lt;a href=&#34;https://en.wikipedia.org/wiki/Orthophoto&#34;&gt;orthophotos&lt;/a&gt;.
+If you don&amp;rsquo;t know what are orthophotos, the good news is that &lt;a href=&#34;https://appsilon.com/using-ai-to-detect-solar-panels-part-1/&#34;&gt;the first post has been released recently!&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ML Data Versioning With DVC: How to manage machine learning data 🗃</title>
+      <link>/posts/ml-data-versioning-with-dvc/</link>
+      <pubDate>Wed, 13 Oct 2021 07:23:26 +0200</pubDate>
+      <guid>/posts/ml-data-versioning-with-dvc/</guid>
+      <description>&lt;p&gt;Recently I wrote &lt;a href=&#34;https://appsilon.com/ml-data-versioning-with-dvc/&#34;&gt;a post about DVC at my company&amp;rsquo;s, Appsilon blog&lt;/a&gt;.
+&lt;a href=&#34;https://dvc.org/&#34;&gt;DVC&lt;/a&gt; is like a git, but for data, models and experiments.
+It also allows for creating an automated experiments pipelines.&lt;/p&gt;
+&lt;p&gt;As a teaser I&amp;rsquo;ll just say that, having prepared scripts for model training and evaluating, when new data is added to the repo, the whole training is run automatically.
+Metrics are saved to appropriate files alongside with parameters, same with plots.
+However, if you just upload a new test data, a part of pipeline will be run only.
+This is a pretty simple case, but DVC is a very powerful tool, check out &lt;a href=&#34;https://dvc.org/doc/use-cases&#34;&gt;different use cases in their docs&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

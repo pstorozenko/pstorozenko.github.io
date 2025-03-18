@@ -1,17 +1,90 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Julia on Pasza's blog</title><link>/tags/julia/</link><description>Recent content in Julia on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Tue, 04 Jan 2022 21:00:59 +0100</lastBuildDate><atom:link href="/tags/julia/index.xml" rel="self" type="application/rss+xml"/><item><title>Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄</title><link>/posts/aoc2021-minimizing-loss/</link><pubDate>Tue, 04 Jan 2022 21:00:59 +0100</pubDate><guid>/posts/aoc2021-minimizing-loss/</guid><description>
-This year I took part in the advent of code event. If you&amp;rsquo;ve never heard about it, I attach tl;dr bellow. Today, I&amp;rsquo;d like to share my solution for Day 7 problem, because I find it very interesting.
-In the first half of the post I describe comparison in time complexity of two solutions (programming). In the second half I outline the proof of one solution (math). What is the Advent of Code # For sure you had some kind of advent calendar in the past (or you still have), e.</description></item><item><title>Practical Mathematical Optimization 🏡🛒🧃</title><link>/posts/practical-mathematical-optimization/</link><pubDate>Sun, 21 Nov 2021 14:18:35 +0100</pubDate><guid>/posts/practical-mathematical-optimization/</guid><description>
-&lt;p>In &lt;a href="/posts/mathematical-optimization/">the previous post&lt;/a> I&amp;rsquo;ve presented the basics of stating mathematical optimization problems and JuMP framework in julia.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Julia on Pasza&#39;s blog</title>
+    <link>/tags/julia/</link>
+    <description>Recent content in Julia on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Tue, 04 Jan 2022 21:00:59 +0100</lastBuildDate>
+    <atom:link href="/tags/julia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Minimizing The Sum of Absolute Values -- Day 7 Advent of Code part 1 🎄</title>
+      <link>/posts/aoc2021-minimizing-loss/</link>
+      <pubDate>Tue, 04 Jan 2022 21:00:59 +0100</pubDate>
+      <guid>/posts/aoc2021-minimizing-loss/</guid>
+      <description>&lt;p&gt;This year I took part in the &lt;a href=&#34;https://adventofcode.com/&#34;&gt;advent of code event&lt;/a&gt;.
+If you&amp;rsquo;ve never heard about it, I attach tl;dr bellow.
+Today, I&amp;rsquo;d like to share my solution for &lt;a href=&#34;https://adventofcode.com/2021/day/7&#34;&gt;Day 7 problem&lt;/a&gt;, because I find it &lt;a href=&#34;https://c.tenor.com/cU06Rf0SxeEAAAAC/rhel1-captain-obvious.gif&#34;&gt;very interesting&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In the first half of the post I describe comparison in time complexity of two solutions (programming).&lt;/li&gt;
+&lt;li&gt;In the second half I outline the proof of one solution (math).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;what-is-the-advent-of-code&#34;&gt;What is the Advent of Code&lt;/h2&gt;
+&lt;p&gt;For sure you had some kind of advent calendar in the past (or you still have), e.g. with little chocolates.
+You are supposed to eat one chocolate per day while counting days to Christmas Eve.
+AoC is an advent calendar for coders.
+Every day, a new programming task is revealed.
+You can compete to be high either in a global ranking (which is unreasonably difficult) or among your friends in a private ranking (that&amp;rsquo;s feasible, depending on your friends).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Practical Mathematical Optimization 🏡🛒🧃</title>
+      <link>/posts/practical-mathematical-optimization/</link>
+      <pubDate>Sun, 21 Nov 2021 14:18:35 +0100</pubDate>
+      <guid>/posts/practical-mathematical-optimization/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;/posts/mathematical-optimization/&#34;&gt;the previous post&lt;/a&gt; I&amp;rsquo;ve presented the basics of stating mathematical optimization problems and JuMP framework in julia.
 Today let&amp;rsquo;s follow up with concrete examples!
-Please checkout &lt;a href="https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/practical-mathematical-optimization/main.ipynb">the accompanying jupyter notebook&lt;/a> even though you might not feel like a programmer.
-It&amp;rsquo;s very clear and shows how easy it is to obtain solutions!&lt;/p></description></item><item><title>Introduction Into Mathematical Optimization Way of Thinking 🧮</title><link>/posts/mathematical-optimization/</link><pubDate>Sun, 07 Nov 2021 19:40:13 +0100</pubDate><guid>/posts/mathematical-optimization/</guid><description>
-In the post about fitting pizzas inside another pizza I&amp;rsquo;ve shown the following picture and promised a post about recreating it.
-Pizzas packed in pizza However, I would not like to assume that everyone is familiar with the optimization theory (you may graduate from Computer Science and still not know a lot) so I want to present an introduction here as high school math and quadratic equations are enough to understand those concepts.</description></item><item><title>How to Sum Like a Boss (Almost) Σ</title><link>/posts/how-to-sum-like-a-boss/</link><pubDate>Sat, 16 Oct 2021 08:42:59 +0200</pubDate><guid>/posts/how-to-sum-like-a-boss/</guid><description>
-&lt;p>In a recent post, I presented how memory layout may influence a matrix summing speed.
+Please checkout &lt;a href=&#34;https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/practical-mathematical-optimization/main.ipynb&#34;&gt;the accompanying jupyter notebook&lt;/a&gt; even though you might not feel like a programmer.
+It&amp;rsquo;s very clear and shows how easy it is to obtain solutions!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introduction Into Mathematical Optimization Way of Thinking 🧮</title>
+      <link>/posts/mathematical-optimization/</link>
+      <pubDate>Sun, 07 Nov 2021 19:40:13 +0100</pubDate>
+      <guid>/posts/mathematical-optimization/</guid>
+      <description>&lt;p&gt;In the post about fitting pizzas inside another pizza I&amp;rsquo;ve shown the following picture and promised a post about recreating it.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;/posts/pizza-twice-as-big/circles_in_circle.png&#34;
+         alt=&#34;Pizzas packed in pizza&#34;/&gt; &lt;figcaption&gt;
+            pizzas in pizza&lt;p&gt;Pizzas packed in pizza&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;However, I would not like to assume that everyone is familiar with the &lt;a href=&#34;https://en.wikipedia.org/wiki/Mathematical_optimization&#34;&gt;optimization theory&lt;/a&gt; (you may graduate from Computer Science and still not know a lot) so I want to present an introduction here as high school math and quadratic equations are enough to understand those concepts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Sum Like a Boss (Almost) Σ</title>
+      <link>/posts/how-to-sum-like-a-boss/</link>
+      <pubDate>Sat, 16 Oct 2021 08:42:59 +0200</pubDate>
+      <guid>/posts/how-to-sum-like-a-boss/</guid>
+      <description>&lt;p&gt;In a recent post, I presented how memory layout may influence a matrix summing speed.
 It&amp;rsquo;s interesting to see that there are plenty of pitfalls we might fall into when writing sum function and memory layout is not the only one.
-Please first &lt;a href="/posts/speed-of-traversing-matrix/" title="Post on summing by rows vs cols first">read the previous post on summing&lt;/a> if you haven&amp;rsquo;t already.&lt;/p>
-&lt;p>Without thinking &lt;em>why&lt;/em>, let&amp;rsquo;s take a look at those two functions:&lt;/p></description></item><item><title>Speed of Traversing Matrix → vs ↓</title><link>/posts/speed-of-traversing-matrix/</link><pubDate>Fri, 01 Oct 2021 22:24:55 +0200</pubDate><guid>/posts/speed-of-traversing-matrix/</guid><description>
-Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
-Why it differs whetter matrix is traversed by rows or columns? # Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively.</description></item><item><title>Pizza Twice as Big 🍕</title><link>/posts/pizza-twice-as-big/</link><pubDate>Sat, 04 Sep 2021 11:01:14 +0200</pubDate><guid>/posts/pizza-twice-as-big/</guid><description>
-One morning I was standing in a queue in my local bakery, and I&amp;rsquo;ve seen a woman buying one of those small quasi-pizzas. Pizzas ~20cm in diameter. Immediately I thought about how profitable it is when compared to the full-size 42cm pizza. Since the area of a larger pizza is 4 times bigger, of course, it&amp;rsquo;s not worth buying smaller pizzas.
-Then I thought about fitting smaller pizzas inside the bigger one.</description></item></channel></rss>
+Please first &lt;a href=&#34;/posts/speed-of-traversing-matrix/&#34; title=&#34;Post on summing by rows vs cols first&#34;&gt;read the previous post on summing&lt;/a&gt; if you haven&amp;rsquo;t already.&lt;/p&gt;
+&lt;p&gt;Without thinking &lt;em&gt;why&lt;/em&gt;, let&amp;rsquo;s take a look at those two functions:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Speed of Traversing Matrix → vs ↓</title>
+      <link>/posts/speed-of-traversing-matrix/</link>
+      <pubDate>Fri, 01 Oct 2021 22:24:55 +0200</pubDate>
+      <guid>/posts/speed-of-traversing-matrix/</guid>
+      <description>&lt;p&gt;Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.&lt;/p&gt;
+&lt;h2 id=&#34;why-it-differs-whetter-matrix-is-traversed-by-rows-or-columns&#34;&gt;Why it differs whetter matrix is traversed by rows or columns?&lt;/h2&gt;
+&lt;p&gt;Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers.
+Therefore there are two schemas one can follow, row-first and column-first.
+Historically they are called C-style and Fortran-style respectively.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pizza Twice as Big 🍕</title>
+      <link>/posts/pizza-twice-as-big/</link>
+      <pubDate>Sat, 04 Sep 2021 11:01:14 +0200</pubDate>
+      <guid>/posts/pizza-twice-as-big/</guid>
+      <description>&lt;p&gt;One morning I was standing in a queue in my local bakery, and I&amp;rsquo;ve seen a woman buying one of those small quasi-pizzas.
+Pizzas ~20cm in diameter.
+Immediately I thought about how profitable it is when compared to the full-size 42cm pizza.
+Since the area of a larger pizza is 4 times bigger, of course, it&amp;rsquo;s not worth buying smaller pizzas.&lt;/p&gt;
+&lt;p&gt;Then I thought about fitting smaller pizzas inside the bigger one.
+But first let&amp;rsquo;s think about filling a square with smaller squares.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

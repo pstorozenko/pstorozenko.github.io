@@ -1,59 +1,261 @@
-<!doctype html><html lang=en><head><title>Speed of Traversing Matrix → vs ↓ ::
-Pasza's blog — a simple blog about complex things
-</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
-Why it differs whetter matrix is traversed by rows or columns? # Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively."><meta name=keywords content="piotr pasza pasha storozenko ml data science machine learning"><meta name=robots content="noodp"><link rel=canonical href=/posts/speed-of-traversing-matrix/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.css integrity=sha384-ysFyB7Is//Q1JNgERb0bLJokXKM8eWJsjEutGvthoHtBilHWgbdmbYkQZdwCIGIq crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.js integrity=sha384-UWjC+k927Mtx6WQF5SzKTXLLrOYmzs69HvkUjiKvUwSOljzc+C6PrGquNpOvJBBo crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-PR8Z9SJC7F",{anonymize_ip:!1})}</script><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="Speed of Traversing Matrix → vs ↓"><meta name=twitter:description content="Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
-Why it differs whetter matrix is traversed by rows or columns? # Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively."><meta property="og:title" content="Speed of Traversing Matrix → vs ↓"><meta property="og:description" content="Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
-Why it differs whetter matrix is traversed by rows or columns? # Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively."><meta property="og:type" content="article"><meta property="og:url" content="/posts/speed-of-traversing-matrix/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-10-01T22:24:55+02:00"><meta property="article:modified_time" content="2021-10-01T22:24:55+02:00"></head><body class=light-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span><span class=logo__text>pasza's blog</span>
-<span class=logo__cursor></span>
-</a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About me</a></li><li><a href=/useful-materials>Useful materials</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About me</a></li><li><a href=/useful-materials>Useful materials</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-</span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Speed of Traversing Matrix → vs ↓</h1><div class=post-meta><span class=post-date>2021-10-01</span></div><span class=post-tags><a href=/tags/programming/>#programming</a>&nbsp;
-<a href=/tags/julia/>#julia</a>&nbsp;
-<a href=/tags/performance/>#performance</a>&nbsp;
-<a href=/tags/sums/>#sums</a>&nbsp;</span><div class=post-content><p>Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.</p><h2 id=why-it-differs-whetter-matrix-is-traversed-by-rows-or-columns>Why it differs whetter matrix is traversed by rows or columns?
-<a href=#why-it-differs-whetter-matrix-is-traversed-by-rows-or-columns class=h-anchor aria-hidden=true>#</a></h2><p>Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers.
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Speed of Traversing Matrix → vs ↓ | Pasza&#39;s blog</title>
+<meta name="keywords" content="programming, julia, performance, sums">
+<meta name="description" content="Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
+Why it differs whetter matrix is traversed by rows or columns?
+Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers.
 Therefore there are two schemas one can follow, row-first and column-first.
-Historically they are called C-style and Fortran-style respectively.</p><p>For example, given an array $A$:</p><p>$$
+Historically they are called C-style and Fortran-style respectively.">
+<meta name="author" content="">
+<link rel="canonical" href="/posts/speed-of-traversing-matrix/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="/posts/speed-of-traversing-matrix/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PR8Z9SJC7F');
+        }
+      </script><meta property="og:url" content="/posts/speed-of-traversing-matrix/">
+  <meta property="og:site_name" content="Pasza&#39;s blog">
+  <meta property="og:title" content="Speed of Traversing Matrix → vs ↓">
+  <meta property="og:description" content="Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
+Why it differs whetter matrix is traversed by rows or columns? Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-10-01T22:24:55+02:00">
+    <meta property="article:modified_time" content="2021-10-01T22:24:55+02:00">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Julia">
+    <meta property="article:tag" content="Performance">
+    <meta property="article:tag" content="Sums">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Speed of Traversing Matrix → vs ↓">
+<meta name="twitter:description" content="Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
+Why it differs whetter matrix is traversed by rows or columns?
+Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers.
+Therefore there are two schemas one can follow, row-first and column-first.
+Historically they are called C-style and Fortran-style respectively.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/posts/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Speed of Traversing Matrix → vs ↓",
+      "item": "/posts/speed-of-traversing-matrix/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Speed of Traversing Matrix → vs ↓",
+  "name": "Speed of Traversing Matrix → vs ↓",
+  "description": "Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.\nWhy it differs whetter matrix is traversed by rows or columns? Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively.\n",
+  "keywords": [
+    "programming", "julia", "performance", "sums"
+  ],
+  "articleBody": "Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.\nWhy it differs whetter matrix is traversed by rows or columns? Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively.\nFor example, given an array $A$:\n$$ A = \\begin{pmatrix} 1 \u0026 2 \u0026 3 \u0026 4 \\\\ 5 \u0026 6 \u0026 7 \u0026 8 \\\\ 9 \u0026 10 \u0026 11 \u0026 12 \\\\ 13 \u0026 14 \u0026 15 \u0026 16 \\end{pmatrix}, $$\nnumber can be either stored in C-style as in C, C++: $$ A_C = (1\\ 2\\ 3\\ 4\\ 5\\ 6\\ 7\\ \\dots\\ 16), $$\nor in F-style as in fortran, julia, mat***: $$ A_F = (1\\ 5\\ 9\\ 13\\ 2\\ 6\\ 10 \\dots\\ 16). $$\nnumpy ndarrays are C-style by default, but you can change it by specifying order parameter when creating an array. julia on the other hand uses F-style. In the next section you will see why is it important.\nBenchmarking matrix summing Take a look at those two functions. The difference is only in for’s order.\nIn function sum_by_row, matrix $A$ is traversed for each row, for each column. In function sum_by_column, matrix $A$ is traversed for each column, for each row. function sum_by_row(A) # this is a claver julia trick to have s = 0 (Int) if matrix A contains integers # and s = 0.0 (Float64) when A contains floating point numbers # this also allows to sum any abstract matrix that contains summable elements s = zero(eltype(A)) n, m = size(A) for i in 1:n for j in 1:m s += A[i, j] end end return s end function sum_by_col(A) s = zero(eltype(A)) n, m = size(A) for j in 1:m for i in 1:n s += A[i, j] end end return s end Single matrix summing benchmarks Now let’s take a look at benchmark times of summing matrix of size 3000x3000.\nA = rand(3000, 3000) @benchmark sum_by_col(A) Range (min … max): 15.548 ms … 22.414 ms ┊ GC (min … max): 0.00% … 0.00% Time (median): 15.669 ms ┊ GC (median): 0.00% Time (mean ± σ): 16.351 ms ± 1.327 ms ┊ GC (mean ± σ): 0.00% ± 0.00% █▆▂ ▂ ██████▇▅▁▁▄▅▄▆▁▇▆▄▁▇▄▁▅▄▆▅▅▆▄▁▅▄▆▆▄▆▅▄▄▅▁▅▅▅▁▅▄▅▄▄▄▅▁▁▄▁▄▁▄ ▆ 15.5 ms Histogram: log(frequency) by time 20.6 ms \u003c Memory estimate: 16 bytes, allocs estimate: 1. @benchmark sum_by_row(A) BenchmarkTools.Trial: 65 samples with 1 evaluation. Range (min … max): 72.929 ms … 175.824 ms ┊ GC (min … max): 0.00% … 0.00% Time (median): 75.294 ms ┊ GC (median): 0.00% Time (mean ± σ): 77.286 ms ± 12.711 ms ┊ GC (mean ± σ): 0.00% ± 0.00% █▅ ▂ ████▁▁▇▁▄▄▅▄▅▅▁▇▅▄▄▇▅▄▅▄▁▁▄▅▁▁▁▁▁▄▁▁▄▁▅▄▁▅▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄ ▁ 72.9 ms Histogram: frequency by time 85.2 ms \u003c Memory estimate: 16 bytes, allocs estimate: 1. Summing with outer loop on columns is almost 5 times faster on average!!!\nDifferent sizes matrix summing benchmarks Now let’s explore how times are changing with matrix $A$ size ranging from 512x512 to 8192x8192.\nNotebook with benchmarks is available at GitHub.\nThe summing mysteries We can observe two interesting behaviors:\nSumming by columns first is constantly faster the summing by rows first. Summing by rows is not only slower, but also exhibits a peculiar irregularities. The answer to the first question is as following. The problem with traversing matrix by rows in julia is the matrix memory layout and how it interacts with processors cache memory. When you access A[i, j], not only specific A[i, j] element is copied to processors cache, but a bigger chunk of continuous memory. The computer predicts that if you’ve accessed A[i, j] element, you might want to access the next in the near future. In a column-major memory layout as in julia, the next element is A[i + 1, j], so sum_by_col function is memory layout friendly (inner loop goes over i). In the opposite in sum_by_row, when you use A[i, j] element, processor predicts that you may want to use A[i + 1, j] in the near future, while what you really need is A[i, j + 1], element that may be far away and require different part of memory copied into cache.\nThe second behavior however surprised me and I’m actively looking for the answer :)\nHow should I sum the matrix then? Just use the provided sum function. :) It takes care of the above effects and more. However, when you have to traverse the whole matrix and conduct some more advanced calculations then it’s important to follow the memory layout if you want to be efficient. Look forward to applicable examples in upcoming posts!\n",
+  "wordCount" : "798",
+  "inLanguage": "en",
+  "datePublished": "2021-10-01T22:24:55+02:00",
+  "dateModified": "2021-10-01T22:24:55+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/posts/speed-of-traversing-matrix/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pasza's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Pasza&#39;s blog (Alt + H)">Pasza&#39;s blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="/about" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+            <li>
+                <a href="/useful-materials" title="Useful materials">
+                    <span>Useful materials</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Speed of Traversing Matrix → vs ↓
+    </h1>
+    <div class="post-meta"><span title='2021-10-01 22:24:55 +0200 +0200'>October 1, 2021</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.</p>
+<h2 id="why-it-differs-whetter-matrix-is-traversed-by-rows-or-columns">Why it differs whetter matrix is traversed by rows or columns?<a hidden class="anchor" aria-hidden="true" href="#why-it-differs-whetter-matrix-is-traversed-by-rows-or-columns">#</a></h2>
+<p>Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers.
+Therefore there are two schemas one can follow, row-first and column-first.
+Historically they are called C-style and Fortran-style respectively.</p>
+<p>For example, given an array $A$:</p>
+<p>$$
 A = \begin{pmatrix}
-1 & 2 & 3 & 4 \\ 5 & 6 & 7 & 8 \\ 9 & 10 & 11 & 12 \\ 13 & 14 & 15 & 16
+1 &amp; 2 &amp; 3 &amp; 4 \\ 5 &amp; 6 &amp; 7 &amp; 8 \\  9 &amp; 10 &amp; 11 &amp; 12 \\ 13 &amp; 14 &amp; 15 &amp; 16
 \end{pmatrix},
-$$</p><p>number can be either stored in C-style as in C, C++:
+$$</p>
+<p>number can be either stored in C-style as in C, C++:
 $$
 A_C = (1\ 2\ 3\ 4\ 5\ 6\ 7\ \dots\ 16),
-$$</p><p>or in F-style as in fortran, julia, mat***:
+$$</p>
+<p>or in F-style as in fortran, julia, mat***:
 $$
 A_F = (1\ 5\ 9\ 13\ 2\ 6\ 10 \dots\ 16).
-$$</p><p><code>numpy</code> ndarrays are C-style by default, but you can change it by specifying <code>order</code> <a href=https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy-array>parameter when creating an array</a>.
+$$</p>
+<p><code>numpy</code> ndarrays are C-style by default, but you can change it by specifying <code>order</code> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy-array">parameter when creating an array</a>.
 <code>julia</code> on the other hand uses F-style.
-In the next section you will see why is it important.</p><h2 id=benchmarking-matrix-summing>Benchmarking matrix summing
-<a href=#benchmarking-matrix-summing class=h-anchor aria-hidden=true>#</a></h2><p>Take a look at those two functions.
-The difference is only in for&rsquo;s order.</p><ul><li>In function <code>sum_by_row</code>, matrix $A$ is traversed <em>for each row, for each column</em>.</li><li>In function <code>sum_by_column</code>, matrix $A$ is traversed <em>for each column, for each row</em>.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia><span style=display:flex><span><span style=color:#66d9ef>function</span> sum_by_row(A)
-</span></span><span style=display:flex><span>    <span style=color:#75715e># this is a claver julia trick to have s = 0 (Int) if matrix A contains integers</span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e># and s = 0.0 (Float64) when A contains floating point numbers</span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e># this also allows to sum any abstract matrix that contains summable elements</span>
-</span></span><span style=display:flex><span>    s <span style=color:#f92672>=</span> zero(eltype(A))
-</span></span><span style=display:flex><span>    n, m <span style=color:#f92672>=</span> size(A)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#66d9ef>in</span> <span style=color:#ae81ff>1</span><span style=color:#f92672>:</span>n
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> j <span style=color:#66d9ef>in</span> <span style=color:#ae81ff>1</span><span style=color:#f92672>:</span>m
-</span></span><span style=display:flex><span>            s <span style=color:#f92672>+=</span> A[i, j]
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>end</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> s
-</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia><span style=display:flex><span><span style=color:#66d9ef>function</span> sum_by_col(A)
-</span></span><span style=display:flex><span>    s <span style=color:#f92672>=</span> zero(eltype(A))
-</span></span><span style=display:flex><span>    n, m <span style=color:#f92672>=</span> size(A)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> j <span style=color:#66d9ef>in</span> <span style=color:#ae81ff>1</span><span style=color:#f92672>:</span>m
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#66d9ef>in</span> <span style=color:#ae81ff>1</span><span style=color:#f92672>:</span>n
-</span></span><span style=display:flex><span>            s <span style=color:#f92672>+=</span> A[i, j]
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>end</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> s
-</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
-</span></span></code></pre></div><h3 id=single-matrix-summing-benchmarks>Single matrix summing benchmarks
-<a href=#single-matrix-summing-benchmarks class=h-anchor aria-hidden=true>#</a></h3><p>Now let&rsquo;s take a look at benchmark times of summing matrix of size 3000x3000.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia><span style=display:flex><span>A <span style=color:#f92672>=</span> rand(<span style=color:#ae81ff>3000</span>, <span style=color:#ae81ff>3000</span>)
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@benchmark</span> sum_by_col(A)
-</span></span></code></pre></div><pre tabindex=0><code> Range (min … max):  15.548 ms … 22.414 ms  ┊ GC (min … max): 0.00% … 0.00%
+In the next section you will see why is it important.</p>
+<h2 id="benchmarking-matrix-summing">Benchmarking matrix summing<a hidden class="anchor" aria-hidden="true" href="#benchmarking-matrix-summing">#</a></h2>
+<p>Take a look at those two functions.
+The difference is only in for&rsquo;s order.</p>
+<ul>
+<li>In function <code>sum_by_row</code>, matrix $A$ is traversed <em>for each row, for each column</em>.</li>
+<li>In function <code>sum_by_column</code>, matrix $A$ is traversed <em>for each column, for each row</em>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> sum_by_row(A)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># this is a claver julia trick to have s = 0 (Int) if matrix A contains integers</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># and s = 0.0 (Float64) when A contains floating point numbers</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># this also allows to sum any abstract matrix that contains summable elements</span>
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> zero(eltype(A))
+</span></span><span style="display:flex;"><span>    n, m <span style="color:#f92672">=</span> size(A)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>n
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>m
+</span></span><span style="display:flex;"><span>            s <span style="color:#f92672">+=</span> A[i, j]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> s
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> sum_by_col(A)
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> zero(eltype(A))
+</span></span><span style="display:flex;"><span>    n, m <span style="color:#f92672">=</span> size(A)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> j <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>m
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>n
+</span></span><span style="display:flex;"><span>            s <span style="color:#f92672">+=</span> A[i, j]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> s
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="single-matrix-summing-benchmarks">Single matrix summing benchmarks<a hidden class="anchor" aria-hidden="true" href="#single-matrix-summing-benchmarks">#</a></h3>
+<p>Now let&rsquo;s take a look at benchmark times of summing matrix of size 3000x3000.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>A <span style="color:#f92672">=</span> rand(<span style="color:#ae81ff">3000</span>, <span style="color:#ae81ff">3000</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@benchmark</span> sum_by_col(A)
+</span></span></code></pre></div><pre tabindex="0"><code> Range (min … max):  15.548 ms … 22.414 ms  ┊ GC (min … max): 0.00% … 0.00%
  Time  (median):     15.669 ms              ┊ GC (median):    0.00%
  Time  (mean ± σ):   16.351 ms ±  1.327 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%
 
@@ -62,8 +264,8 @@ The difference is only in for&rsquo;s order.</p><ul><li>In function <code>sum_by
   15.5 ms      Histogram: log(frequency) by time      20.6 ms &lt;
 
  Memory estimate: 16 bytes, allocs estimate: 1.
-</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-julia data-lang=julia><span style=display:flex><span><span style=color:#a6e22e>@benchmark</span> sum_by_row(A)
-</span></span></code></pre></div><pre tabindex=0><code> BenchmarkTools.Trial: 65 samples with 1 evaluation.
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#a6e22e">@benchmark</span> sum_by_row(A)
+</span></span></code></pre></div><pre tabindex="0"><code> BenchmarkTools.Trial: 65 samples with 1 evaluation.
  Range (min … max):  72.929 ms … 175.824 ms  ┊ GC (min … max): 0.00% … 0.00%
  Time  (median):     75.294 ms               ┊ GC (median):    0.00%
  Time  (mean ± σ):   77.286 ms ±  12.711 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%
@@ -73,18 +275,113 @@ The difference is only in for&rsquo;s order.</p><ul><li>In function <code>sum_by
   72.9 ms         Histogram: frequency by time         85.2 ms &lt;
 
  Memory estimate: 16 bytes, allocs estimate: 1.
-</code></pre><p>Summing with outer loop on columns is almost <strong>5 times faster</strong> on average!!!</p><h3 id=different-sizes-matrix-summing-benchmarks>Different sizes matrix summing benchmarks
-<a href=#different-sizes-matrix-summing-benchmarks class=h-anchor aria-hidden=true>#</a></h3><p>Now let&rsquo;s explore how times are changing with matrix $A$ size ranging from 512x512 to 8192x8192.</p><p><img alt="Summing over rows vs columns benchmark" src=/posts/speed-of-traversing-matrix/benchmark.png></p><p>Notebook with benchmarks <a href=https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/speed-of-traversing-matrix/summing.ipynb>is available at GitHub</a>.</p><h2 id=the-summing-mysteries>The summing mysteries
-<a href=#the-summing-mysteries class=h-anchor aria-hidden=true>#</a></h2><p>We can observe two interesting behaviors:</p><ol><li>Summing by columns first is constantly faster the summing by rows first.</li><li>Summing by rows is not only slower, but also exhibits a peculiar irregularities.</li></ol><p>The answer to the first question is as following.
+</code></pre><p>Summing with outer loop on columns is almost <strong>5 times faster</strong> on average!!!</p>
+<h3 id="different-sizes-matrix-summing-benchmarks">Different sizes matrix summing benchmarks<a hidden class="anchor" aria-hidden="true" href="#different-sizes-matrix-summing-benchmarks">#</a></h3>
+<p>Now let&rsquo;s explore how times are changing with matrix $A$ size ranging from 512x512 to 8192x8192.</p>
+<p><img alt="Summing over rows vs columns benchmark" loading="lazy" src="/posts/speed-of-traversing-matrix/benchmark.png"></p>
+<p>Notebook with benchmarks <a href="https://github.com/pstorozenko/pstorozenko.github.io/blob/main/code/speed-of-traversing-matrix/summing.ipynb">is available at GitHub</a>.</p>
+<h2 id="the-summing-mysteries">The summing mysteries<a hidden class="anchor" aria-hidden="true" href="#the-summing-mysteries">#</a></h2>
+<p>We can observe two interesting behaviors:</p>
+<ol>
+<li>Summing by columns first is constantly faster the summing by rows first.</li>
+<li>Summing by rows is not only slower, but also exhibits a peculiar irregularities.</li>
+</ol>
+<p>The answer to the first question is as following.
 The problem with traversing matrix by rows in julia is the matrix memory layout and how it interacts with processors cache memory.
 When you access <code>A[i, j]</code>, not only specific <code>A[i, j]</code> element is copied to processors cache, but a bigger chunk of continuous memory.
 The computer predicts that if you&rsquo;ve accessed <code>A[i, j]</code> element, you might want to access <strong>the next</strong> in the near future.
 In a column-major memory layout as in julia, the next element is <code>A[i + 1, j]</code>, so <code>sum_by_col</code> function is <em>memory layout friendly</em> (inner loop goes over <code>i</code>).
-In the opposite in <code>sum_by_row</code>, when you use <code>A[i, j]</code> element, processor predicts that you may want to use <code>A[i + 1, j]</code> in the near future, while what you really need is <code>A[i, j + 1]</code>, element that may be far away and require different part of memory copied into cache.</p><p>The second behavior however surprised me and I&rsquo;m actively looking for the answer :)</p><h2 id=how-should-i-sum-the-matrix-then>How should I sum the matrix then?
-<a href=#how-should-i-sum-the-matrix-then class=h-anchor aria-hidden=true>#</a></h2><p>Just use the provided <code>sum</code> function. :)
+In the opposite in <code>sum_by_row</code>, when you use <code>A[i, j]</code> element, processor predicts that you may want to use <code>A[i + 1, j]</code> in the near future, while what you really need is <code>A[i, j + 1]</code>, element that may be far away and require different part of memory copied into cache.</p>
+<p>The second behavior however surprised me and I&rsquo;m actively looking for the answer :)</p>
+<h2 id="how-should-i-sum-the-matrix-then">How should I sum the matrix then?<a hidden class="anchor" aria-hidden="true" href="#how-should-i-sum-the-matrix-then">#</a></h2>
+<p>Just use the provided <code>sum</code> function. :)
 It takes care of the above effects and more.
 However, when you have to traverse the whole matrix and conduct some more advanced calculations then it&rsquo;s important to follow the memory layout if you want to be efficient.
-Look forward to applicable examples in upcoming posts!</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=/posts/ml-data-versioning-with-dvc/><span class=button__icon>←</span>
-<span class=button__text>ML Data Versioning With DVC: How to manage machine learning data 🗃</span>
-</a></span><span class="button next"><a href=/posts/leuven-ring-problem/><span class=button__text>The Leuven Ring Problem ○</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user">Piotr Pasza Storożenko</div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-PR8Z9SJC7F",{anonymize_ip:!1})}</script></body></html>
+Look forward to applicable examples in upcoming posts!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/programming/">Programming</a></li>
+      <li><a href="/tags/julia/">Julia</a></li>
+      <li><a href="/tags/performance/">Performance</a></li>
+      <li><a href="/tags/sums/">Sums</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>Piotr Pasza Storożenko</span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

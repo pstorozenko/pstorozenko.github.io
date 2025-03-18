@@ -1,79 +1,402 @@
-<!doctype html><html lang=en><head><title>StyleGANv2 in Your Hands 💇👻 ::
-Pasza's blog — a simple blog about complex things
-</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="This is the second post from micro-series preceding the SFI conference. In the first post I showed how easy it is to do the style transfer at home. Now, I would like to present you how to play with StyleGANv2. StyleGANv2 is the second version of StyleGAN, they are very similar in core principals. We will be working with StyleGANv2 but I will refer to it as SG. There is a lot that can be said/explained about SG."><meta name=keywords content="piotr pasza pasha storozenko ml data science machine learning"><meta name=robots content="noodp"><link rel=canonical href=/posts/stylegan-in-your-hands/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.css integrity=sha384-ysFyB7Is//Q1JNgERb0bLJokXKM8eWJsjEutGvthoHtBilHWgbdmbYkQZdwCIGIq crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.js integrity=sha384-UWjC+k927Mtx6WQF5SzKTXLLrOYmzs69HvkUjiKvUwSOljzc+C6PrGquNpOvJBBo crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-PR8Z9SJC7F",{anonymize_ip:!1})}</script><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="StyleGANv2 in Your Hands 💇👻"><meta name=twitter:description content="This is the second post from micro-series preceding the SFI conference. In the first post I showed how easy it is to do the style transfer at home. Now, I would like to present you how to play with StyleGANv2. StyleGANv2 is the second version of StyleGAN, they are very similar in core principals. We will be working with StyleGANv2 but I will refer to it as SG. There is a lot that can be said/explained about SG."><meta property="og:title" content="StyleGANv2 in Your Hands 💇👻"><meta property="og:description" content="This is the second post from micro-series preceding the SFI conference. In the first post I showed how easy it is to do the style transfer at home. Now, I would like to present you how to play with StyleGANv2. StyleGANv2 is the second version of StyleGAN, they are very similar in core principals. We will be working with StyleGANv2 but I will refer to it as SG. There is a lot that can be said/explained about SG."><meta property="og:type" content="article"><meta property="og:url" content="/posts/stylegan-in-your-hands/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-03-14T22:30:09+01:00"><meta property="article:modified_time" content="2022-03-14T22:30:09+01:00"></head><body class=light-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span><span class=logo__text>pasza's blog</span>
-<span class=logo__cursor></span>
-</a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About me</a></li><li><a href=/useful-materials>Useful materials</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About me</a></li><li><a href=/useful-materials>Useful materials</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-</span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>StyleGANv2 in Your Hands 💇👻</h1><div class=post-meta><span class=post-date>2022-03-14</span></div><span class=post-tags><a href=/tags/python/>#python</a>&nbsp;
-<a href=/tags/machine-learning/>#machine-learning</a>&nbsp;
-<a href=/tags/conference/>#conference</a>&nbsp;
-<a href=/tags/sfi-2022/>#SFI 2022</a>&nbsp;</span><div class=post-content><p>This is the second post from micro-series preceding the SFI conference.
-In <a href=/posts/playing-with-style-transfer/>the first post</a> I showed how easy it is to do the style transfer at home.
-Now, I would like to present you how to play with <a href=https://github.com/NVlabs/stylegan2>StyleGANv2</a>.
-StyleGANv2 is <a href=https://indipest.files.wordpress.com/2021/03/bw6d5zz.gif>the second version of StyleGAN</a>, they are very similar in core principals.
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>StyleGANv2 in Your Hands 💇👻 | Pasza&#39;s blog</title>
+<meta name="keywords" content="python, machine-learning, conference, SFI 2022">
+<meta name="description" content="This is the second post from micro-series preceding the SFI conference.
+In the first post I showed how easy it is to do the style transfer at home.
+Now, I would like to present you how to play with StyleGANv2.
+StyleGANv2 is the second version of StyleGAN, they are very similar in core principals.
 We will be working with StyleGANv2 but I will refer to it as SG.
 There is a lot that can be said/explained about SG.
-Here I would like to focus on showing how to make your own experiments with SG instead of getting into SG&rsquo;s details.</p><p>The post is divided in two parts.
+Here I would like to focus on showing how to make your own experiments with SG instead of getting into SG&rsquo;s details.">
+<meta name="author" content="">
+<link rel="canonical" href="/posts/stylegan-in-your-hands/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="/posts/stylegan-in-your-hands/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PR8Z9SJC7F');
+        }
+      </script><meta property="og:url" content="/posts/stylegan-in-your-hands/">
+  <meta property="og:site_name" content="Pasza&#39;s blog">
+  <meta property="og:title" content="StyleGANv2 in Your Hands 💇👻">
+  <meta property="og:description" content="This is the second post from micro-series preceding the SFI conference. In the first post I showed how easy it is to do the style transfer at home. Now, I would like to present you how to play with StyleGANv2. StyleGANv2 is the second version of StyleGAN, they are very similar in core principals. We will be working with StyleGANv2 but I will refer to it as SG. There is a lot that can be said/explained about SG. Here I would like to focus on showing how to make your own experiments with SG instead of getting into SG’s details.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-03-14T22:30:09+01:00">
+    <meta property="article:modified_time" content="2022-03-14T22:30:09+01:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Machine-Learning">
+    <meta property="article:tag" content="Conference">
+    <meta property="article:tag" content="SFI 2022">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="StyleGANv2 in Your Hands 💇👻">
+<meta name="twitter:description" content="This is the second post from micro-series preceding the SFI conference.
+In the first post I showed how easy it is to do the style transfer at home.
+Now, I would like to present you how to play with StyleGANv2.
+StyleGANv2 is the second version of StyleGAN, they are very similar in core principals.
+We will be working with StyleGANv2 but I will refer to it as SG.
+There is a lot that can be said/explained about SG.
+Here I would like to focus on showing how to make your own experiments with SG instead of getting into SG&rsquo;s details.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/posts/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "StyleGANv2 in Your Hands 💇👻",
+      "item": "/posts/stylegan-in-your-hands/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "StyleGANv2 in Your Hands 💇👻",
+  "name": "StyleGANv2 in Your Hands 💇👻",
+  "description": "This is the second post from micro-series preceding the SFI conference. In the first post I showed how easy it is to do the style transfer at home. Now, I would like to present you how to play with StyleGANv2. StyleGANv2 is the second version of StyleGAN, they are very similar in core principals. We will be working with StyleGANv2 but I will refer to it as SG. There is a lot that can be said/explained about SG. Here I would like to focus on showing how to make your own experiments with SG instead of getting into SG\u0026rsquo;s details.\n",
+  "keywords": [
+    "python", "machine-learning", "conference", "SFI 2022"
+  ],
+  "articleBody": "This is the second post from micro-series preceding the SFI conference. In the first post I showed how easy it is to do the style transfer at home. Now, I would like to present you how to play with StyleGANv2. StyleGANv2 is the second version of StyleGAN, they are very similar in core principals. We will be working with StyleGANv2 but I will refer to it as SG. There is a lot that can be said/explained about SG. Here I would like to focus on showing how to make your own experiments with SG instead of getting into SG’s details.\nThe post is divided in two parts. In the first, I present some results and ideas behind them. In the second, I show how to obtain similar results and what can you do on your own computer (with an access to the internet).\nWhat do I need to know about StyleGAN before the experiments? Simple face generations StyleGAN is a computer vision model that is able to create a high-resolution portraits (1024x1024px) from a random vector $z$ of length 512 (sic!).\nThis photorealistic image has been generated from random vector $z$. This person DOES NOT EXIST! Isn’t that crazy? It’s just the beginning.\nActually SG first transforms vector $z_1\\in \\mathbb{R}^{512}$ to set of style vectors $w_1\\in\\mathbb{R}^{512 \\times 18}$ and generates face from them. This is important for our later experiments.\nAs for now let us sample different $z_2$ and generate face from this vector.\nStyle vectors mixing Researchers discovered that the first style vectors of $w$ are responsible for general shape of face, gender, while some later are responsible for style, i.e., color of skin, hair.\nSince almost any vector $w$ (created from random vector $z$) will give us some face, we can also interpolate between different $w$! This will happen if we take vectors 1 to 10 from $w_1$, and vectors 11 to 18 from $w_2$:\nCrazy, huh? It goes further, we can take less layers from $w_1$, for example take layers 1 to 7 from $w_1$ and 8 to 18 from $w_2$. This introduces more features from $w_2$ into result:\nWe can also generate faces from $w_i$ interpolated between $w_1$ and $w_2$. For example if we would like to have $n=30$ faces in-between we can create them from the following $w_i$\n$$ w_k = \\left(1 - \\frac{k}{n}\\right) w_1 + \\frac{k}{n} w_2, \\quad k = 1..n $$\nAnimation from generated faces from $w_i$\n“Excuse me, where is the age direction?” There exist particular linear directions in $w$ space, that are responsible for aging or turning head! This means that once we discover direction $a_{pose}$ we can rotate the face to the left by generating face from $w_1 - 5 a_{pose}$, we can also rotate face to the right by generating from $w_1 + 5 a_{pose}$. We can also generate the image for some intermediate poses and create the gif:\nReal face editing So far we have operated on faces generated from random vectors. This might be a great fun, but we might want to edit some photo using StyleGAN. Surprisingly enough it is somehow possible with encoder4editing! Using this technique along with aging and pose directions we can create interesting mashups. Following a common pattern to use the US presidents for benchmarking CV algorithms, I present you the mashup between aging presidents Andrzej Duda and Volodymyr Zelenskyy.\nStyleGAN and e4e at home Similarly to the previous post, encoder4editing model authors provided a colab notebook for experimenting!\nHere it will not be as easy and straightforward as earlier because the model is not included in any kind of model zoo. You have to follow the notebook step by step, cells might require some time to run. On one point, you will have to grant the Google Cloud SDK access to your Google Drive. It will be necessary to download the pretrained e4e model and load it into your colab environment (model weights over 1GB), don’t be scared (the code will do it automatically for you).\nSome explanations regarding experiments in the notebook:\nffhq_encode - our focus, StyleGAN trained on FFHQ - dataset of high quality images cars_encode - StyleGAN on cars horse_encode - StyleGAN on horse church_encode - StyleGAN on church Working with real images approximations To provide your own photo for e4e to use, you can upload your photo to colab (I explained it in the previous post) and change the first line in cell:\nimage_path = EXPERIMENT_DATA_ARGS[experiment_type][\"image_path\"] original_image = Image.open(image_path) original_image = original_image.convert(\"RGB\") to\nimage_path = \"path_to_image.jpg\" In section:\nwith torch.no_grad(): tic = time.time() images, latents = run_on_batch(transformed_image.unsqueeze(0), net) result_image, latent = images[0], latents[0] toc = time.time() print('Inference took {:.4f} seconds.'.format(toc - tic)) you get latents, the key part of what you need. This is what we called $w$ and is later used to generate the face.\nIf you have latents, you can create image from them with\nwith torch.no_grad(): img_t, _ = net.decoder(latents.unsqueeze(0), input_is_latent=True, randomize_noise=False) img_t = img_t.squeeze(0) The resulting img_t is [3, 1024, 1024] tensor that can be converted to image with img = tensor2im(img). It is convenient to resize images to something smaller with img.resize((256, 256)) as working with 1024x1024 images is rather slow in colab from my experience.\nCreating random images In this implementation of SG you have to create all 18 $w$/latents from separate $z$. For example like that:\nlatents = net.decoder.get_latent(torch.normal(0, 1, size=(18, 512), device=\"cuda:0\")).unsqueeze(0) Feed it into the earlier code to get your first generated face!\nIf you have latents l1 and l2 you want to create face from first 8 layers of l1 and last 10 of l2 you can do:\nl12 = torch.cat((l1[:, :8, :], l2[:, 8:, :]), dim=1) In my case I got this scarry face this time. Please, do not blame me for your nightmares later. 👻\nWhy this all is possible While this all is magnificent we can only speculate why random vectors are giving us reasonable faces and why those age/rotation directions exist. People say it is because the latent space of size 512 is very dense in terms of contained information. It has to be able to carry information on about 1024x1024 pixel of people of all ethnicities, ages. We can choose almost any point in $R^{512}$ and it will produce plausible results. It is also important to remember that the network saw all those ages and ethnicities in the training data.\nThis also explains the existence of directions responsible for aging and face rotation. Since network saw a lot of faces rotated by different angles, this information located in latent space. The same goes for aging. On the other hand there is no up-down head direction in SG as there were not that much examples of people tilting forward and backward their heads in the training data. Network can generate brilliant results, but only of the same kind as it saw.\nSummary In this post I presented what can be achieved with StyleGAN and how you can play with it using free google colab. I hope you liked that and your experiments were fruitful ;)\n",
+  "wordCount" : "1172",
+  "inLanguage": "en",
+  "datePublished": "2022-03-14T22:30:09+01:00",
+  "dateModified": "2022-03-14T22:30:09+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/posts/stylegan-in-your-hands/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pasza's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Pasza&#39;s blog (Alt + H)">Pasza&#39;s blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="/about" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+            <li>
+                <a href="/useful-materials" title="Useful materials">
+                    <span>Useful materials</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      StyleGANv2 in Your Hands 💇👻
+    </h1>
+    <div class="post-meta"><span title='2022-03-14 22:30:09 +0100 +0100'>March 14, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>This is the second post from micro-series preceding the SFI conference.
+In <a href="/posts/playing-with-style-transfer/">the first post</a> I showed how easy it is to do the style transfer at home.
+Now, I would like to present you how to play with <a href="https://github.com/NVlabs/stylegan2">StyleGANv2</a>.
+StyleGANv2 is <a href="https://indipest.files.wordpress.com/2021/03/bw6d5zz.gif">the second version of StyleGAN</a>, they are very similar in core principals.
+We will be working with StyleGANv2 but I will refer to it as SG.
+There is a lot that can be said/explained about SG.
+Here I would like to focus on showing how to make your own experiments with SG instead of getting into SG&rsquo;s details.</p>
+<p>The post is divided in two parts.
 In the first, I present some results and ideas behind them.
-<a href=/posts/stylegan-in-your-hands/#stylegan-and-e4e-at-home>In the second</a>, I show how to obtain similar results and what can you do <strong>on your own computer</strong> (with an access to the internet).</p><h2 id=what-do-i-need-to-know-about-stylegan-before-the-experiments>What do I need to know about StyleGAN before the experiments?
-<a href=#what-do-i-need-to-know-about-stylegan-before-the-experiments class=h-anchor aria-hidden=true>#</a></h2><h3 id=simple-face-generations>Simple face generations
-<a href=#simple-face-generations class=h-anchor aria-hidden=true>#</a></h3><p>StyleGAN is a computer vision model that is able to create a high-resolution portraits (1024x1024px) from a random vector $z$ of length 512 (sic!).</p><p><img src=white_lady.jpg></p><p>This photorealistic image has been generated from random vector $z$.
+<a href="/posts/stylegan-in-your-hands/#stylegan-and-e4e-at-home">In the second</a>, I show how to obtain similar results and what can you do <strong>on your own computer</strong> (with an access to the internet).</p>
+<h2 id="what-do-i-need-to-know-about-stylegan-before-the-experiments">What do I need to know about StyleGAN before the experiments?<a hidden class="anchor" aria-hidden="true" href="#what-do-i-need-to-know-about-stylegan-before-the-experiments">#</a></h2>
+<h3 id="simple-face-generations">Simple face generations<a hidden class="anchor" aria-hidden="true" href="#simple-face-generations">#</a></h3>
+<p>StyleGAN is a computer vision model that is able to create a high-resolution portraits (1024x1024px) from a random vector $z$ of length 512 (sic!).</p>
+<p><img loading="lazy" src="white_lady.jpg"></p>
+<p>This photorealistic image has been generated from random vector $z$.
 This <em>person</em> <strong>DOES NOT EXIST</strong>!
 Isn&rsquo;t that crazy?
-It&rsquo;s just the beginning.</p><p>Actually SG first transforms vector $z_1\in \mathbb{R}^{512}$ to set of style vectors $w_1\in\mathbb{R}^{512 \times 18}$ and generates face from them.
-This is important for our later experiments.</p><p>As for now let us sample different $z_2$ and generate face from this vector.</p><p><img src=smile_black.jpg></p><h3 id=style-vectors-mixing>Style vectors mixing
-<a href=#style-vectors-mixing class=h-anchor aria-hidden=true>#</a></h3><p>Researchers discovered that the first style vectors of $w$ are responsible for general shape of face, gender, while some later are responsible for style, i.e., color of skin, hair.</p><p>Since almost any vector $w$ (created from random vector $z$) will give us <em>some</em> face, we can also interpolate between different $w$!
-This will happen if we take vectors 1 to 10 from $w_1$, and vectors 11 to 18 from $w_2$:</p><p><img src=black_lady2.jpg></p><p>Crazy, huh?
+It&rsquo;s just the beginning.</p>
+<p>Actually SG first transforms vector $z_1\in \mathbb{R}^{512}$ to set of style vectors $w_1\in\mathbb{R}^{512 \times 18}$ and generates face from them.
+This is important for our later experiments.</p>
+<p>As for now let us sample different $z_2$ and generate face from this vector.</p>
+<p><img loading="lazy" src="smile_black.jpg"></p>
+<h3 id="style-vectors-mixing">Style vectors mixing<a hidden class="anchor" aria-hidden="true" href="#style-vectors-mixing">#</a></h3>
+<p>Researchers discovered that the first style vectors of $w$ are responsible for general shape of face, gender, while some later are responsible for style, i.e., color of skin, hair.</p>
+<p>Since almost any vector $w$ (created from random vector $z$) will give us <em>some</em> face, we can also interpolate between different $w$!
+This will happen if we take vectors 1 to 10 from $w_1$, and vectors 11 to 18 from $w_2$:</p>
+<p><img loading="lazy" src="black_lady2.jpg"></p>
+<p>Crazy, huh?
 It goes further, we can take less layers from $w_1$, for example take layers 1 to 7 from $w_1$ and 8 to 18 from $w_2$.
-This introduces more features from $w_2$ into result:</p><p><img src=black_guy2.jpg></p><p>We can also generate faces from $w_i$ interpolated between $w_1$ and $w_2$.
-For example if we would like to have $n=30$ faces in-between we can create them from the following $w_i$</p><p>$$
+This introduces more features from $w_2$ into result:</p>
+<p><img loading="lazy" src="black_guy2.jpg"></p>
+<p>We can also generate faces from $w_i$ interpolated between $w_1$ and $w_2$.
+For example if we would like to have $n=30$ faces in-between we can create them from the following $w_i$</p>
+<p>$$
 w_k = \left(1 - \frac{k}{n}\right) w_1 + \frac{k}{n} w_2, \quad k = 1..n
-$$</p><p>Animation from generated faces from $w_i$</p><p><img src=man_woman.webp></p><h3 id=excuse-me-where-is-the-age-direction>&ldquo;Excuse me, where is the age direction?&rdquo;
-<a href=#excuse-me-where-is-the-age-direction class=h-anchor aria-hidden=true>#</a></h3><p>There exist <a href=https://github.com/genforce/interfacegan>particular <strong>linear</strong> directions</a> in $w$ space, that are responsible for aging or turning head!
+$$</p>
+<p>Animation from generated faces from $w_i$</p>
+<p><img loading="lazy" src="man_woman.webp"></p>
+<h3 id="excuse-me-where-is-the-age-direction">&ldquo;Excuse me, where is the age direction?&rdquo;<a hidden class="anchor" aria-hidden="true" href="#excuse-me-where-is-the-age-direction">#</a></h3>
+<p>There exist <a href="https://github.com/genforce/interfacegan">particular <strong>linear</strong> directions</a> in $w$ space, that are responsible for aging or turning head!
 This means that once we discover direction $a_{pose}$ we can rotate the face to the left by generating face from $w_1 - 5 a_{pose}$, we can also rotate face to the right by generating from $w_1 + 5 a_{pose}$.
-We can also generate the image for some intermediate poses and create the gif:</p><p><img src=rotate_woman.webp></p><h3 id=real-face-editing>Real face editing
-<a href=#real-face-editing class=h-anchor aria-hidden=true>#</a></h3><p>So far we have operated on faces generated from random vectors.
+We can also generate the image for some intermediate poses and create the gif:</p>
+<p><img loading="lazy" src="rotate_woman.webp"></p>
+<h3 id="real-face-editing">Real face editing<a hidden class="anchor" aria-hidden="true" href="#real-face-editing">#</a></h3>
+<p>So far we have operated on faces generated from random vectors.
 This might be a great fun, but we might want to <em>edit</em> some photo using StyleGAN.
-Surprisingly enough it is <em>somehow</em> possible with <a href=https://github.com/omertov/encoder4editing>encoder4editing</a>!
+Surprisingly enough it is <em>somehow</em> possible with <a href="https://github.com/omertov/encoder4editing">encoder4editing</a>!
 Using this technique along with aging and pose directions we can create interesting mashups.
-Following a common pattern to use <a href=https://github.com/ageitgey/face_recognition>the US presidents</a> for benchmarking <a href=https://en.wikipedia.org/wiki/Computer_vision>CV</a> algorithms, I present you the mashup between aging presidents Andrzej Duda and Volodymyr Zelenskyy.</p><p><img src=presidents.webp></p><h2 id=stylegan-and-e4e-at-home>StyleGAN and e4e at home
-<a href=#stylegan-and-e4e-at-home class=h-anchor aria-hidden=true>#</a></h2><p>Similarly to the previous post, encoder4editing model authors provided <a href=https://colab.research.google.com/github/omertov/encoder4editing/blob/main/notebooks/inference_playground.ipynb>a colab notebook for experimenting</a>!</p><p><a href=http://colab.research.google.com/github/omertov/encoder4editing/blob/main/notebooks/inference_playground.ipynb><img alt="Open In Colab" src=https://colab.research.google.com/assets/colab-badge.svg></a></p><p>Here it will not be as easy and straightforward as earlier because the model is not included in any kind of model zoo.
+Following a common pattern to use <a href="https://github.com/ageitgey/face_recognition">the US presidents</a> for benchmarking <a href="https://en.wikipedia.org/wiki/Computer_vision">CV</a> algorithms, I present you the mashup between aging presidents Andrzej Duda and Volodymyr Zelenskyy.</p>
+<p><img loading="lazy" src="presidents.webp"></p>
+<h2 id="stylegan-and-e4e-at-home">StyleGAN and e4e at home<a hidden class="anchor" aria-hidden="true" href="#stylegan-and-e4e-at-home">#</a></h2>
+<p>Similarly to the previous post, encoder4editing model authors provided <a href="https://colab.research.google.com/github/omertov/encoder4editing/blob/main/notebooks/inference_playground.ipynb">a colab notebook for experimenting</a>!</p>
+<p><a href="http://colab.research.google.com/github/omertov/encoder4editing/blob/main/notebooks/inference_playground.ipynb"><img alt="Open In Colab" loading="lazy" src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
+<p>Here it will not be as easy and straightforward as earlier because the model is not included in any kind of model zoo.
 You have to follow the notebook step by step, cells might require some time to run.
 On one point, you will have to grant the Google Cloud SDK access to your Google Drive.
-It will be necessary to download the pretrained e4e model and load it into your colab environment (model weights over 1GB), don&rsquo;t be scared (the code will do it automatically for you).</p><p>Some explanations regarding experiments in the notebook:</p><ul><li><code>ffhq_encode</code> - our focus, StyleGAN trained on <a href=https://github.com/NVlabs/ffhq-dataset>FFHQ - dataset of high quality images</a></li><li><code>cars_encode</code> - StyleGAN on cars</li><li><code>horse_encode</code> - StyleGAN on horse</li><li><code>church_encode</code> - StyleGAN on church</li></ul><h3 id=working-with-real-images-approximations>Working with real images approximations
-<a href=#working-with-real-images-approximations class=h-anchor aria-hidden=true>#</a></h3><p>To provide your own photo for e4e to use, you can upload your photo to colab (I explained it <a href=/posts/playing-with-style-transfer/#adjusting-for-images-from-you-local-disk>in the previous post</a>) and change the first line in cell:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>image_path <span style=color:#f92672>=</span> EXPERIMENT_DATA_ARGS[experiment_type][<span style=color:#e6db74>&#34;image_path&#34;</span>]
-</span></span><span style=display:flex><span>original_image <span style=color:#f92672>=</span> Image<span style=color:#f92672>.</span>open(image_path)
-</span></span><span style=display:flex><span>original_image <span style=color:#f92672>=</span> original_image<span style=color:#f92672>.</span>convert(<span style=color:#e6db74>&#34;RGB&#34;</span>)
-</span></span></code></pre></div><p>to</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>image_path <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;path_to_image.jpg&#34;</span>
-</span></span></code></pre></div><p>In section:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>with</span> torch<span style=color:#f92672>.</span>no_grad():
-</span></span><span style=display:flex><span>    tic <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
-</span></span><span style=display:flex><span>    images, latents <span style=color:#f92672>=</span> run_on_batch(transformed_image<span style=color:#f92672>.</span>unsqueeze(<span style=color:#ae81ff>0</span>), net)
-</span></span><span style=display:flex><span>    result_image, latent <span style=color:#f92672>=</span> images[<span style=color:#ae81ff>0</span>], latents[<span style=color:#ae81ff>0</span>]
-</span></span><span style=display:flex><span>    toc <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;Inference took </span><span style=color:#e6db74>{:.4f}</span><span style=color:#e6db74> seconds.&#39;</span><span style=color:#f92672>.</span>format(toc <span style=color:#f92672>-</span> tic))
+It will be necessary to download the pretrained e4e model and load it into your colab environment (model weights over 1GB), don&rsquo;t be scared (the code will do it automatically for you).</p>
+<p>Some explanations regarding experiments in the notebook:</p>
+<ul>
+<li><code>ffhq_encode</code> - our focus, StyleGAN trained on <a href="https://github.com/NVlabs/ffhq-dataset">FFHQ - dataset of high quality images</a></li>
+<li><code>cars_encode</code> - StyleGAN on cars</li>
+<li><code>horse_encode</code> - StyleGAN on horse</li>
+<li><code>church_encode</code> - StyleGAN on church</li>
+</ul>
+<h3 id="working-with-real-images-approximations">Working with real images approximations<a hidden class="anchor" aria-hidden="true" href="#working-with-real-images-approximations">#</a></h3>
+<p>To provide your own photo for e4e to use, you can upload your photo to colab (I explained it <a href="/posts/playing-with-style-transfer/#adjusting-for-images-from-you-local-disk">in the previous post</a>) and change the first line in cell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>image_path <span style="color:#f92672">=</span> EXPERIMENT_DATA_ARGS[experiment_type][<span style="color:#e6db74">&#34;image_path&#34;</span>]
+</span></span><span style="display:flex;"><span>original_image <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(image_path)
+</span></span><span style="display:flex;"><span>original_image <span style="color:#f92672">=</span> original_image<span style="color:#f92672">.</span>convert(<span style="color:#e6db74">&#34;RGB&#34;</span>)
+</span></span></code></pre></div><p>to</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>image_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;path_to_image.jpg&#34;</span>
+</span></span></code></pre></div><p>In section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>    tic <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>    images, latents <span style="color:#f92672">=</span> run_on_batch(transformed_image<span style="color:#f92672">.</span>unsqueeze(<span style="color:#ae81ff">0</span>), net)
+</span></span><span style="display:flex;"><span>    result_image, latent <span style="color:#f92672">=</span> images[<span style="color:#ae81ff">0</span>], latents[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    toc <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Inference took </span><span style="color:#e6db74">{:.4f}</span><span style="color:#e6db74"> seconds.&#39;</span><span style="color:#f92672">.</span>format(toc <span style="color:#f92672">-</span> tic))
 </span></span></code></pre></div><p>you get <code>latents</code>, the key part of what you need.
-This is what we called $w$ and is later used to generate the face.</p><p>If you have <code>latents</code>, you can create image from them with</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>with</span> torch<span style=color:#f92672>.</span>no_grad():
-</span></span><span style=display:flex><span>  img_t, _ <span style=color:#f92672>=</span> net<span style=color:#f92672>.</span>decoder(latents<span style=color:#f92672>.</span>unsqueeze(<span style=color:#ae81ff>0</span>), input_is_latent<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>, randomize_noise<span style=color:#f92672>=</span><span style=color:#66d9ef>False</span>)
-</span></span><span style=display:flex><span>  img_t <span style=color:#f92672>=</span> img_t<span style=color:#f92672>.</span>squeeze(<span style=color:#ae81ff>0</span>)
+This is what we called $w$ and is later used to generate the face.</p>
+<p>If you have <code>latents</code>, you can create image from them with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>  img_t, _ <span style="color:#f92672">=</span> net<span style="color:#f92672">.</span>decoder(latents<span style="color:#f92672">.</span>unsqueeze(<span style="color:#ae81ff">0</span>), input_is_latent<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, randomize_noise<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>  img_t <span style="color:#f92672">=</span> img_t<span style="color:#f92672">.</span>squeeze(<span style="color:#ae81ff">0</span>)
 </span></span></code></pre></div><p>The resulting <code>img_t</code> is <code>[3, 1024, 1024]</code> tensor that can be converted to image with
 <code>img = tensor2im(img)</code>.
-It is convenient to resize images to something smaller with <code>img.resize((256, 256))</code> as working with 1024x1024 images is rather slow in colab from my experience.</p><h3 id=creating-random-images>Creating random images
-<a href=#creating-random-images class=h-anchor aria-hidden=true>#</a></h3><p>In this implementation of SG you have to create all 18 $w$/<code>latents</code> from separate $z$.
-For example like that:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>latents <span style=color:#f92672>=</span> net<span style=color:#f92672>.</span>decoder<span style=color:#f92672>.</span>get_latent(torch<span style=color:#f92672>.</span>normal(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, size<span style=color:#f92672>=</span>(<span style=color:#ae81ff>18</span>, <span style=color:#ae81ff>512</span>), device<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;cuda:0&#34;</span>))<span style=color:#f92672>.</span>unsqueeze(<span style=color:#ae81ff>0</span>)
-</span></span></code></pre></div><p>Feed it into the earlier code to get your first generated face!</p><p>If you have latents <code>l1</code> and <code>l2</code> you want to create face from first 8 layers of <code>l1</code> and last 10 of <code>l2</code> you can do:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>l12 <span style=color:#f92672>=</span> torch<span style=color:#f92672>.</span>cat((l1[:, :<span style=color:#ae81ff>8</span>, :], l2[:, <span style=color:#ae81ff>8</span>:, :]), dim<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>)
+It is convenient to resize images to something smaller with <code>img.resize((256, 256))</code> as working with 1024x1024 images is rather slow in colab from my experience.</p>
+<h3 id="creating-random-images">Creating random images<a hidden class="anchor" aria-hidden="true" href="#creating-random-images">#</a></h3>
+<p>In this implementation of SG you have to create all 18 $w$/<code>latents</code> from separate $z$.
+For example like that:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latents <span style="color:#f92672">=</span> net<span style="color:#f92672">.</span>decoder<span style="color:#f92672">.</span>get_latent(torch<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, size<span style="color:#f92672">=</span>(<span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">512</span>), device<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cuda:0&#34;</span>))<span style="color:#f92672">.</span>unsqueeze(<span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><p>Feed it into the earlier code to get your first generated face!</p>
+<p>If you have latents <code>l1</code> and <code>l2</code> you want to create face from first 8 layers of <code>l1</code> and last 10 of <code>l2</code> you can do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>l12 <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>cat((l1[:, :<span style="color:#ae81ff">8</span>, :], l2[:, <span style="color:#ae81ff">8</span>:, :]), dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
 </span></span></code></pre></div><p>In my case I got this scarry face this time.
-Please, do not blame me for your nightmares later. 👻</p><p><img src=strange_mix.jpg></p><h2 id=why-this-all-is-possible>Why this all is possible
-<a href=#why-this-all-is-possible class=h-anchor aria-hidden=true>#</a></h2><p>While this all is magnificent we can only speculate why random vectors are giving us reasonable faces and why those age/rotation directions exist.
+Please, do not blame me for your nightmares later. 👻</p>
+<p><img loading="lazy" src="strange_mix.jpg"></p>
+<h2 id="why-this-all-is-possible">Why this all is possible<a hidden class="anchor" aria-hidden="true" href="#why-this-all-is-possible">#</a></h2>
+<p>While this all is magnificent we can only speculate why random vectors are giving us reasonable faces and why those age/rotation directions exist.
 People say it is because the latent space of size 512 is very dense in terms of contained information.
 It has to be able to carry information on about 1024x1024 pixel of people of all ethnicities, ages.
 We can choose almost any point in $R^{512}$ and it will produce plausible results.
-It is also important to remember that the network saw all those ages and ethnicities in the training data.</p><p>This also explains the existence of directions responsible for aging and face rotation.
+It is also important to remember that the network saw all those ages and ethnicities in the training data.</p>
+<p>This also explains the existence of directions responsible for aging and face rotation.
 Since network saw a lot of faces rotated by different angles, this information located in latent space.
 The same goes for aging.
 On the other hand there is no up-down head direction in SG as there were not that much examples of people tilting forward and backward their heads in the training data.
-Network can generate brilliant results, but only of the same kind as it saw.</p><h2 id=summary>Summary
-<a href=#summary class=h-anchor aria-hidden=true>#</a></h2><p>In this post I presented what can be achieved with StyleGAN and how you can play with it using free google colab.
-I hope you liked that and your experiments were fruitful ;)</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=/posts/ml4plankton-conference/><span class=button__icon>←</span>
-<span class=button__text>Presentation at ML4Plankton Conference 🌊🐟</span>
-</a></span><span class="button next"><a href=/posts/solar-panels-4/><span class=button__text>Streamlit Tutorial: How to Deploy Streamlit Apps on RStudio Connect 💰</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user">Piotr Pasza Storożenko</div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-PR8Z9SJC7F"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-PR8Z9SJC7F",{anonymize_ip:!1})}</script></body></html>
+Network can generate brilliant results, but only of the same kind as it saw.</p>
+<h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>In this post I presented what can be achieved with StyleGAN and how you can play with it using free google colab.
+I hope you liked that and your experiments were fruitful ;)</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/python/">Python</a></li>
+      <li><a href="/tags/machine-learning/">Machine-Learning</a></li>
+      <li><a href="/tags/conference/">Conference</a></li>
+      <li><a href="/tags/sfi-2022/">SFI 2022</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>Piotr Pasza Storożenko</span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

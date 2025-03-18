@@ -1,31 +1,73 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Oxford on Pasza's blog</title><link>/tags/oxford/</link><description>Recent content in Oxford on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Mon, 24 Jul 2023 23:00:00 +0100</lastBuildDate><atom:link href="/tags/oxford/index.xml" rel="self" type="application/rss+xml"/><item><title>OxML Report Day4 📜</title><link>/posts/oxml-report-day4/</link><pubDate>Mon, 24 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day4/</guid><description>
-&lt;p>The report of all talks during the fourth day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>..&lt;/p>
-&lt;p>This day talks were on:&lt;/p>
-&lt;ol>
-&lt;li>Insightful Lecture on ML for Mental Health - &lt;a href="http://www.munmund.net/">Munmun De Chodhury&lt;/a>&lt;/li>
-&lt;li>Drug Discovery with ML - &lt;a href="https://www.linkedin.com/in/ravi-patel-841a52138/">Ravi Patel&lt;/a>&lt;/li>
-&lt;li>How to make sure the Market wants your solution - &lt;a href="https://www.swissre.com/profile/Reza_Khorshidi/ep_cd4b47">Reza Khorshidi&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>OxML Report Day3 📜</title><link>/posts/oxml-report-day3/</link><pubDate>Sun, 23 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day3/</guid><description>
-&lt;p>The report of all talks during the third day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>..&lt;/p>
-&lt;p>This day talks were on:&lt;/p>
-&lt;ol>
-&lt;li>Introduction to Neural Networks - &lt;a href="https://www.ai.math.uni-muenchen.de/members/professor/kutyniok/index.html">Gitta Kutyniok&lt;/a>&lt;/li>
-&lt;li>Medical Expert&amp;rsquo;s View on Impactful and Responsible ML in Health with EHR - &lt;a href="https://www.oxfordmartin.ox.ac.uk/people/kazem-rahimi/">Kazem Rahimi&lt;/a>&lt;/li>
-&lt;li>Chaotic Lecture on Graphs and ML - &lt;a href="https://www.cl.cam.ac.uk/~pl219/">Pietro Liò&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>OxML Report Day2 📜</title><link>/posts/oxml-report-day2/</link><pubDate>Sat, 22 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day2/</guid><description>
-&lt;p>The report of all talks during the second day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>..&lt;/p>
-&lt;p>This day talks were on:&lt;/p>
-&lt;ol>
-&lt;li>The State of Computer Vision and Many CV Experiments - &lt;a href="https://chrirupp.github.io/">Cristian Rupprecht&lt;/a>&lt;/li>
-&lt;li>ML Challenges in Oncology and Multi-omics data - &lt;a href="https://www.oncology.cam.ac.uk/research/our-research/crispin">Mireira Crispin&lt;/a>&lt;/li>
-&lt;li>What is a Multimodality and How To Work With It? - &lt;a href="https://www.cs.cmu.edu/~morency/">Louis-Philippe (LP) Morency&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>OxML Report Day 1 📜</title><link>/posts/oxml-report-day1/</link><pubDate>Fri, 21 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-report-day1/</guid><description>
-&lt;p>The report of all talks during the first day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>.&lt;/p>
-&lt;p>This day talks were on:&lt;/p>
-&lt;ol>
-&lt;li>Casual Inference - &lt;a href="https://www.microsoft.com/en-us/research/people/chezha/">Cheng Zhang&lt;/a>&lt;/li>
-&lt;li>Computer Vision in medicine - &lt;a href="https://www.kcl.ac.uk/people/jorge-cardoso">Jorge Cardoso&lt;/a>&lt;/li>
-&lt;li>Knowledge Representation - &lt;a href="http://arkitus.com/">Ali Eslami&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>OxML Health 2023 - Summary 🌍📚❤️‍🩹</title><link>/posts/oxml-summary/</link><pubDate>Thu, 20 Jul 2023 23:00:00 +0100</pubDate><guid>/posts/oxml-summary/</guid><description>
-&lt;p>Long time no see ^^
-Today, I&amp;rsquo;d like to share my experience from &lt;a href="https://www.oxfordml.school/">OxML Health Summer School&lt;/a> that I attended in person this year on behalf of &lt;a href="https://appsilon.com/">Appsilon&lt;/a>.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Oxford on Pasza&#39;s blog</title>
+    <link>/tags/oxford/</link>
+    <description>Recent content in Oxford on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Mon, 24 Jul 2023 23:00:00 +0100</lastBuildDate>
+    <atom:link href="/tags/oxford/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OxML Report Day4 📜</title>
+      <link>/posts/oxml-report-day4/</link>
+      <pubDate>Mon, 24 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-report-day4/</guid>
+      <description>&lt;p&gt;The report of all talks during the fourth day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;..&lt;/p&gt;
+&lt;p&gt;This day talks were on:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Insightful Lecture on ML for Mental Health - &lt;a href=&#34;http://www.munmund.net/&#34;&gt;Munmun De Chodhury&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Drug Discovery with ML - &lt;a href=&#34;https://www.linkedin.com/in/ravi-patel-841a52138/&#34;&gt;Ravi Patel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;How to make sure the Market wants your solution - &lt;a href=&#34;https://www.swissre.com/profile/Reza_Khorshidi/ep_cd4b47&#34;&gt;Reza Khorshidi&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>OxML Report Day3 📜</title>
+      <link>/posts/oxml-report-day3/</link>
+      <pubDate>Sun, 23 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-report-day3/</guid>
+      <description>&lt;p&gt;The report of all talks during the third day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;..&lt;/p&gt;
+&lt;p&gt;This day talks were on:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Introduction to Neural Networks - &lt;a href=&#34;https://www.ai.math.uni-muenchen.de/members/professor/kutyniok/index.html&#34;&gt;Gitta Kutyniok&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Medical Expert&amp;rsquo;s View on Impactful and Responsible ML in Health with EHR - &lt;a href=&#34;https://www.oxfordmartin.ox.ac.uk/people/kazem-rahimi/&#34;&gt;Kazem Rahimi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chaotic Lecture on Graphs and ML - &lt;a href=&#34;https://www.cl.cam.ac.uk/~pl219/&#34;&gt;Pietro Liò&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>OxML Report Day2 📜</title>
+      <link>/posts/oxml-report-day2/</link>
+      <pubDate>Sat, 22 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-report-day2/</guid>
+      <description>&lt;p&gt;The report of all talks during the second day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;..&lt;/p&gt;
+&lt;p&gt;This day talks were on:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The State of Computer Vision and Many CV Experiments - &lt;a href=&#34;https://chrirupp.github.io/&#34;&gt;Cristian Rupprecht&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ML Challenges in Oncology and Multi-omics data - &lt;a href=&#34;https://www.oncology.cam.ac.uk/research/our-research/crispin&#34;&gt;Mireira Crispin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;What is a Multimodality and How To Work With It? - &lt;a href=&#34;https://www.cs.cmu.edu/~morency/&#34;&gt;Louis-Philippe (LP) Morency&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>OxML Report Day 1 📜</title>
+      <link>/posts/oxml-report-day1/</link>
+      <pubDate>Fri, 21 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-report-day1/</guid>
+      <description>&lt;p&gt;The report of all talks during the first day of OxML Health 2023 where I&amp;rsquo;ve been on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This day talks were on:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Casual Inference - &lt;a href=&#34;https://www.microsoft.com/en-us/research/people/chezha/&#34;&gt;Cheng Zhang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Computer Vision in medicine - &lt;a href=&#34;https://www.kcl.ac.uk/people/jorge-cardoso&#34;&gt;Jorge Cardoso&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Knowledge Representation - &lt;a href=&#34;http://arkitus.com/&#34;&gt;Ali Eslami&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>OxML Health 2023 - Summary 🌍📚❤️‍🩹</title>
+      <link>/posts/oxml-summary/</link>
+      <pubDate>Thu, 20 Jul 2023 23:00:00 +0100</pubDate>
+      <guid>/posts/oxml-summary/</guid>
+      <description>&lt;p&gt;Long time no see ^^
+Today, I&amp;rsquo;d like to share my experience from &lt;a href=&#34;https://www.oxfordml.school/&#34;&gt;OxML Health Summer School&lt;/a&gt; that I attended in person this year on behalf of &lt;a href=&#34;https://appsilon.com/&#34;&gt;Appsilon&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

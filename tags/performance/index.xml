@@ -1,7 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Performance on Pasza's blog</title><link>/tags/performance/</link><description>Recent content in Performance on Pasza's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Piotr Pasza Storożenko</copyright><lastBuildDate>Sat, 16 Oct 2021 08:42:59 +0200</lastBuildDate><atom:link href="/tags/performance/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Sum Like a Boss (Almost) Σ</title><link>/posts/how-to-sum-like-a-boss/</link><pubDate>Sat, 16 Oct 2021 08:42:59 +0200</pubDate><guid>/posts/how-to-sum-like-a-boss/</guid><description>
-&lt;p>In a recent post, I presented how memory layout may influence a matrix summing speed.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Performance on Pasza&#39;s blog</title>
+    <link>/tags/performance/</link>
+    <description>Recent content in Performance on Pasza&#39;s blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en</language>
+    <copyright>Piotr Pasza Storożenko</copyright>
+    <lastBuildDate>Sat, 16 Oct 2021 08:42:59 +0200</lastBuildDate>
+    <atom:link href="/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Sum Like a Boss (Almost) Σ</title>
+      <link>/posts/how-to-sum-like-a-boss/</link>
+      <pubDate>Sat, 16 Oct 2021 08:42:59 +0200</pubDate>
+      <guid>/posts/how-to-sum-like-a-boss/</guid>
+      <description>&lt;p&gt;In a recent post, I presented how memory layout may influence a matrix summing speed.
 It&amp;rsquo;s interesting to see that there are plenty of pitfalls we might fall into when writing sum function and memory layout is not the only one.
-Please first &lt;a href="/posts/speed-of-traversing-matrix/" title="Post on summing by rows vs cols first">read the previous post on summing&lt;/a> if you haven&amp;rsquo;t already.&lt;/p>
-&lt;p>Without thinking &lt;em>why&lt;/em>, let&amp;rsquo;s take a look at those two functions:&lt;/p></description></item><item><title>Speed of Traversing Matrix → vs ↓</title><link>/posts/speed-of-traversing-matrix/</link><pubDate>Fri, 01 Oct 2021 22:24:55 +0200</pubDate><guid>/posts/speed-of-traversing-matrix/</guid><description>
-Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.
-Why it differs whetter matrix is traversed by rows or columns? # Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers. Therefore there are two schemas one can follow, row-first and column-first. Historically they are called C-style and Fortran-style respectively.</description></item></channel></rss>
+Please first &lt;a href=&#34;/posts/speed-of-traversing-matrix/&#34; title=&#34;Post on summing by rows vs cols first&#34;&gt;read the previous post on summing&lt;/a&gt; if you haven&amp;rsquo;t already.&lt;/p&gt;
+&lt;p&gt;Without thinking &lt;em&gt;why&lt;/em&gt;, let&amp;rsquo;s take a look at those two functions:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Speed of Traversing Matrix → vs ↓</title>
+      <link>/posts/speed-of-traversing-matrix/</link>
+      <pubDate>Fri, 01 Oct 2021 22:24:55 +0200</pubDate>
+      <guid>/posts/speed-of-traversing-matrix/</guid>
+      <description>&lt;p&gt;Today I would like to mention a low-level peculiarity I was taught in highschool, but passed over during my studies.&lt;/p&gt;
+&lt;h2 id=&#34;why-it-differs-whetter-matrix-is-traversed-by-rows-or-columns&#34;&gt;Why it differs whetter matrix is traversed by rows or columns?&lt;/h2&gt;
+&lt;p&gt;Even though we think of a matrices as a two dimensional creatures, inside a computer they have to be stored as a sequence of numbers.
+Therefore there are two schemas one can follow, row-first and column-first.
+Historically they are called C-style and Fortran-style respectively.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
