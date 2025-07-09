@@ -5,7 +5,7 @@ title: "About me"
 Hi, my name is Piotr Pasza Storożenko located in Warsaw, Poland.
 I'm a machine learning engineer, physicist, by heart with love for programming.
 Wannabe applied mathematician.
-A huge julia enthusiast, but I code mostly in python and R.
+A huge julia enthusiast, but I code mostly in python.
 Some small chunks of code and simulations in C++17 and newer are also fine ^^.
 On this blog I share things I find interesting.
 
@@ -63,6 +63,7 @@ On this blog I share things I find interesting.
 
 * November 2024 - Machine Made Human Motion - using ML to generate animations. Presentation at [Data Science Summit 2024](https://dssconf.pl/). [The talk is available on YouTube](https://www.youtube.com/watch?v=R2t03bn-vys).
 * April 2024 - Shiny for Python workshop at ShinyConf 2024. [The workshop is available on YouTube](https://www.youtube.com/watch?v=DBP8Aqag7lg).
+* July 2023 - Oxford ML Summer School 2023, MLx Health track. [Relation under `oxml` tag](/tags/oxml/)
 * June 2022 - 3rd place award for a talk _O strachu przed liczeniem na papierze_ (eng. _About the fear of calculating on paper_) during [SFINKS'22](http://sfinks.fizyka.pw.edu.pl/) conference.
 * May-June 2022 - In collaboration with [DaftAcademy](https://www.daftacademy.pl/) I prepared and taught the course _Python LevelUP: Data Science by Appsilon_. The materials (in English) [available on GitHub](https://github.com/Appsilon/datascience-python) on CC license.
 * March 2022 - I was invited to give a talk on [SFI 2022 Conference](https://sfi.pl/en/). _StyleGAN w Twoich rękach_ (eng. _StyleGAN in your hands_). [The talk is available on YouTube](https://www.youtube.com/watch?v=aqK1gmJqxFc).
